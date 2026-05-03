@@ -13,10 +13,10 @@ const PartnerCarousel = () => {
   const duplicatedLogos = [...logos, ...logos];
 
   return (
-    <div className="relative w-full overflow-hidden py-10 bg-white/50 backdrop-blur-sm">
+    <div className="relative w-full overflow-hidden py-12 bg-white/50 backdrop-blur-sm">
       {/* Gradient Overlays for smooth fade in/out */}
-      <div className="absolute left-0 top-0 bottom-0 w-20 md:w-40 bg-gradient-to-r from-gray-50 to-transparent z-10" />
-      <div className="absolute right-0 top-0 bottom-0 w-20 md:w-40 bg-gradient-to-l from-gray-50 to-transparent z-10" />
+      <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-gray-50 to-transparent z-10" />
+      <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-gray-50 to-transparent z-10" />
 
       <motion.div 
         className="flex whitespace-nowrap"
@@ -27,7 +27,7 @@ const PartnerCarousel = () => {
           x: {
             repeat: Infinity,
             repeatType: "loop",
-            duration: 50, // Adjust speed here
+            duration: 60, // Slower speed for better readability
             ease: "linear",
           },
         }}
@@ -37,7 +37,7 @@ const PartnerCarousel = () => {
         {duplicatedLogos.map((logo, index) => (
           <div 
             key={index} 
-            className="inline-flex items-center justify-center mx-6 md:mx-12 w-24 md:w-32 h-16 md:h-20 grayscale hover:grayscale-0 transition-all duration-500 hover:scale-110"
+            className="inline-flex items-center justify-center mx-4 md:mx-6 w-32 md:w-44 h-20 md:h-28 hover:scale-110 transition-transform duration-500"
           >
             <img 
               src={`/partners/${logo}`} 
