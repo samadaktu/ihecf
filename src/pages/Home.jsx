@@ -3,6 +3,7 @@ import { Globe, Users, GraduationCap, Calendar, ChevronRight, CheckCircle, Arrow
 import { Link } from 'react-router-dom';
 import { services, countries } from '../utils/data';
 import SEO from '../components/SEO';
+import PartnerCarousel from '../components/PartnerCarousel';
 
 const Home = () => {
   const stats = [
@@ -255,10 +256,8 @@ const Home = () => {
               <h3 className="text-[10px] md:text-sm font-black uppercase tracking-[0.4em] text-gray-400 mb-3">Partnering Institutions</h3>
               <div className="h-0.5 w-16 md:w-24 bg-secondary mx-auto" />
             </div>
-            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-24 opacity-30 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-700">
-               {['Amity', 'SRM', 'VIT', 'IIT', 'BITS', 'LPU'].map(u => (
-                 <span key={u} className="text-xl md:text-2xl font-black text-primary italic font-heading">{u}</span>
-               ))}
+            <div className="mt-8">
+              <PartnerCarousel />
             </div>
          </div>
       </section>
