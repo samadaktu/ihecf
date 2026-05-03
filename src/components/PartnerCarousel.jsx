@@ -27,7 +27,7 @@ const PartnerCarousel = () => {
           x: {
             repeat: Infinity,
             repeatType: "loop",
-            duration: 60, // Slower speed for better readability
+            duration: 80, // Slower for much larger logos
             ease: "linear",
           },
         }}
@@ -37,7 +37,7 @@ const PartnerCarousel = () => {
         {duplicatedLogos.map((logo, index) => (
           <div 
             key={index} 
-            className="inline-flex items-center justify-center mx-4 md:mx-6 w-32 md:w-44 h-20 md:h-28 hover:scale-110 transition-transform duration-500"
+            className="inline-flex items-center justify-center mx-2 md:mx-3 w-40 md:w-56 h-24 md:h-36 hover:scale-110 transition-transform duration-500"
           >
             <img 
               src={`/partners/${logo}`} 
