@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Image as ImageIcon, Play, Search, ZoomIn } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const Gallery = () => {
   const images = [
@@ -13,6 +14,11 @@ const Gallery = () => {
 
   return (
     <div className="min-h-screen bg-white pb-24 md:pb-32">
+      <SEO 
+        title="Photo Gallery" 
+        description="A visual journey through our global recruitment fairs and roadshows. See the impact we make across the Middle East, Africa, and Southeast Asia." 
+        keywords="Education Fair Photos, Recruitment Events Gallery, Global Roadshows"
+      />
       {/* Header - Optimized for Mobile */}
       <section className="bg-primary text-white pt-24 md:pt-32 pb-16 md:pb-24 px-6 relative overflow-hidden">
         <div className="max-w-7xl mx-auto text-center relative z-10">

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Target, Eye, Clock, Award, ShieldCheck, Zap } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const About = () => {
   const values = [
@@ -17,6 +18,11 @@ const About = () => {
 
   return (
     <div className="min-h-screen">
+      <SEO 
+        title="About Us" 
+        description="Learn more about IHECF, a part of the Edunial Group, dedicated to creating meaningful connections between world-class Indian institutions and ambitious international students." 
+        keywords="About IHECF, Edunial Group, Student Recruitment Mission, Global Education Vision"
+      />
       {/* Hero - Optimized for Mobile */}
       <section className="bg-primary text-white pt-24 md:pt-32 pb-16 md:pb-24 text-center px-6">
         <div className="max-w-4xl mx-auto">

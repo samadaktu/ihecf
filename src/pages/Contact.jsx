@@ -1,5 +1,6 @@
 import { Mail, Phone, MapPin, Send, Globe, MessageSquare } from 'lucide-react';
 import { motion } from 'framer-motion';
+import SEO from '../components/SEO';
 
 const Contact = () => {
   const contactInfo = [
@@ -10,6 +11,11 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO 
+        title="Contact Us" 
+        description="Get in touch with IHECF for university partnerships, event registrations, or school collaborations. Our team is ready to assist you worldwide." 
+        keywords="Contact IHECF, University Partnership, Event Registration, Global Inquiries"
+      />
       {/* Hero - Optimized for Mobile */}
       <section className="bg-primary text-white pt-24 md:pt-32 pb-16 md:pb-24 relative overflow-hidden px-6">
         <div className="absolute top-0 right-0 w-64 md:w-96 h-64 md:h-96 bg-secondary/10 rounded-full blur-[100px] md:blur-[120px] -translate-y-1/2 translate-x-1/2" />

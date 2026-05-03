@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { countries } from '../utils/data';
 import { Calendar, MapPin, Search, Filter, ArrowRight, X, CheckCircle, Info } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import SEO from '../components/SEO';
 
 const Events = () => {
   const [filter, setFilter] = useState('All');
@@ -39,6 +40,11 @@ const Events = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEO 
+        title="Upcoming Events" 
+        description="Find and register for the next major recruitment event in your target region. View our schedule for education expos, summits, and school roadshows." 
+        keywords="Education Expo Schedule, Recruitment Events, IHECF Fairs 2026, Education Summits"
+      />
       {/* Header - Optimized for Mobile */}
       <section className="bg-primary text-white pt-24 md:pt-32 pb-16 md:pb-24 px-6 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2" />

@@ -1,6 +1,7 @@
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { MapPin, Users, Globe, ArrowLeft, ArrowRight, Calendar, CheckCircle, Target, Sparkles, Building2 } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const CountryDetail = () => {
   const { slug } = useParams();
@@ -29,6 +30,11 @@ const CountryDetail = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO 
+        title={`${countryName} Student Recruitment`} 
+        description={`Strategic insights and recruitment opportunities in ${countryName}. Connect with qualified students and institutions for Indian higher education.`}
+        keywords={`Student Recruitment ${countryName}, Education Fairs ${countryName}, IHECF ${countryName}`}
+      />
       {/* Hero - Optimized for Mobile */}
       <section className="bg-primary text-white pt-24 md:pt-32 pb-16 md:pb-24 relative overflow-hidden px-6">
         <div className="absolute inset-0 z-0">

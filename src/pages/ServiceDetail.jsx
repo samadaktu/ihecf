@@ -14,6 +14,7 @@ import {
   ArrowRight
 } from 'lucide-react';
 import { services } from '../utils/data';
+import SEO from '../components/SEO';
 
 const ServiceDetail = () => {
   const { slug } = useParams();
@@ -58,6 +59,11 @@ const ServiceDetail = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO 
+        title={service.title} 
+        description={service.description}
+        keywords={`IHECF ${service.title}, Student Recruitment Service, ${service.title} for Universities`}
+      />
       {/* Hero Section */}
       <section className="bg-primary text-white pt-24 md:pt-32 pb-16 md:pb-24 relative overflow-hidden px-6">
         <div className="absolute inset-0 z-0">

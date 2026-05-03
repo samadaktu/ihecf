@@ -2,10 +2,16 @@ import { services } from '../utils/data';
 import { motion } from 'framer-motion';
 import { CheckCircle, ArrowRight, Zap, Globe, Users, BarChart } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 
 const Services = () => {
   return (
     <div className="min-h-screen bg-white">
+      <SEO 
+        title="Our Services" 
+        description="Comprehensive solutions for international student recruitment including education fairs, counsellor meets, school visits, and market research." 
+        keywords="Education Fairs, Counsellor Meet, School Visits, Market Research, Student Recruitment Services"
+      />
       {/* Hero - Optimized for Mobile */}
       <section className="bg-primary text-white pt-24 md:pt-32 pb-16 md:pb-24 relative overflow-hidden px-6">
         <div className="absolute inset-0 bg-[url('/hero_background_students_map.png')] bg-cover opacity-10 grayscale scale-110" />

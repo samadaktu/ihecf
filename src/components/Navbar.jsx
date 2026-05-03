@@ -30,7 +30,8 @@ const Navbar = () => {
     { name: 'About', path: '/about' },
     { name: 'Services', path: '/services', mega: 'services' },
     { name: 'Countries', path: '#', mega: 'countries' },
-    { name: 'Events', path: '/events' },
+    { name: 'Promotions', path: '/how-ihecf-promoted' },
+    { name: 'Advertising', path: '/advertising-sponsorship' },
     { name: 'Gallery', path: '/gallery' },
     { name: 'Contact', path: '/contact' },
   ];

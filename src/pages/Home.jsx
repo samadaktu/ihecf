@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Globe, Users, GraduationCap, Calendar, ChevronRight, CheckCircle, ArrowRight, Play, ExternalLink, ShieldCheck, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { services, countries } from '../utils/data';
+import SEO from '../components/SEO';
 
 const Home = () => {
   const stats = [
@@ -30,6 +31,11 @@ const Home = () => {
 
   return (
     <div className="overflow-hidden bg-white">
+      <SEO 
+        title="Home" 
+        description="Pioneer international students recruitment with IHECF fairs. Your reliable platform to connect with most promising students, parents, local universities & schools." 
+        keywords="IHECF, Education Fairs, Student Recruitment, International Education, Indian Higher Education"
+      />
       {/* Hero Section - Optimized for Mobile */}
       <section className="relative min-h-[90vh] md:min-h-screen flex items-center pt-24 md:pt-32 pb-16 md:pb-20 px-6 overflow-hidden">
         <div className="absolute inset-0 z-0">

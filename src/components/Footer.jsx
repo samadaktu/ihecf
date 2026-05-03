@@ -26,9 +26,13 @@ const Footer = () => {
         <div>
           <h3 className="text-lg font-bold mb-6 border-b border-white/10 pb-2">Quick Links</h3>
           <ul className="space-y-4">
-            {['Home', 'About', 'Services', 'Events', 'Gallery', 'Contact'].map((link) => (
+            {['Home', 'About', 'Services', 'Events', 'Promotions', 'Advertising', 'Gallery', 'Contact'].map((link) => (
               <li key={link}>
-                <Link to={link === 'Home' ? '/' : `/${link.toLowerCase()}`} className="text-gray-400 hover:text-secondary transition-colors text-sm flex items-center gap-2">
+                <Link 
+                  to={link === 'Home' ? '/' : link === 'Promotions' ? '/how-ihecf-promoted' : link === 'Advertising' ? '/advertising-sponsorship' : `/${link.toLowerCase()}`} 
+                  onClick={() => window.scrollTo(0, 0)}
+                  className="text-gray-400 hover:text-secondary transition-colors text-sm flex items-center gap-2"
+                >
                   <div className="w-1 h-1 bg-secondary rounded-full" />
                   {link}
                 </Link>
@@ -70,7 +74,7 @@ const Footer = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 mt-20 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
-        <p>&copy; {new Date().getFullYear()} IHECF - Indian Higher Education & Career Fairs. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} IHECF - Indian Higher Education & Career Fairs. All rights reserved. Developed By <a href="https://www.technoalig.com" target="_blank">Techno Alig</a></p>
         <div className="flex gap-6">
           <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
           <a href="#" className="hover:text-white transition-colors">Terms of Service</a>

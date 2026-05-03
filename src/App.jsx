@@ -9,6 +9,8 @@ import Contact from './pages/Contact';
 import Gallery from './pages/Gallery';
 import CountryDetail from './pages/CountryDetail';
 import ServiceDetail from './pages/ServiceDetail';
+import Promotions from './pages/Promotions';
+import Advertising from './pages/Advertising';
 import ScrollToTop from './components/ScrollToTop';
 
 function App() {
@@ -27,6 +29,8 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/country/:slug" element={<CountryDetail />} />
+            <Route path="/how-ihecf-promoted" element={<Promotions />} />
+            <Route path="/advertising-sponsorship" element={<Advertising />} />
           </Routes>
         </main>
         <Footer />
