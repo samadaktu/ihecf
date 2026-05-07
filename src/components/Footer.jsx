@@ -59,15 +59,25 @@ const Footer = () => {
           <ul className="space-y-4">
             <li className="flex items-start gap-3">
               <MapPin className="text-secondary shrink-0" size={18} />
-              <span className="text-gray-400 text-sm">Edunial Group, Global Education Plaza, New Delhi, India</span>
+              <span className="text-gray-400 text-sm">B-2/A, East Vinod Nagar, Delhi-110091</span>
             </li>
-            <li className="flex items-center gap-3">
+            <li className="flex items-start gap-3">
               <Phone className="text-secondary shrink-0" size={18} />
-              <span className="text-gray-400 text-sm">+91 123 456 7890</span>
+              <div className="flex flex-col gap-2">
+                <div className="flex flex-col">
+                  <span className="text-[10px] text-gray-500 uppercase font-bold tracking-wider">Mr. Tribhuwan P. Singh</span>
+                  <a href="tel:+919319473355" className="text-gray-400 hover:text-secondary transition-colors text-sm">+91-9319473355</a>
+                  <a href="tel:+9660544548024" className="text-gray-400 hover:text-secondary transition-colors text-sm">+966-0544548024</a>
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-[10px] text-gray-500 uppercase font-bold tracking-wider">Ms. Kavita</span>
+                  <a href="tel:+919654448283" className="text-gray-400 hover:text-secondary transition-colors text-sm">+91-9654448283</a>
+                </div>
+              </div>
             </li>
             <li className="flex items-center gap-3">
               <Mail className="text-secondary shrink-0" size={18} />
-              <span className="text-gray-400 text-sm">info@ihecf.com</span>
+              <a href="mailto:info@ihecf.info" className="text-gray-400 hover:text-secondary transition-colors text-sm">info@ihecf.info</a>
             </li>
           </ul>
         </div>

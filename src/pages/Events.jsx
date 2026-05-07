@@ -25,17 +25,39 @@ const Events = () => {
 
   const filterOptions = ['All', 'Fair', 'Visit', 'Summit', ...countries.slice(0, 5)];
 
-  const handleRegister = (e) => {
+  const handleRegister = async (e) => {
     e.preventDefault();
     setIsRegistering(true);
-    setTimeout(() => {
+    
+    const formData = new FormData(e.target);
+    // Adding event details to form data
+    formData.append('event_title', selectedEvent.title);
+    formData.append('event_country', selectedEvent.country);
+    formData.append('_subject', `New Registration: ${selectedEvent.title} (${selectedEvent.country})`);
+    formData.append('_template', 'table');
+    formData.append('_captcha', 'false');
+
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/info@ihecf.info", {
+        method: "POST",
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+      
+      if (response.ok) {
+        setShowSuccess(true);
+        setTimeout(() => {
+          setShowSuccess(false);
+          setSelectedEvent(null);
+        }, 5000);
+      }
+    } catch (error) {
+      console.error("Registration error", error);
+    } finally {
       setIsRegistering(false);
-      setShowSuccess(true);
-      setTimeout(() => {
-        setShowSuccess(false);
-        setSelectedEvent(null);
-      }, 3000);
-    }, 1500);
+    }
   };
 
   return (
@@ -200,16 +222,16 @@ const Events = () => {
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
                         <div className="space-y-1 md:space-y-2">
                           <label className="text-[8px] md:text-[10px] font-black uppercase tracking-widest text-gray-400 ml-1">Name</label>
-                          <input required type="text" className="w-full bg-gray-50 border-none rounded-xl md:rounded-2xl p-4 md:p-5 focus:ring-2 focus:ring-secondary/50 text-sm md:text-base" placeholder="Name" />
+                          <input required name="name" type="text" className="w-full bg-gray-50 border-none rounded-xl md:rounded-2xl p-4 md:p-5 focus:ring-2 focus:ring-secondary/50 text-sm md:text-base" placeholder="Name" />
                         </div>
                         <div className="space-y-1 md:space-y-2">
                           <label className="text-[8px] md:text-[10px] font-black uppercase tracking-widest text-gray-400 ml-1">Email</label>
-                          <input required type="email" className="w-full bg-gray-50 border-none rounded-xl md:rounded-2xl p-4 md:p-5 focus:ring-2 focus:ring-secondary/50 text-sm md:text-base" placeholder="Email" />
+                          <input required name="email" type="email" className="w-full bg-gray-50 border-none rounded-xl md:rounded-2xl p-4 md:p-5 focus:ring-2 focus:ring-secondary/50 text-sm md:text-base" placeholder="Email" />
                         </div>
                       </div>
                       <div className="space-y-1 md:space-y-2">
                         <label className="text-[8px] md:text-[10px] font-black uppercase tracking-widest text-gray-400 ml-1">Org</label>
-                        <input required type="text" className="w-full bg-gray-50 border-none rounded-xl md:rounded-2xl p-4 md:p-5 focus:ring-2 focus:ring-secondary/50 text-sm md:text-base" placeholder="Organization" />
+                        <input required name="organization" type="text" className="w-full bg-gray-50 border-none rounded-xl md:rounded-2xl p-4 md:p-5 focus:ring-2 focus:ring-secondary/50 text-sm md:text-base" placeholder="Organization" />
                       </div>
                       <button 
                         disabled={isRegistering}

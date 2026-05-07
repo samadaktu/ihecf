@@ -1,12 +1,47 @@
-import { Mail, Phone, MapPin, Send, Globe, MessageSquare } from 'lucide-react';
+import { useState } from 'react';
+import { Mail, Phone, MapPin, Send, Globe, MessageSquare, CheckCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 import SEO from '../components/SEO';
 
 const Contact = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    // Using formsubmit.co to handle submissions to info@ihecf.info
+    const formData = new FormData(e.target);
+    formData.append('_subject', 'New Contact Inquiry - IHECF Website');
+    formData.append('_template', 'table');
+    formData.append('_captcha', 'false');
+
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/info@ihecf.info", {
+        method: "POST",
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+      
+      if (response.ok) {
+        setSubmitted(true);
+        e.target.reset();
+      }
+    } catch (error) {
+      console.error("Submission error", error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   const contactInfo = [
-    { icon: <Phone />, label: 'Call Us', value: '+91 98765 43210', desc: 'Mon-Fri, 9am-6pm IST' },
-    { icon: <Mail />, label: 'Email Us', value: 'info@ihecf.org', desc: 'We reply within 24 hours' },
-    { icon: <MapPin />, label: 'Visit Office', value: 'New Delhi, India', desc: 'Corporate Headquarters' },
+    { icon: <Phone />, label: 'Director (T.P. Singh)', value: '+91-9319473355', desc: 'KSA: +966-0544548024' },
+    { icon: <Phone />, label: 'Support (Ms. Kavita)', value: '+91-9654448283', desc: 'Technical & Event Support' },
+    { icon: <Mail />, label: 'Email Us', value: 'info@ihecf.info', desc: 'We reply within 24 hours' },
+    { icon: <MapPin />, label: 'Visit Office', value: 'Delhi-110091', desc: 'B-2/A, East Vinod Nagar' },
   ];
 
   return (
@@ -84,50 +119,80 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             className="bg-white p-8 md:p-12 rounded-[2.5rem] md:rounded-[3.5rem] shadow-2xl border border-gray-50"
           >
-            <form className="space-y-4 md:space-y-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
-                <div className="space-y-1 md:space-y-2">
-                  <label className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-gray-400 ml-1">Name</label>
-                  <input type="text" className="w-full bg-gray-50 border-none rounded-xl md:rounded-2xl p-4 focus:ring-2 focus:ring-secondary/50 text-sm md:text-base" placeholder="Name" />
+            {submitted ? (
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="h-full flex flex-col items-center justify-center text-center py-12"
+              >
+                <div className="w-20 h-20 bg-green-50 text-green-500 rounded-full flex items-center justify-center mb-6 shadow-inner">
+                  <CheckCircle size={40} />
+                </div>
+                <h3 className="text-2xl font-bold text-primary mb-2">Message Sent!</h3>
+                <p className="text-gray-500">Thank you for reaching out. We will get back to you at info@ihecf.info soon.</p>
+                <button 
+                  onClick={() => setSubmitted(false)}
+                  className="mt-8 text-secondary font-bold uppercase tracking-widest text-xs hover:underline"
+                >
+                  Send another message
+                </button>
+              </motion.div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+                  <div className="space-y-1 md:space-y-2">
+                    <label className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-gray-400 ml-1">Name</label>
+                    <input required name="name" type="text" className="w-full bg-gray-50 border-none rounded-xl md:rounded-2xl p-4 focus:ring-2 focus:ring-secondary/50 text-sm md:text-base" placeholder="Name" />
+                  </div>
+                  <div className="space-y-1 md:space-y-2">
+                    <label className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-gray-400 ml-1">Email</label>
+                    <input required name="email" type="email" className="w-full bg-gray-50 border-none rounded-xl md:rounded-2xl p-4 focus:ring-2 focus:ring-secondary/50 text-sm md:text-base" placeholder="Email" />
+                  </div>
                 </div>
                 <div className="space-y-1 md:space-y-2">
-                  <label className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-gray-400 ml-1">Email</label>
-                  <input type="email" className="w-full bg-gray-50 border-none rounded-xl md:rounded-2xl p-4 focus:ring-2 focus:ring-secondary/50 text-sm md:text-base" placeholder="Email" />
+                  <label className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-gray-400 ml-1">Organization</label>
+                  <input required name="organization" type="text" className="w-full bg-gray-50 border-none rounded-xl md:rounded-2xl p-4 focus:ring-2 focus:ring-secondary/50 text-sm md:text-base" placeholder="Institution" />
                 </div>
-              </div>
-              <div className="space-y-1 md:space-y-2">
-                <label className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-gray-400 ml-1">Organization</label>
-                <input type="text" className="w-full bg-gray-50 border-none rounded-xl md:rounded-2xl p-4 focus:ring-2 focus:ring-secondary/50 text-sm md:text-base" placeholder="Institution" />
-              </div>
-              <div className="space-y-1 md:space-y-2">
-                <label className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-gray-400 ml-1">Help with?</label>
-                <select className="w-full bg-gray-50 border-none rounded-xl md:rounded-2xl p-4 focus:ring-2 focus:ring-secondary/50 text-sm md:text-base text-gray-500">
-                  <option>University Partnership</option>
-                  <option>Event Registration</option>
-                  <option>School Collaboration</option>
-                </select>
-              </div>
-              <div className="space-y-1 md:space-y-2">
-                <label className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-gray-400 ml-1">Message</label>
-                <textarea rows={4} className="w-full bg-gray-50 border-none rounded-xl md:rounded-2xl p-4 focus:ring-2 focus:ring-secondary/50 text-sm md:text-base" placeholder="Message"></textarea>
-              </div>
-              <button className="btn-secondary w-full py-4 md:py-5 text-base md:text-lg shadow-xl group">
-                Send <Send size={18} className="group-hover:translate-x-1 transition-transform" />
-              </button>
-            </form>
+                <div className="space-y-1 md:space-y-2">
+                  <label className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-gray-400 ml-1">Help with?</label>
+                  <select name="subject" className="w-full bg-gray-50 border-none rounded-xl md:rounded-2xl p-4 focus:ring-2 focus:ring-secondary/50 text-sm md:text-base text-gray-500">
+                    <option>University Partnership</option>
+                    <option>Event Registration</option>
+                    <option>School Collaboration</option>
+                  </select>
+                </div>
+                <div className="space-y-1 md:space-y-2">
+                  <label className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-gray-400 ml-1">Message</label>
+                  <textarea required name="message" rows={4} className="w-full bg-gray-50 border-none rounded-xl md:rounded-2xl p-4 focus:ring-2 focus:ring-secondary/50 text-sm md:text-base" placeholder="Message"></textarea>
+                </div>
+                <button 
+                  disabled={isSubmitting}
+                  className="btn-secondary w-full py-4 md:py-5 text-base md:text-lg shadow-xl group disabled:opacity-50"
+                >
+                  {isSubmitting ? 'Sending...' : (
+                    <span className="flex items-center justify-center gap-2">
+                      Send <Send size={18} className="group-hover:translate-x-1 transition-transform" />
+                    </span>
+                  )}
+                </button>
+              </form>
+            )}
           </motion.div>
         </div>
       </section>
 
-      {/* Map Placeholder - Responsive Height */}
-      <section className="h-[300px] md:h-[400px] bg-gray-100 mx-4 md:mx-6 mb-16 md:mb-24 rounded-[2rem] md:rounded-[3rem] overflow-hidden relative">
-        <div className="absolute inset-0 flex items-center justify-center bg-primary/5">
-          <div className="text-center px-6">
-            <MapPin size={40} md:size={48} className="text-secondary mx-auto mb-4 animate-bounce" />
-            <h3 className="text-xl md:text-2xl font-bold text-primary">Global Headquarters</h3>
-            <p className="text-gray-500 text-sm md:text-base">New Delhi, India</p>
-          </div>
-        </div>
+      {/* Real Google Map */}
+      <section className="h-[400px] md:h-[500px] bg-gray-100 mx-4 md:mx-6 mb-16 md:mb-24 rounded-[2rem] md:rounded-[3rem] overflow-hidden relative shadow-inner border border-gray-100">
+        <iframe 
+          src="https://maps.google.com/maps?q=B-2/A,East%20Vinod%20Nagar,Delhi-110091&t=&z=15&ie=UTF8&iwloc=&output=embed"
+          width="100%" 
+          height="100%" 
+          style={{ border: 0, filter: 'grayscale(0.5) contrast(1.1)' }} 
+          allowFullScreen="" 
+          loading="lazy" 
+          className="hover:grayscale-0 transition-all duration-1000"
+          title="IHECF Headquarters"
+        ></iframe>
       </section>
     </div>
   );
