@@ -1,16 +1,31 @@
-import { motion } from 'framer-motion';
-import { Image as ImageIcon, Play, Search, ZoomIn } from 'lucide-react';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Image as ImageIcon, Play, ZoomIn, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import SEO from '../components/SEO';
+import { galleryImages } from '../utils/galleryImages';
 
 const Gallery = () => {
-  const images = [
-    { url: '/ksa_education_event.png', title: 'Riyadh Expo 2024', category: 'Middle East' },
-    { url: '/student_interaction_fair.png', title: 'Mumbai Roadshow', category: 'India' },
-    { url: '/vietnam_education_event.png', title: 'Hanoi Fair', category: 'Southeast Asia' },
-    { url: '/kenya_education_event.png', title: 'Nairobi Summit', category: 'Africa' },
-    { url: '/ksa_education_event.png', title: 'Oman Career Fair', category: 'Middle East' },
-    { url: '/student_interaction_fair.png', title: 'Dubai Forum', category: 'Middle East' },
-  ];
+  const [selectedImageIndex, setSelectedImageIndex] = useState(null);
+
+  const openLightbox = (index) => {
+    setSelectedImageIndex(index);
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeLightbox = () => {
+    setSelectedImageIndex(null);
+    document.body.style.overflow = 'auto';
+  };
+
+  const nextImage = (e) => {
+    e.stopPropagation();
+    setSelectedImageIndex((prev) => (prev === galleryImages.length - 1 ? 0 : prev + 1));
+  };
+
+  const prevImage = (e) => {
+    e.stopPropagation();
+    setSelectedImageIndex((prev) => (prev === 0 ? galleryImages.length - 1 : prev - 1));
+  };
 
   return (
     <div className="min-h-screen bg-white pb-24 md:pb-32">
@@ -36,50 +51,89 @@ const Gallery = () => {
         <div className="absolute top-0 right-0 w-64 md:w-96 h-64 md:h-96 bg-secondary/10 rounded-full blur-[80px] md:blur-[100px] translate-x-1/2 -translate-y-1/2" />
       </section>
 
-      {/* Gallery Grid - Scrollable Categories on Mobile */}
+      {/* Gallery Grid */}
       <section className="py-16 md:py-24 px-6 max-w-7xl mx-auto">
-        <div className="flex flex-nowrap md:flex-wrap gap-3 md:gap-4 mb-12 md:mb-16 overflow-x-auto pb-4 md:pb-0 no-scrollbar justify-start md:justify-center">
-          {['All', 'Middle East', 'Africa', 'Southeast Asia', 'Events'].map(cat => (
-            <button key={cat} className="px-6 md:px-8 py-2 md:py-3 rounded-full text-[10px] md:text-xs font-black uppercase tracking-widest border border-gray-100 hover:border-secondary hover:text-secondary transition-all whitespace-nowrap">
-              {cat}
-            </button>
-          ))}
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
-          {images.map((item, i) => (
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+          {galleryImages.map((url, i) => (
             <motion.div
               key={i}
-              whileHover={{ y: -10 }}
-              className="group relative rounded-[2rem] md:rounded-[3rem] overflow-hidden bg-gray-50 aspect-video shadow-sm hover:shadow-2xl transition-all duration-500"
+              whileHover={{ y: -5 }}
+              onClick={() => openLightbox(i)}
+              className="group relative rounded-2xl md:rounded-[2rem] overflow-hidden bg-gray-100 aspect-square shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer"
             >
-              <img src={item.url} alt={item.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" />
-              <div className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-6 md:p-10">
-                <div className="text-secondary font-black uppercase tracking-[0.4em] text-[8px] md:text-[10px] mb-2">{item.category}</div>
-                <h3 className="text-xl md:text-2xl text-white font-bold mb-4 md:mb-6">{item.title}</h3>
-                <div className="flex gap-3 md:gap-4">
-                  <button className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-full flex items-center justify-center text-primary">
-                    <ZoomIn size={18} md:size={20} />
-                  </button>
-                  <button className="px-4 md:px-6 h-10 md:h-12 bg-white/10 text-white border border-white/20 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-primary transition-all">
-                    View Project
-                  </button>
-                </div>
+              <img src={url} alt={`Gallery Image ${i + 1}`} loading="lazy" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+              <div className="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
+                 <div className="w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white scale-50 group-hover:scale-100 transition-transform duration-300">
+                    <ZoomIn size={24} />
+                 </div>
               </div>
             </motion.div>
           ))}
         </div>
       </section>
 
-      {/* Video Strip - Stack on Mobile */}
+      {/* Professional Lightbox */}
+      <AnimatePresence>
+        {selectedImageIndex !== null && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-lg"
+            onClick={closeLightbox}
+          >
+            {/* Close Button */}
+            <button 
+              onClick={closeLightbox}
+              className="absolute top-6 right-6 z-50 w-12 h-12 bg-white/10 hover:bg-white text-white hover:text-black rounded-full flex items-center justify-center transition-colors"
+            >
+              <X size={24} />
+            </button>
+
+            {/* Navigation Buttons */}
+            <button 
+              onClick={prevImage}
+              className="absolute left-4 md:left-10 z-50 w-12 h-12 bg-white/10 hover:bg-white text-white hover:text-black rounded-full flex items-center justify-center transition-colors"
+            >
+              <ChevronLeft size={24} />
+            </button>
+            <button 
+              onClick={nextImage}
+              className="absolute right-4 md:right-10 z-50 w-12 h-12 bg-white/10 hover:bg-white text-white hover:text-black rounded-full flex items-center justify-center transition-colors"
+            >
+              <ChevronRight size={24} />
+            </button>
+
+            {/* Image Container */}
+            <div className="relative w-full h-full p-4 md:p-12 flex items-center justify-center">
+              <motion.img 
+                key={selectedImageIndex}
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.2 }}
+                src={galleryImages[selectedImageIndex]} 
+                alt={`Enlarged Gallery Image ${selectedImageIndex + 1}`}
+                className="max-w-full max-h-full object-contain rounded-lg md:rounded-2xl shadow-2xl"
+                onClick={(e) => e.stopPropagation()}
+              />
+              <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/50 text-xs font-bold tracking-widest uppercase">
+                {selectedImageIndex + 1} / {galleryImages.length}
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Video Strip */}
       <section className="bg-gray-50 py-16 md:py-24 mx-4 md:mx-6 rounded-[2.5rem] md:rounded-[4rem] px-6 md:px-10">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-10 md:gap-12 text-center lg:text-left">
           <div className="max-w-xl">
              <h2 className="text-3xl md:text-4xl font-black tracking-tighter mb-4 md:mb-6">Experience the Energy</h2>
              <p className="text-gray-500 text-base md:text-lg leading-relaxed">Watch highlight reels from recent fairs to understand the level of engagement we deliver.</p>
           </div>
-          <div className="flex gap-4 md:gap-6">
-            <div className="w-24 h-24 md:w-32 md:h-32 bg-white rounded-2xl md:rounded-[2rem] shadow-xl flex items-center justify-center text-secondary border border-gray-100">
+          <div className="flex gap-4 md:gap-6 justify-center">
+            <div className="w-24 h-24 md:w-32 md:h-32 bg-white rounded-2xl md:rounded-[2rem] shadow-xl flex items-center justify-center text-secondary border border-gray-100 hover:scale-105 transition-transform cursor-pointer">
                <Play size={32} md:size={40} fill="currentColor" />
             </div>
             <div className="w-24 h-24 md:w-32 md:h-32 bg-primary rounded-2xl md:rounded-[2rem] shadow-xl flex items-center justify-center text-white">
