@@ -11,6 +11,8 @@ const Events = () => {
   const [showSuccess, setShowSuccess] = useState(false);
   
   const allEvents = [
+    { country: 'Gambia', date: 'Nov 2026', title: 'IHECF Gambia 2026', type: 'Fair', image: '/gambia_education_fair.png' },
+    { country: 'Senegal', date: 'Nov 2026', title: 'IHECF Senegal 2026', type: 'Fair', image: '/senegal_education_fair.png' },
     { country: 'KSA', date: 'Sept 15-20, 2026', title: 'Riyadh Education Expo', type: 'Fair', image: '/ksa_education_event.png' },
     { country: 'Oman', date: 'Oct 02-05, 2026', title: 'Muscat Career Fair', type: 'Fair', image: '/student_interaction_fair.png' },
     { country: 'Ethiopia', date: 'Oct 20-22, 2026', title: 'Addis Ababa Summit', type: 'Summit', image: '/kenya_education_event.png' },

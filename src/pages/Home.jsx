@@ -14,6 +14,8 @@ const Home = () => {
   ];
 
   const upcomingEvents = [
+    { country: 'Gambia', date: 'Nov 2026', title: 'IHECF Gambia 2026', image: '/gambia_education_fair.png', type: 'Education Fair' },
+    { country: 'Senegal', date: 'Nov 2026', title: 'IHECF Senegal 2026', image: '/senegal_education_fair.png', type: 'Education Fair' },
     { country: 'KSA', date: 'Sept 15-20, 2026', title: 'Riyadh Education Expo', image: '/ksa_education_event.png', type: 'Premium Expo' },
     { country: 'Oman', date: 'Oct 02-05, 2026', title: 'Muscat Career Fair', image: '/student_interaction_fair.png', type: 'Career Fair' },
     { country: 'Vietnam', date: 'Nov 10-14, 2026', title: 'Hanoi University Meet', image: '/vietnam_education_event.png', type: 'Institutional Meet' },

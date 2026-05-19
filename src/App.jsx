@@ -11,6 +11,8 @@ import CountryDetail from './pages/CountryDetail';
 import ServiceDetail from './pages/ServiceDetail';
 import Promotions from './pages/Promotions';
 import Advertising from './pages/Advertising';
+import SenegalEvent from './pages/SenegalEvent';
+import GambiaEvent from './pages/GambiaEvent';
 import ScrollToTop from './components/ScrollToTop';
 
 function App() {
@@ -28,6 +30,8 @@ function App() {
             <Route path="/events" element={<Events />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/gallery" element={<Gallery />} />
+            <Route path="/country/senegal" element={<SenegalEvent />} />
+            <Route path="/country/gambia" element={<GambiaEvent />} />
             <Route path="/country/:slug" element={<CountryDetail />} />
             <Route path="/how-ihecf-promoted" element={<Promotions />} />
             <Route path="/advertising-sponsorship" element={<Advertising />} />
