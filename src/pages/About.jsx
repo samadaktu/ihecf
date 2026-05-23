@@ -1,19 +1,48 @@
 import { motion } from 'framer-motion';
-import { Target, Eye, Clock, Award, ShieldCheck, Zap } from 'lucide-react';
+import { Target, Eye, Clock, Award, ShieldCheck, Zap, Globe } from 'lucide-react';
 import SEO from '../components/SEO';
 
 const About = () => {
   const values = [
-    { title: "Excellence", icon: <Award />, desc: "Striving for the highest standards in education recruitment." },
-    { title: "Integrity", icon: <ShieldCheck />, desc: "Transparent and ethical practices across all our operations." },
-    { title: "Innovation", icon: <Zap />, desc: "Continuously evolving our strategies to meet global demands." }
+    { title: "Excellence", icon: <Award />, desc: "Delivering premium educational opportunities and unparalleled event execution across every global market we touch." },
+    { title: "Integrity", icon: <ShieldCheck />, desc: "We serve as a transparent, dependable bridge for families and university partners alike." },
+    { title: "Innovation", icon: <Zap />, desc: "The global education landscape is constantly evolving, and so are we. We pioneer new recruitment strategies, leverage modern digital tools, and build strategic diplomatic collaborations to stay ahead of the curve." }
   ];
 
   const timeline = [
     { year: "2012", title: "Inception", desc: "Started as a small consultancy focused on Indian student mobility." },
-    { year: "2015", title: "Middle East Expansion", desc: "Launched our first major fairs in KSA and Oman." },
-    { year: "2018", title: "African Footprint", desc: "Established strong ties with schools in Kenya and Ethiopia." },
+    { year: "2015", title: "Middle East Expansion", desc: "Launched our first major fairs across key Middle Eastern hubs." },
+    { year: "2018", title: "African Footprint", desc: "Established strong ties with schools across the African continent." },
     { year: "2023", title: "Global Network", desc: "Connecting 30,000+ students across 20+ countries annually." }
+  ];
+
+  const globalPresence = [
+    {
+      region: "African Footprint",
+      desc: "Established strong ties with schools in:",
+      countries: [
+        { name: "Ethiopia", code: "et" },
+        { name: "Uganda", code: "ug" },
+        { name: "Kenya", code: "ke" },
+        { name: "Tanzania", code: "tz" },
+        { name: "Zambia", code: "zm" },
+        { name: "Zimbabwe", code: "zw" },
+        { name: "Gambia", code: "gm" },
+        { name: "Senegal", code: "sn" },
+        { name: "Namibia", code: "na" },
+        { name: "Mauritius", code: "mu" }
+      ]
+    },
+    {
+      region: "Middle East Expansion",
+      desc: "Launched our first major fairs in:",
+      countries: [
+        { name: "Saudi Arabia", sub: "Riyadh, Dammam, Jeddah", code: "sa" },
+        { name: "Qatar", code: "qa" },
+        { name: "Kuwait", code: "kw" },
+        { name: "Oman", code: "om" }
+      ]
+    }
   ];
 
   return (
@@ -31,10 +60,11 @@ const About = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-3xl md:text-7xl mb-6 font-black tracking-tighter leading-tight"
           >
-            Pioneering the Path to <span className="text-secondary">Global Education</span>
+            The Premier Gateway Connecting Global Talent with <span className="text-secondary">World-Class Education</span>
           </motion.h1>
           <p className="text-base md:text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">
-            Part of the Edunial Group, IHECF is dedicated to creating meaningful connections between world-class Indian institutions and ambitious international students.
+            Driven by Edunial, the Indian Higher Education & Career Fair (IHECF) is the definitive bridge between ambitious international students and India’s leading universities. We simplify the global student recruitment ecosystem, empowering future leaders with world-class academic pathways while helping premier institutions expand their global footprint.<br /><br />
+            At Edunial Group, we don’t just advise — we partner in your success.
           </p>
         </div>
       </section>
@@ -47,7 +77,7 @@ const About = () => {
           </div>
           <h2 className="text-2xl md:text-3xl mb-4 font-bold">Our Mission</h2>
           <p className="text-gray-500 leading-relaxed text-base md:text-lg">
-            To provide a transparent, accessible, and high-impact platform where Indian universities can showcase their excellence and students can discover their future academic homes without boundaries.
+            To create a seamless, trusted ecosystem where premier Indian institutions and international talent meet. Through strategic global recruitment fairs, diplomatic collaborations, and dedicated student support, we turn academic aspirations into tangible global opportunities.
           </p>
         </div>
         <div className="bg-primary text-white p-8 md:p-12 rounded-[2rem] md:rounded-[3rem] shadow-xl relative overflow-hidden group">
@@ -57,7 +87,7 @@ const About = () => {
           </div>
           <h2 className="text-2xl md:text-3xl mb-4 font-bold">Our Vision</h2>
           <p className="text-gray-300 leading-relaxed text-base md:text-lg">
-            To become the undisputed global leader in international student recruitment for the Indian higher education sector, known for our quality, reach, and commitment to student success.
+            To reshape the global education landscape by making India the destination of choice for future leaders seeking academic excellence, cultural diversity, and future-ready career pathways.
           </p>
         </div>
       </section>
@@ -85,23 +115,69 @@ const About = () => {
         </div>
       </section>
 
+      {/* Global Presence */}
+      <section className="bg-white py-16 md:py-24 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12 md:mb-20">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Global Footprint</h2>
+            <p className="text-gray-500 text-lg max-w-2xl mx-auto">Expanding our reach and creating meaningful connections across the globe.</p>
+          </div>
+          <div className="space-y-8 md:space-y-12">
+            {globalPresence.map((region, i) => (
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="bg-gray-50 rounded-[2rem] p-8 md:p-12 border border-gray-100 shadow-sm"
+              >
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 bg-secondary/10 text-secondary rounded-xl flex items-center justify-center">
+                    <Globe size={24} />
+                  </div>
+                  <h3 className="text-2xl md:text-3xl font-bold text-primary">{region.region}</h3>
+                </div>
+                <p className="text-gray-600 mb-8 text-lg">{region.desc}</p>
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 md:gap-4">
+                  {region.countries.map((country, idx) => (
+                    <div key={idx} className="flex items-center gap-2 md:gap-3 bg-white px-3 md:px-4 py-2.5 md:py-3 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                      <img 
+                        src={`https://flagcdn.com/w40/${country.code}.png`} 
+                        alt={`${country.name} flag`} 
+                        className="w-6 md:w-8 h-auto rounded-sm shadow-sm object-cover shrink-0" 
+                      />
+                      <div className="flex flex-col min-w-0">
+                        <span className="font-semibold text-gray-800 text-sm md:text-base leading-tight truncate">{country.name}</span>
+                        {country.sub && <span className="text-[10px] md:text-xs text-gray-500 mt-0.5 leading-tight line-clamp-2">{country.sub}</span>}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Values - Responsive Grid */}
-      <section className="py-16 md:py-24 px-6 max-w-7xl mx-auto">
-        <h2 className="text-3xl md:text-4xl text-center mb-12 md:mb-16 font-bold">The Values That Drive Us</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-          {values.map((v, i) => (
-            <motion.div 
-              key={i} 
-              whileHover={{ y: -10 }}
-              className="text-center p-8 md:p-10 bg-white rounded-[2rem] md:rounded-[3rem] border border-gray-100 shadow-sm hover:shadow-xl transition-all"
-            >
-              <div className="w-12 h-12 md:w-16 md:h-16 bg-accent-light text-primary rounded-xl md:rounded-2xl flex items-center justify-center mx-auto mb-6 md:mb-8 shadow-inner">
-                {v.icon}
-              </div>
-              <h3 className="text-xl md:text-2xl mb-3 md:mb-4 font-bold">{v.title}</h3>
-              <p className="text-gray-500 text-sm md:text-base leading-relaxed">{v.desc}</p>
-            </motion.div>
-          ))}
+      <section className="bg-gray-50 py-16 md:py-24 px-6">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl md:text-4xl text-center mb-12 md:mb-16 font-bold">The Values That Drive Us</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+            {values.map((v, i) => (
+              <motion.div 
+                key={i} 
+                whileHover={{ y: -10 }}
+                className="text-center p-8 md:p-10 bg-white rounded-[2rem] md:rounded-[3rem] border border-gray-100 shadow-sm hover:shadow-xl transition-all"
+              >
+                <div className="w-12 h-12 md:w-16 md:h-16 bg-accent-light text-primary rounded-xl md:rounded-2xl flex items-center justify-center mx-auto mb-6 md:mb-8 shadow-inner">
+                  {v.icon}
+                </div>
+                <h3 className="text-xl md:text-2xl mb-3 md:mb-4 font-bold">{v.title}</h3>
+                <p className="text-gray-500 text-sm md:text-base leading-relaxed">{v.desc}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
     </div>
