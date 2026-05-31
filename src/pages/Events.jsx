@@ -11,13 +11,19 @@ const Events = () => {
   const [showSuccess, setShowSuccess] = useState(false);
   
   const allEvents = [
+    { country: 'Uganda', date: 'Feb 9-10, 2026', title: 'IHECF Uganda 2026', type: 'Fair', image: '/uganda_education_fair.png' },
+    { country: 'Kenya', date: 'Feb/Mar 2026', title: 'IHECF Kenya 2026', type: 'Fair', image: '/kenya_education_fair.png' },
+    { country: 'Zanzibar', date: 'Feb/Mar 2026', title: 'IHECF Zanzibar 2026', type: 'Fair', image: '/zanzibar_education_fair.png' },
+    { country: 'Tanzania', date: 'Feb/Mar 2026', title: 'IHECF Tanzania 2026-27', type: 'Fair', image: '/tanzania_education_fair.png' },
+    { country: 'Zambia', date: 'Feb/Mar 2026', title: 'IHECF Zambia 2026-27', type: 'Fair', image: '/zambia_education_fair.png' },
     { country: 'Gambia', date: 'Nov 2026', title: 'IHECF Gambia 2026', type: 'Fair', image: '/gambia_education_fair.png' },
     { country: 'Senegal', date: 'Nov 2026', title: 'IHECF Senegal 2026', type: 'Fair', image: '/senegal_education_fair.png' },
     { country: 'KSA', date: 'Sept 15-20, 2026', title: 'Riyadh Education Expo', type: 'Fair', image: '/ksa_education_event.png' },
+    { country: 'Qatar', date: 'Sept 24, 2026', title: 'IHECF Qatar 2026', type: 'Fair', image: '/qatar_education_fair.png' },
+    { country: 'Kuwait', date: 'Sept 27-30, 2026', title: 'IHECF Kuwait 2026', type: 'Fair', image: '/kuwait_education_fair.png' },
     { country: 'Oman', date: 'Oct 02-05, 2026', title: 'Muscat Career Fair', type: 'Fair', image: '/student_interaction_fair.png' },
     { country: 'Ethiopia', date: 'Oct 20-22, 2026', title: 'Addis Ababa Summit', type: 'Summit', image: '/kenya_education_event.png' },
     { country: 'Vietnam', date: 'Nov 10-14, 2026', title: 'Hanoi University Meet', type: 'Visit', image: '/vietnam_education_event.png' },
-    { country: 'Kenya', date: 'Nov 25-28, 2026', title: 'Nairobi School Roadshow', type: 'Visit', image: '/kenya_education_event.png' },
     { country: 'Thailand', date: 'Dec 05-08, 2026', title: 'Bangkok Student Fair', type: 'Fair', image: '/student_interaction_fair.png' },
   ];
 

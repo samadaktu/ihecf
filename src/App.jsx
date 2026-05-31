@@ -13,6 +13,15 @@ import Promotions from './pages/Promotions';
 import Advertising from './pages/Advertising';
 import SenegalEvent from './pages/SenegalEvent';
 import GambiaEvent from './pages/GambiaEvent';
+import ZambiaEvent from './pages/ZambiaEvent';
+import TanzaniaEvent from './pages/TanzaniaEvent';
+import ZanzibarEvent from './pages/ZanzibarEvent';
+import KenyaEvent from './pages/KenyaEvent';
+import KuwaitEvent from './pages/KuwaitEvent';
+import QatarEvent from './pages/QatarEvent';
+import UgandaEvent from './pages/UgandaEvent';
+import QatarStudent from './pages/QatarStudent';
+import StudentCountryDetail from './pages/StudentCountryDetail';
 import ScrollToTop from './components/ScrollToTop';
 
 function App() {
@@ -32,7 +41,17 @@ function App() {
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/country/senegal" element={<SenegalEvent />} />
             <Route path="/country/gambia" element={<GambiaEvent />} />
+            <Route path="/country/zambia" element={<ZambiaEvent />} />
+            <Route path="/country/tanzania" element={<TanzaniaEvent />} />
+            <Route path="/country/zanzibar" element={<ZanzibarEvent />} />
+            <Route path="/country/kenya" element={<KenyaEvent />} />
+            <Route path="/country/kuwait" element={<KuwaitEvent />} />
+            <Route path="/country/qatar" element={<QatarEvent />} />
+            <Route path="/country/uganda" element={<UgandaEvent />} />
+            <Route path="/student/qatar" element={<QatarStudent />} />
+            <Route path="/student/:slug" element={<StudentCountryDetail />} />
             <Route path="/country/:slug" element={<CountryDetail />} />
+
             <Route path="/how-ihecf-promoted" element={<Promotions />} />
             <Route path="/advertising-sponsorship" element={<Advertising />} />
           </Routes>

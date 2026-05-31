@@ -14,13 +14,20 @@ const Home = () => {
   ];
 
   const upcomingEvents = [
+    { country: 'Uganda', date: 'Feb 9-10, 2026', title: 'IHECF Uganda 2026', image: '/uganda_education_fair.png', type: 'Education Fair' },
+    { country: 'Kenya', date: 'Feb/Mar 2026', title: 'IHECF Kenya 2026', image: '/kenya_education_fair.png', type: 'Education Fair' },
+    { country: 'Zanzibar', date: 'Feb/Mar 2026', title: 'IHECF Zanzibar 2026', image: '/zanzibar_education_fair.png', type: 'Education Fair' },
+    { country: 'Tanzania', date: 'Feb/Mar 2026', title: 'IHECF Tanzania 2026-27', image: '/tanzania_education_fair.png', type: 'Education Fair' },
+    { country: 'Zambia', date: 'Feb/Mar 2026', title: 'IHECF Zambia 2026-27', image: '/zambia_education_fair.png', type: 'Education Fair' },
     { country: 'Gambia', date: 'Nov 2026', title: 'IHECF Gambia 2026', image: '/gambia_education_fair.png', type: 'Education Fair' },
     { country: 'Senegal', date: 'Nov 2026', title: 'IHECF Senegal 2026', image: '/senegal_education_fair.png', type: 'Education Fair' },
     { country: 'KSA', date: 'Sept 15-20, 2026', title: 'Riyadh Education Expo', image: '/ksa_education_event.png', type: 'Premium Expo' },
+    { country: 'Qatar', date: 'Sept 24, 2026', title: 'IHECF Qatar 2026', image: '/qatar_education_fair.png', type: 'Education Fair' },
+    { country: 'Kuwait', date: 'Sept 27-30, 2026', title: 'IHECF Kuwait 2026', image: '/kuwait_education_fair.png', type: 'Education Fair' },
     { country: 'Oman', date: 'Oct 02-05, 2026', title: 'Muscat Career Fair', image: '/student_interaction_fair.png', type: 'Career Fair' },
     { country: 'Vietnam', date: 'Nov 10-14, 2026', title: 'Hanoi University Meet', image: '/vietnam_education_event.png', type: 'Institutional Meet' },
-    { country: 'Kenya', date: 'Nov 25-28, 2026', title: 'Nairobi School Roadshow', image: '/kenya_education_event.png', type: 'Roadshow' },
   ];
+
 
   const containerVariants = {
     hidden: { opacity: 0 },

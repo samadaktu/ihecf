@@ -1,14 +1,25 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown, Globe, BookOpen, Calendar, Image, Phone, Info } from 'lucide-react';
+import { Menu, X, ChevronDown, Globe, BookOpen, Calendar, Image, Phone, Info, Building2, Users, ArrowRight } from 'lucide-react';
 import { countries, services } from '../utils/data';
 import { motion, AnimatePresence } from 'framer-motion';
+
+const universityCountries = [
+  "Kenya", "Uganda", "Tanzania", "Zanzibar", "Zambia", "Gambia", "Senegal", "Kuwait", "Qatar"
+];
+
+const studentCountries = [
+  "Qatar"
+];
+
+
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeMegaMenu, setActiveMegaMenu] = useState(null);
   const [mobileExpanded, setMobileExpanded] = useState(null);
+  const [mobileSubExpanded, setMobileSubExpanded] = useState(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -23,7 +34,9 @@ const Navbar = () => {
     setIsOpen(false);
     setActiveMegaMenu(null);
     setMobileExpanded(null);
+    setMobileSubExpanded(null);
   }, [location]);
+
 
   const navLinks = [
     { name: 'Home', path: '/' },
@@ -71,7 +84,9 @@ const Navbar = () => {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 10 }}
-                    className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[600px] bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-100 p-8 grid grid-cols-2 gap-8"
+                    className={`absolute top-full left-1/2 -translate-x-1/2 mt-4 bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-100 p-8 grid gap-8 ${
+                      link.mega === 'countries' ? 'w-[950px] grid-cols-2' : 'w-[600px] grid-cols-2'
+                    }`}
                   >
                     {link.mega === 'services' && (
                       <>
@@ -88,20 +103,53 @@ const Navbar = () => {
                     )}
                     {link.mega === 'countries' && (
                       <>
-                        <div className="col-span-2 mb-2 pb-2 border-b border-gray-100">
-                          <h3 className="text-primary font-bold flex items-center gap-2"><Globe size={18} className="text-secondary" /> Global Presence</h3>
+                        {/* For Universities */}
+                        <div className="col-span-1 flex flex-col gap-4">
+                          <div className="border-b border-gray-100 pb-2">
+                            <h3 className="text-primary font-black flex items-center gap-2 text-base">
+                              <Building2 size={20} className="text-secondary" /> For Universities
+                            </h3>
+                            <p className="text-xs text-gray-400 mt-1">Explore our country editions and student recruitment expos.</p>
+                          </div>
+                          
+                          <div className="grid grid-cols-2 gap-y-2.5 gap-x-4">
+                            {universityCountries.map((country) => (
+                              <Link 
+                                key={country} 
+                                to={`/country/${country.toLowerCase().replace(/ /g, '-')}`}
+                                className="text-xs text-gray-600 hover:text-secondary hover:font-bold transition-all flex items-center gap-2"
+                              >
+                                <div className="w-1.5 h-1.5 bg-secondary/80 rounded-full shrink-0" />
+                                <span className="truncate">{country}</span>
+                              </Link>
+                            ))}
+                          </div>
                         </div>
-                        <div className="grid grid-cols-3 gap-y-2 gap-x-4 col-span-2">
-                          {countries.map((country) => (
-                            <Link 
-                              key={country} 
-                              to={`/country/${country.toLowerCase().replace(/ /g, '-')}`}
-                              className="text-sm text-gray-600 hover:text-secondary transition-colors flex items-center gap-2"
-                            >
-                              <div className="w-1 h-1 bg-secondary rounded-full" />
-                              {country}
-                            </Link>
-                          ))}
+
+                        {/* For Students */}
+                        <div className="col-span-1 border-l border-gray-100 pl-8 flex flex-col gap-4">
+                          <div className="border-b border-gray-100 pb-2">
+                            <h3 className="text-primary font-black flex items-center gap-2 text-base">
+                              <Users size={20} className="text-secondary" /> For Students
+                            </h3>
+                            <p className="text-xs text-gray-400 mt-1">Discover scholarships, counseling, and study programs.</p>
+                          </div>
+                          
+                          <div className="grid grid-cols-2 gap-y-2.5 gap-x-4">
+                            {studentCountries.map((country) => (
+                              <Link 
+                                key={country} 
+                                to={`/student/${country.toLowerCase().replace(/ /g, '-')}`}
+                                className="text-xs text-gray-600 hover:text-secondary hover:font-bold transition-all flex items-center gap-2"
+                              >
+                                <div className="w-1.5 h-1.5 bg-secondary/80 rounded-full shrink-0" />
+                                <span className="truncate">{country}</span>
+                              </Link>
+                            ))}
+                          </div>
+                          <div className="mt-2 text-[10px] text-gray-400 italic">
+                            * More student editions launching soon.
+                          </div>
                         </div>
                       </>
                     )}
@@ -162,17 +210,70 @@ const Navbar = () => {
                                 </Link>
                               ))}
                               {link.mega === 'countries' && (
-                                <div className="grid grid-cols-2 gap-2">
-                                  {countries.map(c => (
-                                    <Link 
-                                      key={c} 
-                                      to={`/country/${c.toLowerCase().replace(/ /g, '-')}`}
-                                      className="text-gray-500 font-medium py-1"
-                                      onClick={() => setIsOpen(false)}
+                                <div className="space-y-4 pl-2 pt-2 w-full">
+                                  {/* For Universities */}
+                                  <div className="border border-gray-150/20 rounded-2xl p-3 bg-gray-50/50">
+                                    <button 
+                                      onClick={() => setMobileSubExpanded(mobileSubExpanded === 'univ' ? null : 'univ')}
+                                      className="w-full flex justify-between items-center text-sm font-black text-primary py-1"
                                     >
-                                      {c}
-                                    </Link>
-                                  ))}
+                                      <span className="flex items-center gap-2"><Building2 size={16} className="text-secondary" /> For Universities</span>
+                                      <ChevronDown size={16} className={`transition-transform duration-200 ${mobileSubExpanded === 'univ' ? 'rotate-180' : ''}`} />
+                                    </button>
+                                    <AnimatePresence>
+                                      {mobileSubExpanded === 'univ' && (
+                                        <motion.div 
+                                          initial={{ opacity: 0, height: 0 }}
+                                          animate={{ opacity: 1, height: 'auto' }}
+                                          exit={{ opacity: 0, height: 0 }}
+                                          className="grid grid-cols-2 gap-2 pl-6 pt-3"
+                                        >
+                                          {universityCountries.map(c => (
+                                            <Link 
+                                              key={c} 
+                                              to={`/country/${c.toLowerCase().replace(/ /g, '-')}`}
+                                              className="text-xs text-gray-500 font-bold py-1 hover:text-secondary block"
+                                              onClick={() => setIsOpen(false)}
+                                            >
+                                              {c}
+                                            </Link>
+                                          ))}
+                                        </motion.div>
+                                      )}
+                                    </AnimatePresence>
+                                  </div>
+
+                                  {/* For Students */}
+                                  <div className="border border-gray-150/20 rounded-2xl p-3 bg-gray-50/50">
+                                    <button 
+                                      onClick={() => setMobileSubExpanded(mobileSubExpanded === 'students' ? null : 'students')}
+                                      className="w-full flex justify-between items-center text-sm font-black text-primary py-1"
+                                    >
+                                      <span className="flex items-center gap-2"><Users size={16} className="text-secondary" /> For Students</span>
+                                      <ChevronDown size={16} className={`transition-transform duration-200 ${mobileSubExpanded === 'students' ? 'rotate-180' : ''}`} />
+                                    </button>
+                                    <AnimatePresence>
+                                      {mobileSubExpanded === 'students' && (
+                                        <motion.div 
+                                          initial={{ opacity: 0, height: 0 }}
+                                          animate={{ opacity: 1, height: 'auto' }}
+                                          exit={{ opacity: 0, height: 0 }}
+                                          className="grid grid-cols-2 gap-2 pl-6 pt-3"
+                                        >
+                                          {studentCountries.map(c => (
+                                            <Link 
+                                              key={c} 
+                                              to={`/student/${c.toLowerCase().replace(/ /g, '-')}`}
+                                              className="text-xs text-gray-500 font-bold py-1 hover:text-secondary block"
+                                              onClick={() => setIsOpen(false)}
+                                            >
+                                              {c}
+                                            </Link>
+                                          ))}
+                                        </motion.div>
+                                      )}
+                                    </AnimatePresence>
+                                  </div>
                                 </div>
                               )}
                             </div>
