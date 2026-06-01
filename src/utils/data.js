@@ -14,9 +14,14 @@ export const services = [
     description: "Exclusive networking sessions with top school counsellors and advisors."
   },
   {
-    title: "School Visits",
+    title: "School Visit & Recruitment Tours",
     slug: "school-visits",
-    description: "Direct interaction with students in premium international schools."
+    description: "Join us for Edunial Group’s Exclusive Recruitment Tour, meticulously designed for our esteemed partner universities and colleges."
+  },
+  {
+    title: "Career Counselling",
+    slug: "counselling",
+    description: "Empowering global futures with CBSE mandatory career counselling & NEP 2020 initiatives."
   },
   {
     title: "Market Research",

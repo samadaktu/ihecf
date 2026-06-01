@@ -1,11 +1,22 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { Mail, Phone, MapPin, Send, Globe, MessageSquare, CheckCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 import SEO from '../components/SEO';
 
 const Contact = () => {
+  const location = useLocation();
+  const [subject, setSubject] = useState('University Partnership');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+
+  useEffect(() => {
+    const searchParams = new URLSearchParams(location.search);
+    const sub = searchParams.get('subject');
+    if (sub) {
+      setSubject(sub);
+    }
+  }, [location.search]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -38,7 +49,7 @@ const Contact = () => {
   };
 
   const contactInfo = [
-    { icon: <Phone />, label: 'T.P. Singh', value: '+91-9319473355', desc: 'KSA: +966-0544548024', isName: true },
+    { icon: <Phone />, label: 'Tribhuwan Pratap Singh', value: '+91-9319473355', desc: 'KSA: +966-0544548024', isName: true },
     { icon: <Phone />, label: 'Ms. Kavita', value: '+91-9654448283', isName: true },
     { icon: <Mail />, label: 'Email Us', value: 'info@ihecf.info', desc: 'We reply within 24 hours' },
     { icon: <MapPin />, label: 'Visit Office', value: 'Delhi-110091', desc: 'B-2/A, East Vinod Nagar' },
@@ -121,7 +132,7 @@ const Contact = () => {
           <motion.div 
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            className="bg-white p-8 md:p-12 rounded-[2.5rem] md:rounded-[3.5rem] shadow-2xl border border-gray-50"
+            className="bg-white p-8 md:p-12 rounded-[2.5rem] md:rounded-[3.5rem] shadow-2xl border border-gray-50 lg:self-start"
           >
             {submitted ? (
               <motion.div 
@@ -142,44 +153,63 @@ const Contact = () => {
                 </button>
               </motion.div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
-                  <div className="space-y-1 md:space-y-2">
-                    <label className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-gray-400 ml-1">Name</label>
-                    <input required name="name" type="text" className="w-full bg-gray-50 border-none rounded-xl md:rounded-2xl p-4 focus:ring-2 focus:ring-secondary/50 text-sm md:text-base" placeholder="Name" />
+              <div>
+                <div className="mb-8 border-b border-gray-100 pb-6">
+                  <h3 className="text-xl md:text-2xl font-black text-primary mb-2">Send an Inquiry</h3>
+                  <p className="text-xs text-gray-500 leading-relaxed">
+                    Partner with Edunial Group for IHECF events, school visits, and career counselling. Fill out the details below and we will contact you within 24 hours.
+                  </p>
+                </div>
+                <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+                    <div className="space-y-1 md:space-y-2">
+                      <label className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-gray-400 ml-1">Name</label>
+                      <input required name="name" type="text" className="w-full bg-gray-50 border-none rounded-xl md:rounded-2xl p-4 focus:ring-2 focus:ring-secondary/50 text-sm md:text-base" placeholder="Your name" />
+                    </div>
+                    <div className="space-y-1 md:space-y-2">
+                      <label className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-gray-400 ml-1">Email</label>
+                      <input required name="email" type="email" className="w-full bg-gray-50 border-none rounded-xl md:rounded-2xl p-4 focus:ring-2 focus:ring-secondary/50 text-sm md:text-base" placeholder="Your email address" />
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+                    <div className="space-y-1 md:space-y-2">
+                      <label className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-gray-400 ml-1">Organization / School</label>
+                      <input required name="organization" type="text" className="w-full bg-gray-50 border-none rounded-xl md:rounded-2xl p-4 focus:ring-2 focus:ring-secondary/50 text-sm md:text-base" placeholder="Institution name" />
+                    </div>
+                    <div className="space-y-1 md:space-y-2">
+                      <label className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-gray-400 ml-1">Phone / WhatsApp</label>
+                      <input required name="phone" type="tel" className="w-full bg-gray-50 border-none rounded-xl md:rounded-2xl p-4 focus:ring-2 focus:ring-secondary/50 text-sm md:text-base" placeholder="Include country code" />
+                    </div>
                   </div>
                   <div className="space-y-1 md:space-y-2">
-                    <label className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-gray-400 ml-1">Email</label>
-                    <input required name="email" type="email" className="w-full bg-gray-50 border-none rounded-xl md:rounded-2xl p-4 focus:ring-2 focus:ring-secondary/50 text-sm md:text-base" placeholder="Email" />
+                    <label className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-gray-400 ml-1">Help with?</label>
+                    <select 
+                      name="subject" 
+                      value={subject} 
+                      onChange={(e) => setSubject(e.target.value)} 
+                      className="w-full bg-gray-50 border-none rounded-xl md:rounded-2xl p-4 focus:ring-2 focus:ring-secondary/50 text-sm md:text-base text-gray-500 bg-white"
+                    >
+                      <option value="University Partnership">University Partnership</option>
+                      <option value="Event Registration">Event Registration</option>
+                      <option value="School Collaboration">School Collaboration</option>
+                    </select>
                   </div>
-                </div>
-                <div className="space-y-1 md:space-y-2">
-                  <label className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-gray-400 ml-1">Organization</label>
-                  <input required name="organization" type="text" className="w-full bg-gray-50 border-none rounded-xl md:rounded-2xl p-4 focus:ring-2 focus:ring-secondary/50 text-sm md:text-base" placeholder="Institution" />
-                </div>
-                <div className="space-y-1 md:space-y-2">
-                  <label className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-gray-400 ml-1">Help with?</label>
-                  <select name="subject" className="w-full bg-gray-50 border-none rounded-xl md:rounded-2xl p-4 focus:ring-2 focus:ring-secondary/50 text-sm md:text-base text-gray-500">
-                    <option>University Partnership</option>
-                    <option>Event Registration</option>
-                    <option>School Collaboration</option>
-                  </select>
-                </div>
-                <div className="space-y-1 md:space-y-2">
-                  <label className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-gray-400 ml-1">Message</label>
-                  <textarea required name="message" rows={4} className="w-full bg-gray-50 border-none rounded-xl md:rounded-2xl p-4 focus:ring-2 focus:ring-secondary/50 text-sm md:text-base" placeholder="Message"></textarea>
-                </div>
-                <button 
-                  disabled={isSubmitting}
-                  className="btn-secondary w-full py-4 md:py-5 text-base md:text-lg shadow-xl group disabled:opacity-50"
-                >
-                  {isSubmitting ? 'Sending...' : (
-                    <span className="flex items-center justify-center gap-2">
-                      Send <Send size={18} className="group-hover:translate-x-1 transition-transform" />
-                    </span>
-                  )}
-                </button>
-              </form>
+                  <div className="space-y-1 md:space-y-2">
+                    <label className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-gray-400 ml-1">Message</label>
+                    <textarea required name="message" rows={5} className="w-full bg-gray-50 border-none rounded-xl md:rounded-2xl p-4 focus:ring-2 focus:ring-secondary/50 text-sm md:text-base" placeholder="Write your inquiry here..."></textarea>
+                  </div>
+                  <button 
+                    disabled={isSubmitting}
+                    className="btn-secondary w-full py-4 md:py-5 text-base md:text-lg shadow-xl group disabled:opacity-50 mt-2"
+                  >
+                    {isSubmitting ? 'Sending...' : (
+                      <span className="flex items-center justify-center gap-2">
+                        Send Inquiry <Send size={18} className="group-hover:translate-x-1 transition-transform" />
+                      </span>
+                    )}
+                  </button>
+                </form>
+              </div>
             )}
           </motion.div>
         </div>

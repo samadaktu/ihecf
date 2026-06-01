@@ -38,10 +38,35 @@ const About = () => {
       region: "Middle East Expansion",
       desc: "Launched our first major fairs in:",
       countries: [
-        { name: "Saudi Arabia", sub: "Riyadh, Dammam, Jeddah", code: "sa" },
+        { name: "Saudi Arabia", code: "sa" },
         { name: "Qatar", code: "qa" },
         { name: "Kuwait", code: "kw" },
         { name: "Oman", code: "om" }
+      ]
+    },
+    {
+      region: "Southeast Asia",
+      desc: "Connecting with institutions and schools in:",
+      countries: [
+        { name: "Cambodia", code: "kh" },
+        { name: "Thailand", code: "th" }
+      ]
+    },
+    {
+      region: "SAARC",
+      desc: "Building academic partnerships in:",
+      countries: [
+        { name: "Nepal", code: "np" },
+        { name: "Bangladesh", code: "bd" },
+        { name: "Sri Lanka", code: "lk" }
+      ]
+    },
+    {
+      region: "Central Asia",
+      desc: "Expanding student recruitment networks in:",
+      countries: [
+        { name: "Uzbekistan", code: "uz" },
+        { name: "Kazakhstan", code: "kz" }
       ]
     }
   ];

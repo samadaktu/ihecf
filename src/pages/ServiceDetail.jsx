@@ -98,39 +98,61 @@ const ServiceDetail = () => {
       </section>
 
       {/* Main Content */}
-      <section className="py-16 md:py-32 px-6 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-24 items-center">
-          <div>
+      <section className="py-16 md:py-24 px-6 max-w-7xl mx-auto">
+        {/* Top Grid: Title, Description, and Image */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-16 items-start mb-16 md:mb-24">
+          <div className="lg:col-span-7">
             <h2 className="text-3xl md:text-5xl font-black tracking-tighter mb-8 text-primary">Strategic <span className="text-secondary italic">Core Benefits</span></h2>
-            <p className="text-gray-500 text-base md:text-xl leading-relaxed mb-12">
-               Our approach to {service.title} is built on over a decade of local market expertise. We ensure your university gets maximum visibility and high-quality lead generation through a meticulously planned execution.
-            </p>
-            
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {extra.features.map((feature, i) => (
-                <div key={i} className="flex items-start gap-4 p-6 bg-gray-50 rounded-2xl border border-gray-100 group hover:bg-primary transition-all duration-300">
-                  <div className="w-10 h-10 bg-white text-secondary rounded-xl flex items-center justify-center flex-shrink-0 shadow-sm group-hover:bg-secondary group-hover:text-white">
-                    <CheckCircle size={20} />
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-bold text-primary group-hover:text-white transition-colors uppercase tracking-widest mb-1">{feature}</h4>
-                    <p className="text-xs text-gray-400 group-hover:text-gray-300">Industry standard excellence.</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+            {slug === 'school-visits' ? (
+              <div className="space-y-6 text-gray-500 text-base md:text-lg leading-relaxed">
+                <p>
+                  This premium, invitation-only tour provides a powerful platform to directly engage with brightest and most ambitious students who are eager to pursue higher education in India. Through strategic school visits, impactful presentations, interactive sessions, and personalized one-on-one interactions, you will have the opportunity to showcase your institution’s academic excellence, unique programs, world-class facilities, and distinctive advantages.
+                </p>
+                <p>
+                  Our carefully curated tours connect you with highly motivated, qualified, and talented prospective students, enabling you to build meaningful relationships and significantly strengthen your international student recruitment pipeline.
+                </p>
+                <p>
+                  Elevate your global outreach, enhance your institution’s visibility in the Global market, and secure the most promising candidates for your university or college.
+                </p>
+                <p className="font-bold text-primary border-l-4 border-secondary pl-4 py-1">
+                  Partner with Edunial Group and experience recruitment excellence at the highest level.
+                </p>
+              </div>
+            ) : (
+              <p className="text-gray-500 text-base md:text-xl leading-relaxed">
+                 Our approach to {service.title} is built on over a decade of local market expertise. We ensure your university gets maximum visibility and high-quality lead generation through a meticulously planned execution.
+              </p>
+            )}
           </div>
           
-          <div className="relative">
-            <div className="aspect-square bg-gray-50 rounded-[3rem] md:rounded-[5rem] overflow-hidden border border-gray-100 relative group shadow-2xl">
+          <div className="lg:col-span-5 relative w-full">
+            <div className="aspect-[4/3] sm:aspect-video lg:aspect-square bg-gray-50 rounded-[2rem] md:rounded-[3rem] overflow-hidden border border-gray-100 relative group shadow-2xl">
               <img src={extra.image} alt="Process" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" />
               <div className="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors" />
-              <div className="absolute bottom-8 left-8 right-8 bg-white/95 backdrop-blur-md p-8 rounded-[2rem] shadow-2xl border border-white/20">
-                 <h4 className="text-xl font-bold mb-2">Our Execution Process</h4>
-                 <p className="text-gray-500 text-sm">Every detail is handled by our on-ground experts to guarantee a seamless experience for your admission team.</p>
+              <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-md p-6 rounded-2xl shadow-2xl border border-white/20">
+                 <h4 className="text-lg font-bold mb-1">Our Execution Process</h4>
+                 <p className="text-gray-500 text-xs">Every detail is handled by our on-ground experts to guarantee a seamless experience for your admission team.</p>
               </div>
             </div>
             <div className="absolute -top-10 -right-10 w-40 h-40 bg-secondary/10 rounded-full blur-3xl animate-pulse" />
+          </div>
+        </div>
+
+        {/* Bottom Section: Features Grid */}
+        <div>
+          <h3 className="text-xl md:text-2xl font-black uppercase tracking-widest text-primary mb-8 border-b border-gray-100 pb-4">Key Deliverables</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {extra.features.map((feature, i) => (
+              <div key={i} className="flex flex-col p-8 bg-gray-50 rounded-3xl border border-gray-100 group hover:bg-primary hover:shadow-xl transition-all duration-300">
+                <div className="w-12 h-12 bg-white text-secondary rounded-2xl flex items-center justify-center flex-shrink-0 shadow-sm group-hover:bg-secondary group-hover:text-white mb-6 transition-all duration-300">
+                  <CheckCircle size={24} />
+                </div>
+                <div>
+                  <h4 className="text-base font-bold text-primary group-hover:text-white transition-colors uppercase tracking-widest mb-2">{feature}</h4>
+                  <p className="text-xs text-gray-400 group-hover:text-gray-300">Meticulously managed and executed to the highest standards.</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

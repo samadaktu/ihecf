@@ -22,6 +22,7 @@ import QatarEvent from './pages/QatarEvent';
 import UgandaEvent from './pages/UgandaEvent';
 import QatarStudent from './pages/QatarStudent';
 import StudentCountryDetail from './pages/StudentCountryDetail';
+import Counselling from './pages/Counselling';
 import ScrollToTop from './components/ScrollToTop';
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
+            <Route path="/service/counselling" element={<Counselling />} />
             <Route path="/service/:slug" element={<ServiceDetail />} />
             <Route path="/events" element={<Events />} />
             <Route path="/contact" element={<Contact />} />
