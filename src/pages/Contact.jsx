@@ -38,8 +38,8 @@ const Contact = () => {
   };
 
   const contactInfo = [
-    { icon: <Phone />, label: 'Director (T.P. Singh)', value: '+91-9319473355', desc: 'KSA: +966-0544548024' },
-    { icon: <Phone />, label: 'Support (Ms. Kavita)', value: '+91-9654448283', desc: 'Technical & Event Support' },
+    { icon: <Phone />, label: 'T.P. Singh', value: '+91-9319473355', desc: 'KSA: +966-0544548024', isName: true },
+    { icon: <Phone />, label: 'Ms. Kavita', value: '+91-9654448283', isName: true },
     { icon: <Mail />, label: 'Email Us', value: 'info@ihecf.info', desc: 'We reply within 24 hours' },
     { icon: <MapPin />, label: 'Visit Office', value: 'Delhi-110091', desc: 'B-2/A, East Vinod Nagar' },
   ];
@@ -58,11 +58,13 @@ const Contact = () => {
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="max-w-2xl"
+            className="max-w-4xl"
           >
-            <h1 className="text-3xl md:text-7xl mb-6 font-black tracking-tighter leading-tight">Let's Build <span className="text-secondary">Partnerships</span></h1>
-            <p className="text-base md:text-xl text-gray-400 leading-relaxed">
-              Whether you are a university looking for global talent or a consultant seeking collaboration.
+            <h1 className="text-3xl md:text-6xl mb-6 font-black tracking-tighter leading-tight">
+              Forging <span className="text-secondary">Partnerships</span> | Unlocking Global Potential
+            </h1>
+            <p className="text-base md:text-lg text-gray-300 leading-relaxed max-w-3xl">
+              We invite you to partner with us in creating meaningful connections between leading institutions and motivated students. This platform provides an excellent opportunity to showcase your programs, present scholarship offerings, and build direct relationships with high-potential students who are seeking world-class education in India.
             </p>
           </motion.div>
         </div>
@@ -90,9 +92,11 @@ const Contact = () => {
                   <div className="w-10 h-10 md:w-12 md:h-12 bg-white text-secondary rounded-xl flex items-center justify-center mb-4 md:mb-6 shadow-sm group-hover:bg-secondary group-hover:text-white transition-all">
                     {item.icon}
                   </div>
-                  <h3 className="text-[10px] md:text-xs font-bold text-gray-400 uppercase tracking-widest mb-1 md:mb-2">{item.label}</h3>
+                  <h3 className={`text-[10px] md:text-xs uppercase tracking-widest mb-1 md:mb-2 ${item.isName ? 'font-extrabold text-primary' : 'font-bold text-gray-400'}`}>
+                    {item.label}
+                  </h3>
                   <p className="text-lg md:text-xl font-bold text-primary mb-1">{item.value}</p>
-                  <p className="text-[10px] md:text-xs text-gray-500">{item.desc}</p>
+                  {item.desc && <p className="text-[10px] md:text-xs text-gray-500">{item.desc}</p>}
                 </motion.div>
               ))}
             </div>
