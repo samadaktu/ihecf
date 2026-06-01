@@ -43,6 +43,30 @@ const KuwaitEvent = () => {
         title="IHECF Kuwait 2026 | Indian Higher Education Fair" 
         description="Your strategic gateway to the Kuwait & GCC education market. Connect with high-potential students at United Indian School, Kuwait."
         keywords="IHECF Kuwait 2026, Indian Higher Education Fair Kuwait, Study in India Fair Kuwait, Education Exhibition Kuwait United Indian School"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "EducationEvent",
+          "name": "IHECF Kuwait 2026 | Indian Higher Education Fair",
+          "description": "Your strategic gateway to the Kuwait & GCC education market. Connect with high-potential students at United Indian School, Kuwait.",
+          "startDate": "2026-09-27T09:00:00+03:00",
+          "endDate": "2026-09-30T17:00:00+03:00",
+          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+          "eventStatus": "https://schema.org/EventScheduled",
+          "location": {
+            "@type": "Place",
+            "name": "United Indian School",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Kuwait",
+              "addressCountry": "Kuwait"
+            }
+          },
+          "organizer": {
+            "@type": "EducationalOrganization",
+            "name": "Edunial Group",
+            "url": "https://ihecf.info"
+          }
+        }}
       />
 
       {/* Hero Section */}

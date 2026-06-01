@@ -43,6 +43,30 @@ const UgandaEvent = () => {
         title="IHECF Uganda 2026 | Indian Higher Education Fair Kampala" 
         description="Expand your reach in East Africa. Connect with thousands of qualified Ugandan students at the Africana Hotel, Kampala."
         keywords="IHECF Uganda 2026, Indian Higher Education Fair Kampala, Study in India Fair Uganda, Education Exhibition Kampala, Africana Hotel Kampala"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "EducationEvent",
+          "name": "IHECF Uganda 2026 | Indian Higher Education Fair Kampala",
+          "description": "Expand your reach in East Africa. Connect with thousands of qualified Ugandan students at the Africana Hotel, Kampala.",
+          "startDate": "2026-02-09T09:00:00+03:00",
+          "endDate": "2026-02-10T17:00:00+03:00",
+          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+          "eventStatus": "https://schema.org/EventScheduled",
+          "location": {
+            "@type": "Place",
+            "name": "Africana Hotel",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Kampala",
+              "addressCountry": "Uganda"
+            }
+          },
+          "organizer": {
+            "@type": "EducationalOrganization",
+            "name": "Edunial Group",
+            "url": "https://ihecf.info"
+          }
+        }}
       />
 
       {/* Hero Section */}

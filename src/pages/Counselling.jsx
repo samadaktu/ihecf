@@ -77,6 +77,18 @@ const Counselling = () => {
         title="CBSE Career Counselling & NEP 2020 Initiatives" 
         description="Aligning NEP 2020 Frameworks with Global Higher Education Opportunities. Structured career counselling, aptitude testing, and academic planning for CBSE schools abroad." 
         keywords="CBSE Career Counselling, NEP 2020, International CBSE Schools, Student Admissions India, Career Guidance Abroad"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "CBSE Mandatory Career Counselling & Higher Education Initiatives",
+          "alternateName": "CBSE Career Counselling & NEP 2020 Alignment",
+          "description": "Executing high-impact Higher Education & Career Counselling Sessions specifically designed for CBSE schools operating abroad in strict compliance with NEP 2020 directives.",
+          "provider": {
+            "@type": "EducationalOrganization",
+            "name": "IHECF"
+          },
+          "serviceType": "Academic Counseling & Recruitment Tour"
+        }}
       />
 
       {/* Hero Section */}

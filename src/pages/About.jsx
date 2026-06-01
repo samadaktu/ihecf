@@ -77,6 +77,16 @@ const About = () => {
         title="About Us" 
         description="Learn more about IHECF, a part of the Edunial Group, dedicated to creating meaningful connections between world-class Indian institutions and ambitious international students." 
         keywords="About IHECF, Edunial Group, Student Recruitment Mission, Global Education Vision"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "AboutPage",
+          "name": "About IHECF & Edunial Group",
+          "description": "Learn about the Indian Higher Education & Career Fair (IHECF), powered by Edunial Group, dedicated to recruitment mobility and partner networks globally.",
+          "publisher": {
+            "@type": "EducationalOrganization",
+            "name": "IHECF"
+          }
+        }}
       />
       {/* Hero - Optimized for Mobile */}
       <section className="bg-primary text-white pt-24 md:pt-32 pb-16 md:pb-24 text-center px-6">

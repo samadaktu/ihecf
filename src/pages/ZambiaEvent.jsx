@@ -43,6 +43,30 @@ const ZambiaEvent = () => {
         title="IHECF Zambia 2026-27 | Indian Higher Education Fair Lusaka" 
         description="Open the door to Zambia's emerging higher education market. Connect with motivated Zambian students and parents seeking education in India."
         keywords="IHECF Zambia 2026, Indian Higher Education Fair Lusaka, Study in India Fair Zambia, Education Exhibition Lusaka Taj Hotel"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "EducationEvent",
+          "name": "IHECF Zambia 2026-27 | Indian Higher Education Fair Lusaka",
+          "description": "Open the door to Zambia's emerging higher education market. Connect with motivated Zambian students and parents seeking education in India.",
+          "startDate": "2026-02-01T09:00:00+02:00",
+          "endDate": "2026-03-31T17:00:00+02:00",
+          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+          "eventStatus": "https://schema.org/EventScheduled",
+          "location": {
+            "@type": "Place",
+            "name": "Taj Hotel",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Lusaka",
+              "addressCountry": "Zambia"
+            }
+          },
+          "organizer": {
+            "@type": "EducationalOrganization",
+            "name": "Edunial Group",
+            "url": "https://ihecf.info"
+          }
+        }}
       />
 
       {/* Hero Section */}

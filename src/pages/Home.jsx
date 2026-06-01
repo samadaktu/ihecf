@@ -45,6 +45,23 @@ const Home = () => {
         title="Home"
         description="Pioneer international students recruitment with IHECF fairs. Your reliable platform to connect with most promising students, parents, local universities & schools."
         keywords="IHECF, Education Fairs, Student Recruitment, International Education, Indian Higher Education"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "EducationalOrganization",
+          "name": "IHECF - Indian Higher Education & Career Fairs",
+          "alternateName": "IHECF",
+          "url": "https://ihecf.info",
+          "logo": "https://ihecf.info/logo.png",
+          "contactPoint": [
+            {
+              "@type": "ContactPoint",
+              "telephone": "+91-9319473355",
+              "contactType": "customer service",
+              "areaServed": "Global",
+              "availableLanguage": ["English", "Hindi"]
+            }
+          ]
+        }}
       />
       {/* Hero Section - Optimized for Mobile */}
       <section className="relative min-h-[90vh] md:min-h-screen flex items-center pt-24 md:pt-32 pb-16 md:pb-20 px-6 overflow-hidden">

@@ -61,6 +61,24 @@ const Contact = () => {
         title="Contact Us" 
         description="Get in touch with IHECF for university partnerships, event registrations, or school collaborations. Our team is ready to assist you worldwide." 
         keywords="Contact IHECF, University Partnership, Event Registration, Global Inquiries"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          "name": "Contact IHECF",
+          "description": "Get in touch with IHECF representatives Ms. Kavita and Tribhuwan Pratap Singh for university partnerships and event registrations.",
+          "mainEntity": {
+            "@type": "EducationalOrganization",
+            "name": "IHECF",
+            "contactPoint": [
+              {
+                "@type": "ContactPoint",
+                "telephone": "+91-9319473355",
+                "contactType": "sales",
+                "areaServed": "Global"
+              }
+            ]
+          }
+        }}
       />
       {/* Hero - Optimized for Mobile */}
       <section className="bg-primary text-white pt-24 md:pt-32 pb-16 md:pb-24 relative overflow-hidden px-6">
@@ -120,11 +138,7 @@ const Contact = () => {
               <p className="text-gray-400 mb-6 md:mb-8 leading-relaxed text-sm md:text-base">
                 Operating across 20+ countries, we have representatives ready for local queries.
               </p>
-              <div className="flex flex-wrap gap-3">
-                 {['KSA', 'Oman', 'Vietnam', 'Kenya'].map(c => (
-                   <span key={c} className="px-3 py-1 bg-white/10 rounded-full text-[10px] font-bold tracking-widest">{c}</span>
-                 ))}
-              </div>
+              
             </div>
           </div>
 

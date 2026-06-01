@@ -11,6 +11,18 @@ const Services = () => {
         title="Our Services" 
         description="Comprehensive solutions for international student recruitment including education fairs, counsellor meets, school visits, and market research." 
         keywords="Education Fairs, Counsellor Meet, School Visits, Market Research, Student Recruitment Services"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          "name": "IHECF Core Services",
+          "description": "Comprehensive student recruitment and university services offered by IHECF",
+          "itemListElement": services.map((s, idx) => ({
+            "@type": "ListItem",
+            "position": idx + 1,
+            "name": s.title,
+            "url": `https://ihecf.info/service/${s.slug}`
+          }))
+        }}
       />
       {/* Hero - Optimized for Mobile */}
       <section className="bg-primary text-white pt-24 md:pt-32 pb-16 md:pb-24 relative overflow-hidden px-6">

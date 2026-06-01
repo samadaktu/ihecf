@@ -43,6 +43,30 @@ const ZanzibarEvent = () => {
         title="IHECF Zanzibar 2026 | Indian Higher Education Fair" 
         description="Discover Zanzibar. Recruit tomorrow's leaders from the Indian Ocean Region at the Spice Tree Hotel, Zanzibar."
         keywords="IHECF Zanzibar 2026, Indian Higher Education Fair Zanzibar, Study in India Fair Zanzibar, Education Exhibition Zanzibar Spice Tree Hotel"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "EducationEvent",
+          "name": "IHECF Zanzibar 2026 | Indian Higher Education Fair",
+          "description": "Discover Zanzibar. Recruit tomorrow's leaders from the Indian Ocean Region at the Spice Tree Hotel, Zanzibar.",
+          "startDate": "2026-02-01T09:00:00+03:00",
+          "endDate": "2026-03-31T17:00:00+03:00",
+          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+          "eventStatus": "https://schema.org/EventScheduled",
+          "location": {
+            "@type": "Place",
+            "name": "Spice Tree Hotel",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Stone Town, Zanzibar",
+              "addressCountry": "Tanzania"
+            }
+          },
+          "organizer": {
+            "@type": "EducationalOrganization",
+            "name": "Edunial Group",
+            "url": "https://ihecf.info"
+          }
+        }}
       />
 
       {/* Hero Section */}

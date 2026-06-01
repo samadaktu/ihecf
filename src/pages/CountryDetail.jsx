@@ -34,6 +34,16 @@ const CountryDetail = () => {
         title={`${countryName} Student Recruitment`} 
         description={`Strategic insights and recruitment opportunities in ${countryName}. Connect with qualified students and institutions for Indian higher education.`}
         keywords={`Student Recruitment ${countryName}, Education Fairs ${countryName}, IHECF ${countryName}`}
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": `${countryName} Student Recruitment Hub`,
+          "description": `Strategic insights, student demographics, and recruitment opportunities in ${countryName} for Indian higher education institutions.`,
+          "spatialCoverage": {
+            "@type": "Place",
+            "name": countryName
+          }
+        }}
       />
       {/* Hero - Optimized for Mobile */}
       <section className="bg-primary text-white pt-24 md:pt-32 pb-16 md:pb-24 relative overflow-hidden px-6">

@@ -47,6 +47,30 @@ const SenegalEvent = () => {
         title="IHECF Senegal 2026 | Indian Higher Education Fair Dakar" 
         description="Discover the Growing Potential of the Senegalese Education Market. Connect with Ambitious Senegalese Students Seeking Higher Education in India."
         keywords="IHECF Senegal 2026, Indian Higher Education Fair Dakar, Study in India Fair Senegal, Education Exhibition Dakar November 2026"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "EducationEvent",
+          "name": "IHECF Senegal 2026 | Indian Higher Education Fair Dakar",
+          "description": "Discover the Growing Potential of the Senegalese Education Market. Connect with Ambitious Senegalese Students Seeking Higher Education in India.",
+          "startDate": "2026-11-01T09:00:00Z",
+          "endDate": "2026-11-30T17:00:00Z",
+          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+          "eventStatus": "https://schema.org/EventScheduled",
+          "location": {
+            "@type": "Place",
+            "name": "Dakar",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Dakar",
+              "addressCountry": "Senegal"
+            }
+          },
+          "organizer": {
+            "@type": "EducationalOrganization",
+            "name": "Edunial Group",
+            "url": "https://ihecf.info"
+          }
+        }}
       />
 
       {/* Hero Section */}

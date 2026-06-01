@@ -84,6 +84,37 @@ const QatarStudent = () => {
         title="Student Guide: IHECF Qatar 2026 | Study in India Doha" 
         description="Discover world-class Indian higher education in Doha. Meet top universities at MES Indian School. Pre-register for free admissions counseling & scholarships."
         keywords="Study in India Qatar, IHECF Qatar Student Fair, Education Fair Doha, MES Indian School Doha, Indian Universities Doha"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "EducationEvent",
+          "name": "Student Guide: IHECF Qatar 2026 | Study in India Doha",
+          "description": "Discover world-class Indian higher education in Doha. Meet top universities at MES Indian School. Pre-register for free admissions counseling & scholarships.",
+          "startDate": "2026-09-24T08:00:00+03:00",
+          "endDate": "2026-09-24T21:00:00+03:00",
+          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+          "eventStatus": "https://schema.org/EventScheduled",
+          "location": {
+            "@type": "Place",
+            "name": "MES Indian School",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Doha",
+              "addressCountry": "Qatar"
+            }
+          },
+          "offers": {
+            "@type": "Offer",
+            "url": "https://ihecf.info/qatar-student",
+            "price": "0",
+            "priceCurrency": "QAR",
+            "availability": "https://schema.org/InStock"
+          },
+          "organizer": {
+            "@type": "EducationalOrganization",
+            "name": "Edunial Group",
+            "url": "https://ihecf.info"
+          }
+        }}
       />
 
       {/* Hero Section */}

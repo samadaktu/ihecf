@@ -47,6 +47,30 @@ const GambiaEvent = () => {
         title="IHECF Gambia 2026 | Indian Higher Education Fair Banjul" 
         description="Unlock Opportunities in The Gambian Education Market. Connect with Ambitious Gambian Students Seeking Higher Education in India."
         keywords="IHECF Gambia 2026, Indian Higher Education Fair Banjul, Study in India Fair Gambia, Education Exhibition Banjul November 2026"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "EducationEvent",
+          "name": "IHECF Gambia 2026 | Indian Higher Education Fair Banjul",
+          "description": "Unlock Opportunities in The Gambian Education Market. Connect with Ambitious Gambian Students Seeking Higher Education in India.",
+          "startDate": "2026-11-01T09:00:00Z",
+          "endDate": "2026-11-30T17:00:00Z",
+          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+          "eventStatus": "https://schema.org/EventScheduled",
+          "location": {
+            "@type": "Place",
+            "name": "Banjul",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Banjul",
+              "addressCountry": "Gambia"
+            }
+          },
+          "organizer": {
+            "@type": "EducationalOrganization",
+            "name": "Edunial Group",
+            "url": "https://ihecf.info"
+          }
+        }}
       />
 
       {/* Hero Section */}

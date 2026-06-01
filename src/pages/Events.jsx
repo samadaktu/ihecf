@@ -74,6 +74,29 @@ const Events = () => {
         title="Upcoming Events" 
         description="Find and register for the next major recruitment event in your target region. View our schedule for education expos, summits, and school roadshows." 
         keywords="Education Expo Schedule, Recruitment Events, IHECF Fairs 2026, Education Summits"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          "name": "IHECF Upcoming Recruitment Events",
+          "description": "Expos, summits, and institutional visits schedule to connect international students with top Indian universities.",
+          "itemListElement": allEvents.map((e, idx) => ({
+            "@type": "ListItem",
+            "position": idx + 1,
+            "item": {
+              "@type": "EducationEvent",
+              "name": e.title,
+              "location": {
+                "@type": "Place",
+                "name": e.country,
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressCountry": e.country
+                }
+              },
+              "description": `Indian Higher Education & Career Fair in ${e.country}. Meet admission directors and register for free counseling.`
+            }
+          }))
+        }}
       />
       {/* Header - Optimized for Mobile */}
       <section className="bg-primary text-white pt-24 md:pt-32 pb-16 md:pb-24 px-6 relative overflow-hidden">

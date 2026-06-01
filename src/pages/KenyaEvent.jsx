@@ -43,6 +43,30 @@ const KenyaEvent = () => {
         title="IHECF Kenya 2026 | Indian Higher Education Fair Nairobi" 
         description="Tap into Kenya's fastest-growing education market. Connect with motivated Kenyan students at Oshwal Academy Senior High, Nairobi."
         keywords="IHECF Kenya 2026, Indian Higher Education Fair Nairobi, Study in India Fair Kenya, Education Exhibition Nairobi Oshwal Academy"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "EducationEvent",
+          "name": "IHECF Kenya 2026 | Indian Higher Education Fair Nairobi",
+          "description": "Tap into Kenya's fastest-growing education market. Connect with motivated Kenyan students at Oshwal Academy Senior High, Nairobi.",
+          "startDate": "2026-02-01T09:00:00+03:00",
+          "endDate": "2026-03-31T17:00:00+03:00",
+          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+          "eventStatus": "https://schema.org/EventScheduled",
+          "location": {
+            "@type": "Place",
+            "name": "Oshwal Academy Senior High",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Nairobi",
+              "addressCountry": "Kenya"
+            }
+          },
+          "organizer": {
+            "@type": "EducationalOrganization",
+            "name": "Edunial Group",
+            "url": "https://ihecf.info"
+          }
+        }}
       />
 
       {/* Hero Section */}

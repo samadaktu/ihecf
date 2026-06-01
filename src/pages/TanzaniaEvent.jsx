@@ -43,6 +43,30 @@ const TanzaniaEvent = () => {
         title="IHECF Tanzania 2026-27 | Indian Higher Education Fair Dar es Salaam" 
         description="Secure your share of Tanzania's booming higher education market. Connect with motivated Tanzanian students and parents at the Serena Hotel, Dar es Salaam."
         keywords="IHECF Tanzania 2026, Indian Higher Education Fair Dar es Salaam, Study in India Fair Tanzania, Education Exhibition Dar es Salaam Serena Hotel"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "EducationEvent",
+          "name": "IHECF Tanzania 2026-27 | Indian Higher Education Fair Dar es Salaam",
+          "description": "Secure your share of Tanzania's booming higher education market. Connect with motivated Tanzanian students and parents at the Serena Hotel, Dar es Salaam.",
+          "startDate": "2026-02-01T09:00:00+03:00",
+          "endDate": "2026-03-31T17:00:00+03:00",
+          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+          "eventStatus": "https://schema.org/EventScheduled",
+          "location": {
+            "@type": "Place",
+            "name": "Serena Hotel",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Dar es Salaam",
+              "addressCountry": "Tanzania"
+            }
+          },
+          "organizer": {
+            "@type": "EducationalOrganization",
+            "name": "Edunial Group",
+            "url": "https://ihecf.info"
+          }
+        }}
       />
 
       {/* Hero Section */}

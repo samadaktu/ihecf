@@ -37,6 +37,16 @@ const Promotions = () => {
         title="How We Promote" 
         description="Discover our diverse marketing strategies and channels used to spread the word about IHECF fairs. We ensure maximum public engagement and attendance." 
         keywords="Education Fair Promotion, Marketing Strategy, Student Recruitment Marketing, IHECF Fairs"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "How We Promote IHECF Fairs",
+          "description": "Learn about the omni-channel marketing strategy used by IHECF (powered by Edunial Group) including digital ecosystems, mass media ads, FM radio, and outdoor banners.",
+          "publisher": {
+            "@type": "EducationalOrganization",
+            "name": "IHECF"
+          }
+        }}
       />
 
       {/* Hero Section */}

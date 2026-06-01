@@ -63,6 +63,17 @@ const ServiceDetail = () => {
         title={service.title} 
         description={service.description}
         keywords={`IHECF ${service.title}, Student Recruitment Service, ${service.title} for Universities`}
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": service.title,
+          "description": service.description,
+          "provider": {
+            "@type": "EducationalOrganization",
+            "name": "IHECF"
+          },
+          "serviceType": "Student Recruitment Service"
+        }}
       />
       {/* Hero Section */}
       <section className="bg-primary text-white pt-24 md:pt-32 pb-16 md:pb-24 relative overflow-hidden px-6">

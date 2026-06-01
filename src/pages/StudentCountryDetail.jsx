@@ -81,6 +81,16 @@ const StudentCountryDetail = () => {
         title={`Student Admissions: Study in India | IHECF ${countryName}`} 
         description={`Register for the upcoming Indian Higher Education & Career Fair in ${countryName}. Pre-register for admission counseling, courses information, and scholarships.`}
         keywords={`Study in India ${countryName}, IHECF ${countryName} Student Fair, Education Fair ${countryName}, Indian Universities ${countryName}`}
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": `IHECF ${countryName} Student Admissions Portal`,
+          "description": `Pre-register for the Indian Higher Education & Career Fair in ${countryName}. Explore undergraduate, postgraduate admissions and tuition fee scholarships.`,
+          "spatialCoverage": {
+            "@type": "Place",
+            "name": countryName
+          }
+        }}
       />
 
       {/* Hero Section */}

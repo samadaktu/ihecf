@@ -41,6 +41,16 @@ const Advertising = () => {
         title="Advertising & Sponsorship" 
         description="Explore advertising and sponsorship opportunities with IHECF. Increase your brand awareness, trust, and loyalty in the international recruitment sector." 
         keywords="Education Sponsorship, Academic Advertising, Student Recruitment Branding, IHECF Sponsor"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "Product",
+          "name": "IHECF Advertising & Sponsorship Packages",
+          "description": "Premium sponsorship options including Fair Bag Inserts, Post Fair Emails, Site Signage, and Seminar Room branding to expand university visibility in student fairs.",
+          "provider": {
+            "@type": "EducationalOrganization",
+            "name": "IHECF"
+          }
+        }}
       />
 
       {/* Hero Section */}

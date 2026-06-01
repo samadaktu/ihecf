@@ -33,6 +33,13 @@ const Gallery = () => {
         title="Photo Gallery" 
         description="A visual journey through our global recruitment fairs and roadshows. See the impact we make across the Middle East, Africa, and Southeast Asia." 
         keywords="Education Fair Photos, Recruitment Events Gallery, Global Roadshows"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "ImageGallery",
+          "name": "IHECF Global Recruitment Photo Gallery",
+          "description": "Visual highlights of student interactions, university exhibits, and counselling summits across international regions.",
+          "image": galleryImages.map(url => `https://ihecf.info${url}`)
+        }}
       />
       {/* Header - Optimized for Mobile */}
       <section className="bg-primary text-white pt-24 md:pt-32 pb-16 md:pb-24 px-6 relative overflow-hidden">

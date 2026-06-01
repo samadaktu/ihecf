@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-const SEO = ({ title, description, keywords }) => {
+const SEO = ({ title, description, keywords, schema }) => {
   const location = useLocation();
 
   useEffect(() => {
@@ -27,7 +27,28 @@ const SEO = ({ title, description, keywords }) => {
     }
     canonical.setAttribute('href', `https://ihecf.info${location.pathname}`);
 
-  }, [title, description, keywords, location]);
+    // Schema injection
+    let schemaScript = document.getElementById('jsonld-schema');
+    if (schemaScript) {
+      schemaScript.remove();
+    }
+    if (schema) {
+      schemaScript = document.createElement('script');
+      schemaScript.id = 'jsonld-schema';
+      schemaScript.type = 'application/ld+json';
+      schemaScript.text = JSON.stringify(schema);
+      document.head.appendChild(schemaScript);
+    }
+
+    // Cleanup function on unmount
+    return () => {
+      const scriptToRemove = document.getElementById('jsonld-schema');
+      if (scriptToRemove) {
+        scriptToRemove.remove();
+      }
+    };
+
+  }, [title, description, keywords, schema, location]);
 
   return null;
 };

@@ -43,6 +43,30 @@ const QatarEvent = () => {
         title="IHECF Qatar 2026 | Indian Higher Education Fair Doha" 
         description="Unlock the Qatar & GCC market with India's most prestigious education fair. Connect with high-potential students at MES Indian School, Doha."
         keywords="IHECF Qatar 2026, Indian Higher Education Fair Doha, Study in India Fair Qatar, Education Exhibition Doha MES Indian School"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "EducationEvent",
+          "name": "IHECF Qatar 2026 | Indian Higher Education Fair Doha",
+          "description": "Unlock the Qatar & GCC market with India's most prestigious education fair. Connect with high-potential students at MES Indian School, Doha.",
+          "startDate": "2026-09-24T08:00:00+03:00",
+          "endDate": "2026-09-24T21:00:00+03:00",
+          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+          "eventStatus": "https://schema.org/EventScheduled",
+          "location": {
+            "@type": "Place",
+            "name": "MES Indian School",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Doha",
+              "addressCountry": "Qatar"
+            }
+          },
+          "organizer": {
+            "@type": "EducationalOrganization",
+            "name": "Edunial Group",
+            "url": "https://ihecf.info"
+          }
+        }}
       />
 
       {/* Hero Section */}
