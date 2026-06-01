@@ -202,9 +202,10 @@ const Counselling = () => {
             <div className="pt-4">
               <Link 
                 to="/contact?subject=School%20Collaboration" 
-                className="w-full py-4 bg-primary text-white hover:bg-secondary transition-all rounded-xl md:rounded-2xl font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2"
+                className="w-full px-6 py-4 bg-primary text-white hover:bg-secondary transition-all rounded-xl md:rounded-2xl font-bold text-[10px] sm:text-xs uppercase tracking-wider flex items-center justify-center gap-2 text-center"
               >
-                Schedule a Consult to Host a Session <ArrowRight size={16} />
+                <span className="text-center">Schedule a Consult to Host a Session</span>
+                <ArrowRight size={16} className="shrink-0" />
               </Link>
             </div>
           </motion.div>
@@ -249,9 +250,10 @@ const Counselling = () => {
             <div className="pt-4 relative z-10">
               <Link 
                 to="/contact?subject=University%20Partnership" 
-                className="w-full py-4 bg-secondary text-white hover:bg-white hover:text-primary transition-all rounded-xl md:rounded-2xl font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2"
+                className="w-full px-6 py-4 bg-secondary text-white hover:bg-white hover:text-primary transition-all rounded-xl md:rounded-2xl font-bold text-[10px] sm:text-xs uppercase tracking-wider flex items-center justify-center gap-2 text-center"
               >
-                Request an Exhibitor & Partner Brochure <ArrowRight size={16} />
+                <span className="text-center">Request an Exhibitor & Partner Brochure</span>
+                <ArrowRight size={16} className="shrink-0" />
               </Link>
             </div>
           </motion.div>
@@ -311,9 +313,10 @@ const Counselling = () => {
               </div>
               <Link 
                 to="/contact?subject=School%20Collaboration" 
-                className="inline-flex items-center gap-2 text-xs font-black text-secondary hover:text-primary transition-colors uppercase tracking-widest mt-2"
+                className="inline-flex items-center gap-2 text-[10px] sm:text-xs font-black text-secondary hover:text-primary transition-colors uppercase tracking-wider mt-2"
               >
-                Schedule a Consult to Host a Session <ArrowRight size={14} />
+                <span>Schedule a Consult to Host a Session</span>
+                <ArrowRight size={14} className="shrink-0" />
               </Link>
             </div>
 
@@ -330,9 +333,10 @@ const Counselling = () => {
               </div>
               <Link 
                 to="/contact?subject=University%20Partnership" 
-                className="inline-flex items-center gap-2 text-xs font-black text-secondary hover:text-primary transition-colors uppercase tracking-widest mt-2"
+                className="inline-flex items-center gap-2 text-[10px] sm:text-xs font-black text-secondary hover:text-primary transition-colors uppercase tracking-wider mt-2"
               >
-                Request an Exhibitor & Partner Brochure <ArrowRight size={14} />
+                <span>Request an Exhibitor & Partner Brochure</span>
+                <ArrowRight size={14} className="shrink-0" />
               </Link>
             </div>
           </div>
