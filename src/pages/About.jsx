@@ -30,8 +30,7 @@ const About = () => {
         { name: "Gambia", code: "gm" },
         { name: "Senegal", code: "sn" },
         { name: "Namibia", code: "na" },
-        { name: "Mauritius", code: "mu" },
-        { name: "Zanzibar", code: "tz" }
+        { name: "Mauritius", code: "mu" }
       ]
     },
     {

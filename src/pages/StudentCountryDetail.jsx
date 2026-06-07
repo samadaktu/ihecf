@@ -5,7 +5,7 @@ import SEO from '../components/SEO';
 
 const StudentCountryDetail = () => {
   const { slug } = useParams();
-  const countryName = slug.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+  const countryName = slug === 'ksa' ? 'KSA' : slug.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 
   const [formData, setFormData] = useState({
     name: '',

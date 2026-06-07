@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { countries } from '../utils/data';
 import { Calendar, MapPin, Search, Filter, ArrowRight, X, CheckCircle, Info } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import SEO from '../components/SEO';
 
@@ -155,7 +156,9 @@ const Events = () => {
                 className="bg-white rounded-[2rem] md:rounded-[3rem] border border-gray-100 shadow-sm overflow-hidden group hover:shadow-2xl transition-all duration-500 flex flex-col"
               >
                 <div className="h-48 md:h-56 overflow-hidden relative">
-                  <img src={event.image} alt={event.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" />
+                  <Link to={`/country/${event.country.toLowerCase().replace(/ /g, '-')}`}>
+                    <img src={event.image} alt={event.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" />
+                  </Link>
                   <div className="absolute top-4 md:top-6 left-4 md:left-6">
                     <span className="px-3 md:px-4 py-1.5 bg-white/90 backdrop-blur-sm text-primary rounded-full text-[8px] md:text-[10px] font-black uppercase tracking-widest shadow-xl">{event.type}</span>
                   </div>
@@ -165,7 +168,9 @@ const Events = () => {
                     <span className="text-secondary font-black text-[10px] md:text-xs uppercase tracking-widest flex items-center gap-1.5 md:gap-2 whitespace-nowrap"><MapPin size={14}/> {event.country}</span>
                     <span className="text-gray-400 text-[10px] md:text-xs font-bold flex items-center gap-1.5 md:gap-2 whitespace-nowrap"><Calendar size={14}/> {event.date}</span>
                   </div>
-                  <h3 className="text-xl md:text-2xl mb-6 md:mb-8 font-bold group-hover:text-secondary transition-colors leading-tight">{event.title}</h3>
+                  <Link to={`/country/${event.country.toLowerCase().replace(/ /g, '-')}`}>
+                    <h3 className="text-xl md:text-2xl mb-6 md:mb-8 font-bold group-hover:text-secondary transition-colors leading-tight">{event.title}</h3>
+                  </Link>
                   <div className="mt-auto pt-6 md:pt-8 border-t border-gray-50 flex justify-between items-center gap-4 md:gap-6">
                     <button 
                       onClick={() => setSelectedEvent(event)}
@@ -173,12 +178,12 @@ const Events = () => {
                     >
                       Register Now
                     </button>
-                    <button 
-                      onClick={() => setSelectedEvent(event)}
+                    <Link 
+                      to={`/country/${event.country.toLowerCase().replace(/ /g, '-')}`}
                       className="text-primary font-black text-[10px] md:text-xs uppercase tracking-widest flex items-center gap-1.5 md:gap-2 hover:text-secondary transition-colors whitespace-nowrap"
                     >
                       Details <ArrowRight size={14}/>
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </motion.div>

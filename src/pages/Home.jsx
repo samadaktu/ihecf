@@ -364,7 +364,9 @@ const Home = () => {
                 className="bg-gray-50 rounded-[2rem] overflow-hidden group hover:shadow-2xl transition-all border border-gray-100"
               >
                 <div className="h-40 md:h-48 relative overflow-hidden">
-                  <img src={event.image} alt={event.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                  <Link to={`/country/${event.country.toLowerCase().replace(/ /g, '-')}`}>
+                    <img src={event.image} alt={event.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                  </Link>
                   <div className="absolute bottom-3 md:bottom-4 left-3 md:left-4">
                     <span className="px-2 md:px-3 py-1 bg-white/90 backdrop-blur-sm text-primary rounded-lg text-[8px] md:text-[9px] font-black uppercase tracking-widest shadow-lg">{event.type}</span>
                   </div>
@@ -373,11 +375,13 @@ const Home = () => {
                   <div className="flex items-center gap-2 text-secondary font-black text-[8px] md:text-[10px] uppercase tracking-widest mb-1 md:mb-2">
                     <Globe size={12} /> {event.country}
                   </div>
-                  <h3 className="text-lg md:text-xl font-bold text-primary mb-3 md:mb-4 leading-tight group-hover:text-secondary transition-colors">{event.title}</h3>
+                  <Link to={`/country/${event.country.toLowerCase().replace(/ /g, '-')}`}>
+                    <h3 className="text-lg md:text-xl font-bold text-primary mb-3 md:mb-4 leading-tight group-hover:text-secondary transition-colors">{event.title}</h3>
+                  </Link>
                   <div className="flex items-center gap-2 text-gray-400 text-xs mb-6 md:mb-8">
                     <Calendar size={14} className="text-primary" /> {event.date}
                   </div>
-                  <Link to="/events" className="w-full py-3 md:py-4 bg-white border border-gray-200 text-primary hover:bg-primary hover:text-white transition-all rounded-xl md:rounded-2xl text-center font-bold text-[10px] block uppercase tracking-widest">
+                  <Link to={`/country/${event.country.toLowerCase().replace(/ /g, '-')}`} className="w-full py-3 md:py-4 bg-white border border-gray-200 text-primary hover:bg-primary hover:text-white transition-all rounded-xl md:rounded-2xl text-center font-bold text-[10px] block uppercase tracking-widest">
                     Book Now
                   </Link>
                 </div>
