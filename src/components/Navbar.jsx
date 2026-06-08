@@ -5,11 +5,11 @@ import { countries, services } from '../utils/data';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const universityCountries = [
-  "Kenya", "Uganda", "Tanzania", "Zanzibar", "Zambia", "Gambia", "Senegal", "Kuwait", "Qatar"
+  "KSA", "Kenya", "Uganda", "Tanzania", "Zanzibar", "Zambia", "Gambia", "Senegal", "Kuwait", "Qatar"
 ];
 
 const studentCountries = [
-  "Qatar"
+  "Qatar", "KSA"
 ];
 
 
@@ -43,8 +43,7 @@ const Navbar = () => {
     { name: 'About', path: '/about' },
     { name: 'Services', path: '/services', mega: 'services' },
     { name: 'Countries', path: '#', mega: 'countries' },
-    { name: 'Promotions', path: '/how-ihecf-promoted' },
-    { name: 'Advertising', path: '/advertising-sponsorship' },
+    { name: 'Calendar', path: '/calendar' },
     { name: 'Gallery', path: '/gallery' },
     { name: 'Contact', path: '/contact' },
   ];
@@ -94,7 +93,7 @@ const Navbar = () => {
                           <h3 className="text-primary font-bold flex items-center gap-2"><BookOpen size={18} className="text-secondary" /> Our Core Services</h3>
                         </div>
                         {services.map((service) => (
-                          <Link key={service.slug} to={`/service/${service.slug}`} className="group/item">
+                          <Link key={service.slug} to={service.path || `/service/${service.slug}`} className="group/item">
                             <h4 className="text-primary font-bold group-hover/item:text-secondary transition-colors">{service.title}</h4>
                             <p className="text-xs text-gray-500 mt-1 line-clamp-2">{service.description}</p>
                           </Link>
@@ -202,7 +201,7 @@ const Navbar = () => {
                               {link.mega === 'services' && services.map(s => (
                                 <Link 
                                   key={s.slug} 
-                                  to={`/service/${s.slug}`} 
+                                  to={s.path || `/service/${s.slug}`} 
                                   className="block text-gray-500 font-medium"
                                   onClick={() => setIsOpen(false)}
                                 >

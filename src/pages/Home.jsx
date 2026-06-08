@@ -313,32 +313,63 @@ const Home = () => {
             <h2 className="text-3xl md:text-7xl text-white font-black tracking-tighter">Conquering <span className="text-secondary">20+</span> Markets</h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {[
-              { name: 'Middle East', desc: 'The hub of premium student mobility including KSA, Oman, and UAE.', img: '/ksa_education_event.png', count: '8 Countries' },
-              { name: 'Africa', desc: 'The fastest growing youth population across Kenya, Ethiopia, and Tanzania.', img: '/kenya_education_event.png', count: '10 Countries' },
-              { name: 'Southeast Asia', desc: 'Emerging academic powerhouses including Vietnam and Thailand.', img: '/vietnam_education_event.png', count: '5 Countries' }
-            ].map((region, i) => (
-              <motion.div
-                key={i}
-                whileHover={{ y: -10 }}
-                className="group bg-white/5 backdrop-blur-lg border border-white/10 rounded-[2rem] md:rounded-[3rem] overflow-hidden flex flex-col"
-              >
-                <div className="h-48 md:h-64 relative overflow-hidden">
-                  <img src={region.img} alt={region.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" />
-                  <div className="absolute top-4 md:top-6 left-4 md:left-6 px-3 md:px-4 py-1.5 md:py-2 bg-secondary text-white rounded-full text-[8px] md:text-[10px] font-black uppercase tracking-widest shadow-xl">
-                    {region.count}
+          <div className="space-y-6 md:space-y-8">
+            {/* First row: 3 columns */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+              {[
+                { name: 'Middle East', queryRegion: 'Middle East', desc: 'The hub of premium student mobility including KSA, Oman, and UAE.', img: '/ksa_education_event.png', count: '8 Countries' },
+                { name: 'Africa', queryRegion: 'Africa', desc: 'The fastest growing youth population across Kenya, Ethiopia, and Tanzania.', img: '/kenya_education_event.png', count: '10 Countries' },
+                { name: 'Southeast Asia', queryRegion: 'South East Asia', desc: 'Emerging academic powerhouses including Vietnam and Thailand.', img: '/vietnam_education_event.png', count: '5 Countries' }
+              ].map((region, i) => (
+                <motion.div
+                  key={i}
+                  whileHover={{ y: -10 }}
+                  className="group bg-white/5 backdrop-blur-lg border border-white/10 rounded-[2rem] md:rounded-[3rem] overflow-hidden flex flex-col"
+                >
+                  <div className="h-48 md:h-64 relative overflow-hidden">
+                    <img src={region.img} alt={region.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" />
+                    <div className="absolute top-4 md:top-6 left-4 md:left-6 px-3 md:px-4 py-1.5 md:py-2 bg-secondary text-white rounded-full text-[8px] md:text-[10px] font-black uppercase tracking-widest shadow-xl">
+                      {region.count}
+                    </div>
                   </div>
-                </div>
-                <div className="p-8 md:p-10 flex-grow">
-                  <h3 className="text-2xl md:text-3xl text-white font-bold mb-3 md:mb-4">{region.name}</h3>
-                  <p className="text-gray-400 text-sm md:text-lg leading-relaxed mb-6 md:mb-8">{region.desc}</p>
-                  <Link to="/gallery" className="w-full py-3 md:py-4 border border-white/20 rounded-xl md:rounded-2xl text-white font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2 group-hover:bg-white group-hover:text-primary transition-all">
-                    Explore <ChevronRight size={18} />
-                  </Link>
-                </div>
-              </motion.div>
-            ))}
+                  <div className="p-8 md:p-10 flex-grow">
+                    <h3 className="text-2xl md:text-3xl text-white font-bold mb-3 md:mb-4">{region.name}</h3>
+                    <p className="text-gray-400 text-sm md:text-lg leading-relaxed mb-6 md:mb-8">{region.desc}</p>
+                    <Link to={`/calendar?region=${encodeURIComponent(region.queryRegion)}`} className="w-full py-3 md:py-4 border border-white/20 rounded-xl md:rounded-2xl text-white font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2 group-hover:bg-white group-hover:text-primary transition-all">
+                      Explore <ChevronRight size={18} />
+                    </Link>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Second row: 2 columns, centered on desktop */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
+              {[
+                { name: 'SAARC', queryRegion: 'SAARC', desc: 'Key recruitment hubs in South Asia including Nepal, Bangladesh, and Sri Lanka.', img: '/saarc_education_event.png', count: '3 Countries' },
+                { name: 'Central Asia', queryRegion: 'Central Asia', desc: 'Rapidly emerging markets in Central Asia, featuring Uzbekistan and Kazakhstan.', img: '/central_asia_education_event.png', count: '2 Countries' }
+              ].map((region, i) => (
+                <motion.div
+                  key={i}
+                  whileHover={{ y: -10 }}
+                  className="group bg-white/5 backdrop-blur-lg border border-white/10 rounded-[2rem] md:rounded-[3rem] overflow-hidden flex flex-col"
+                >
+                  <div className="h-48 md:h-64 relative overflow-hidden">
+                    <img src={region.img} alt={region.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" />
+                    <div className="absolute top-4 md:top-6 left-4 md:left-6 px-3 md:px-4 py-1.5 md:py-2 bg-secondary text-white rounded-full text-[8px] md:text-[10px] font-black uppercase tracking-widest shadow-xl">
+                      {region.count}
+                    </div>
+                  </div>
+                  <div className="p-8 md:p-10 flex-grow">
+                    <h3 className="text-2xl md:text-3xl text-white font-bold mb-3 md:mb-4">{region.name}</h3>
+                    <p className="text-gray-400 text-sm md:text-lg leading-relaxed mb-6 md:mb-8">{region.desc}</p>
+                    <Link to={`/calendar?region=${encodeURIComponent(region.queryRegion)}`} className="w-full py-3 md:py-4 border border-white/20 rounded-xl md:rounded-2xl text-white font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2 group-hover:bg-white group-hover:text-primary transition-all">
+                      Explore <ChevronRight size={18} />
+                    </Link>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -351,7 +382,7 @@ const Home = () => {
               <h2 className="text-4xl md:text-7xl font-black tracking-tighter text-primary mb-3 md:mb-4 leading-none">The <span className="text-secondary italic underline decoration-4 underline-offset-8">Schedule</span></h2>
               <p className="text-gray-500 text-base md:text-xl">Secure your spot in our upcoming tours.</p>
             </div>
-            <Link to="/events" className="btn-primary inline-flex items-center gap-3 w-full sm:w-auto justify-center py-4">
+            <Link to="/calendar" className="btn-primary inline-flex items-center gap-3 w-full sm:w-auto justify-center py-4">
               View Calendar <Calendar size={20} />
             </Link>
           </div>

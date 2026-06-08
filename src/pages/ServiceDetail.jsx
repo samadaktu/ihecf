@@ -193,7 +193,7 @@ const ServiceDetail = () => {
              <span className="text-primary">{service.title}</span>
            </div>
            <div className="flex gap-8">
-             {services.filter(s => s.slug !== slug).slice(0, 2).map(s => (
+             {services.filter(s => s.slug !== slug && !s.path).slice(0, 2).map(s => (
                <Link key={s.slug} to={`/service/${s.slug}`} className="text-sm font-black text-primary hover:text-secondary transition-colors border-b-2 border-secondary/30 hover:border-secondary pb-1">{s.title}</Link>
              ))}
            </div>

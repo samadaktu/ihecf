@@ -27,5 +27,18 @@ export const services = [
     title: "Market Research",
     slug: "market-research",
     description: "In-depth insights into local education trends and student demographics."
+  },
+  {
+    title: "Promotions",
+    slug: "promotions",
+    path: "/how-ihecf-promoted",
+    description: "Explore how IHECF is promoted across international schools and local media."
+  },
+  {
+    title: "Advertising & Sponsorship",
+    slug: "advertising",
+    path: "/advertising-sponsorship",
+    description: "Discover advertising and sponsorship opportunities to maximize your university's visibility."
   }
 ];
+

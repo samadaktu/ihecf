@@ -1,6 +1,6 @@
 import { services } from '../utils/data';
 import { motion } from 'framer-motion';
-import { CheckCircle, ArrowRight, Zap, Globe, Users, BarChart } from 'lucide-react';
+import { CheckCircle, ArrowRight, Zap, Globe, Users, BarChart, Megaphone, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 
@@ -56,7 +56,12 @@ const Services = () => {
               <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/5 rounded-full translate-x-1/3 -translate-y-1/3 group-hover:scale-125 transition-transform duration-700" />
               
               <div className="w-12 h-12 md:w-16 md:h-16 bg-accent-light text-primary rounded-xl md:rounded-2xl flex items-center justify-center mb-8 md:mb-10 group-hover:bg-secondary group-hover:text-white transition-all shadow-inner">
-                {i === 0 ? <Globe size={28}/> : i === 1 ? <Users size={28}/> : i === 2 ? <Zap size={28}/> : <BarChart size={28}/>}
+                {service.slug === 'education-fairs' ? <Globe size={28}/> : 
+                 service.slug === 'counsellor-meet' ? <Users size={28}/> : 
+                 service.slug === 'school-visits' ? <Zap size={28}/> : 
+                 service.slug === 'promotions' ? <Megaphone size={28}/> :
+                 service.slug === 'advertising' ? <Sparkles size={28}/> :
+                 <BarChart size={28}/>}
               </div>
 
               <h3 className="text-2xl md:text-3xl font-black mb-4 md:mb-6 text-primary tracking-tight">{service.title}</h3>
@@ -70,7 +75,7 @@ const Services = () => {
                 ))}
               </ul>
 
-              <Link to={`/service/${service.slug}`} className="w-full py-4 bg-gray-50 text-primary rounded-xl md:rounded-2xl font-black text-[10px] md:text-xs uppercase tracking-widest flex items-center justify-center gap-2 group-hover:bg-primary group-hover:text-white transition-all">
+              <Link to={service.path || `/service/${service.slug}`} className="w-full py-4 bg-gray-50 text-primary rounded-xl md:rounded-2xl font-black text-[10px] md:text-xs uppercase tracking-widest flex items-center justify-center gap-2 group-hover:bg-primary group-hover:text-white transition-all">
                 View Details <ArrowRight size={16} />
               </Link>
             </motion.div>

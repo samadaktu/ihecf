@@ -4,15 +4,7 @@ import { MapPin, Users, Globe, ArrowLeft, ArrowRight, Calendar, CheckCircle, Gra
 import SEO from '../components/SEO';
 
 const QatarStudent = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    grade: '',
-    course: '',
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [showSuccess, setShowSuccess] = useState(false);
+
 
   const unmissablePoints = [
     { title: "Meet Premier Universities", desc: "Interact directly with Admissions Directors and Deans from IITs, NITs, IIMs, and top-tier private institutions under one roof." },
@@ -37,46 +29,7 @@ const QatarStudent = () => {
     "School principals, career guidance counselors, and education advisors"
   ];
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    const data = new FormData();
-    data.append('name', formData.name);
-    data.append('email', formData.email);
-    data.append('phone', formData.phone);
-    data.append('grade', formData.grade);
-    data.append('course', formData.course);
-    data.append('event_title', 'IHECF Qatar 2026 - Student & Parent Session');
-    data.append('event_country', 'Qatar (Student Edition)');
-    data.append('_subject', `New Student RSVP: IHECF Qatar 2026 (Doha)`);
-    data.append('_template', 'table');
-    data.append('_captcha', 'false');
-
-    try {
-      const response = await fetch("https://formsubmit.co/ajax/info@ihecf.info", {
-        method: "POST",
-        body: data,
-        headers: {
-          'Accept': 'application/json'
-        }
-      });
-      if (response.ok) {
-        setShowSuccess(true);
-        setFormData({ name: '', email: '', phone: '', grade: '', course: '' });
-        setTimeout(() => setShowSuccess(false), 8000);
-      }
-    } catch (error) {
-      console.error("Submission error", error);
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -282,120 +235,31 @@ const QatarStudent = () => {
         </div>
       </section>
 
-      {/* RSVP Form Section */}
+      {/* RSVP Section */}
       <section id="rsvp-form" className="py-16 md:py-24 bg-gray-50 px-6 border-t border-gray-100">
         <div className="max-w-4xl mx-auto">
-          <div className="bg-white rounded-[3rem] p-8 md:p-12 shadow-2xl border border-gray-100 relative overflow-hidden">
+          <div className="bg-white rounded-[3rem] p-8 md:p-16 shadow-2xl border border-gray-100 relative overflow-hidden text-center">
             <div className="absolute -top-10 -right-10 w-32 h-32 bg-accent-light rounded-full z-0"></div>
             
-            <div className="relative z-10 max-w-2xl mx-auto text-center mb-8">
-              <span className="inline-block py-1 px-3 bg-secondary/10 text-secondary rounded-full text-[10px] font-black uppercase tracking-widest mb-4">Free Student & Parent Entry</span>
-              <h2 className="text-3xl md:text-4xl font-black text-primary mb-3">Pre-Register / RSVP Online</h2>
-              <p className="text-gray-500 text-sm">Fill in the quick registration form to receive your free entry pass, counseling slot, and access to scholarship guides.</p>
+            <div className="relative z-10 max-w-2xl mx-auto flex flex-col items-center">
+              <span className="inline-flex items-center gap-2 py-1.5 px-4 bg-secondary/10 text-secondary rounded-full text-xs font-black uppercase tracking-widest mb-6">
+                <Sparkles className="text-secondary animate-pulse" size={14} /> Free Entry Pass for Students & Parents
+              </span>
+              <h2 className="text-3xl md:text-5xl font-black text-primary mb-4 tracking-tight">
+                Register for Qatar Fair 2026
+              </h2>
+              <p className="text-gray-500 text-base md:text-lg mb-8 leading-relaxed">
+                Join thousands of students building their academic future at Qatar's premier higher education & career fair. Explore scholarships, meet top-tier universities, and get expert career guidance.
+              </p>
+              
+              <button 
+                onClick={(e) => { e.preventDefault(); }}
+                className="btn-secondary py-4 px-12 text-base md:text-lg flex justify-center items-center gap-3 shadow-xl hover:shadow-2xl hover:scale-[1.02] active:scale-[0.98] transition-all font-bold rounded-2xl"
+              >
+                Register Now
+                <ArrowRight size={20} />
+              </button>
             </div>
-
-            {showSuccess ? (
-              <div className="bg-green-50 border border-green-200 rounded-2xl p-8 text-center relative z-10 max-w-xl mx-auto">
-                <CheckCircle className="text-green-500 mx-auto mb-4" size={48} />
-                <h3 className="text-green-800 font-bold text-xl mb-2">Registration Successful!</h3>
-                <p className="text-green-700 text-sm mb-4">Your RSVP pass for IHECF Qatar 2026 (Doha) has been confirmed. We have sent a confirmation details details to your email.</p>
-                <div className="text-left text-xs bg-white p-4 rounded-lg border border-green-100 text-gray-600">
-                  <strong>Venue:</strong> MES Indian School, Doha<br/>
-                  <strong>Date:</strong> Thursday, 24th September 2026<br/>
-                  <strong>Parents Track:</strong> Starts at 04:00 PM
-                </div>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-6 relative z-10 max-w-xl mx-auto">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-xs font-black uppercase tracking-wider text-gray-500 mb-2">Full Name</label>
-                    <input 
-                      type="text" 
-                      name="name" 
-                      required 
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      placeholder="Enter student / parent name" 
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-secondary focus:border-secondary text-sm"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-xs font-black uppercase tracking-wider text-gray-500 mb-2">Email Address</label>
-                    <input 
-                      type="email" 
-                      name="email" 
-                      required 
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      placeholder="e.g. name@example.com" 
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-secondary focus:border-secondary text-sm"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-xs font-black uppercase tracking-wider text-gray-500 mb-2">Phone / WhatsApp Number</label>
-                    <input 
-                      type="tel" 
-                      name="phone" 
-                      required 
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      placeholder="e.g. +974 5555 1234" 
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-secondary focus:border-secondary text-sm"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-xs font-black uppercase tracking-wider text-gray-500 mb-2">Current Class / Education</label>
-                    <select 
-                      name="grade" 
-                      required
-                      value={formData.grade}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-secondary focus:border-secondary text-sm bg-white"
-                    >
-                      <option value="">Select current status</option>
-                      <option value="Grade 11">Grade 11 Student</option>
-                      <option value="Grade 12">Grade 12 Student</option>
-                      <option value="Undergraduate">Undergraduate Student</option>
-                      <option value="Parent">Parent of Student</option>
-                      <option value="Other">Other Expatriate / Professional</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-xs font-black uppercase tracking-wider text-gray-500 mb-2">Preferred Field of Study</label>
-                  <select 
-                    name="course" 
-                    required
-                    value={formData.course}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-secondary focus:border-secondary text-sm bg-white"
-                  >
-                    <option value="">Select course of interest</option>
-                    <option value="Medicine / MBBS">Medicine / MBBS / Allied Health</option>
-                    <option value="Engineering / BTech">Engineering / Technology</option>
-                    <option value="Business / MBA / BBA">Business Administration / Commerce</option>
-                    <option value="Computer Science / IT">Computer Science / IT / AI</option>
-                    <option value="Pharmacy / Science">Pharmacy / Applied Sciences</option>
-                    <option value="Arts / Design / Hospitality">Arts, Design & Humanities</option>
-                    <option value="Other / Undecided">Other / Undecided</option>
-                  </select>
-                </div>
-
-                <button 
-                  type="submit" 
-                  disabled={isSubmitting}
-                  className="btn-secondary w-full py-4 text-base flex justify-center items-center gap-2.5 shadow-xl hover:shadow-2xl transition-all"
-                >
-                  {isSubmitting ? 'Registering...' : 'Submit Pre-Registration Pass'} 
-                  <Send size={18} />
-                </button>
-              </form>
-            )}
           </div>
         </div>
       </section>
