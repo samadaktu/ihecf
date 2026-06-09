@@ -7,14 +7,19 @@ import SEO from '../components/SEO';
 const Contact = () => {
   const location = useLocation();
   const [subject, setSubject] = useState('University Partnership');
+  const [message, setMessage] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
     const searchParams = new URLSearchParams(location.search);
     const sub = searchParams.get('subject');
+    const msg = searchParams.get('message');
     if (sub) {
       setSubject(sub);
+    }
+    if (msg) {
+      setMessage(msg);
     }
   }, [location.search]);
 
@@ -210,7 +215,15 @@ const Contact = () => {
                   </div>
                   <div className="space-y-1 md:space-y-2">
                     <label className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-gray-400 ml-1">Message</label>
-                    <textarea required name="message" rows={5} className="w-full bg-gray-50 border-none rounded-xl md:rounded-2xl p-4 focus:ring-2 focus:ring-secondary/50 text-sm md:text-base" placeholder="Write your inquiry here..."></textarea>
+                    <textarea 
+                      required 
+                      name="message" 
+                      value={message} 
+                      onChange={(e) => setMessage(e.target.value)} 
+                      rows={5} 
+                      className="w-full bg-gray-50 border-none rounded-xl md:rounded-2xl p-4 focus:ring-2 focus:ring-secondary/50 text-sm md:text-base" 
+                      placeholder="Write your inquiry here..."
+                    />
                   </div>
                   <button 
                     disabled={isSubmitting}

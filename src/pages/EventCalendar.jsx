@@ -30,10 +30,7 @@ const EventCalendar = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedScheduleFilter, setSelectedScheduleFilter] = useState('All'); // 'All' | 'Confirmed' | 'TBA'
   
-  // Modal states
-  const [selectedEventForInquiry, setSelectedEventForInquiry] = useState(null);
-  const [isSubmittingInquiry, setIsSubmittingInquiry] = useState(false);
-  const [showSuccessInquiry, setShowSuccessInquiry] = useState(false);
+
 
   const setSelectedRegion = (region) => {
     if (region === 'All') {
@@ -150,41 +147,7 @@ const EventCalendar = () => {
 
   const filteredData = getFilteredData();
 
-  // Handle inquiry submissions
-  const handleInquirySubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmittingInquiry(true);
-    
-    const formData = new FormData(e.target);
-    formData.append('inquiry_type', 'Institutional Exhibitor Inquiry');
-    formData.append('target_event_country', selectedEventForInquiry.country);
-    formData.append('target_event_city', selectedEventForInquiry.city);
-    formData.append('_subject', `New Exhibitor Inquiry: ${selectedEventForInquiry.country} (${selectedEventForInquiry.city})`);
-    formData.append('_template', 'table');
-    formData.append('_captcha', 'false');
 
-    try {
-      const response = await fetch("https://formsubmit.co/ajax/info@ihecf.info", {
-        method: "POST",
-        body: formData,
-        headers: {
-          'Accept': 'application/json'
-        }
-      });
-      
-      if (response.ok) {
-        setShowSuccessInquiry(true);
-        setTimeout(() => {
-          setShowSuccessInquiry(false);
-          setSelectedEventForInquiry(null);
-        }, 5000);
-      }
-    } catch (error) {
-      console.error("Exhibitor inquiry submission error", error);
-    } finally {
-      setIsSubmittingInquiry(false);
-    }
-  };
 
   // Animation variants
   const containerVariants = {
@@ -485,16 +448,16 @@ const EventCalendar = () => {
                                 >
                                   <ChevronRight size={18} />
                                 </Link>
-                                <button 
-                                  onClick={() => setSelectedEventForInquiry(event)}
-                                  className={`py-2 px-4 rounded-xl text-xs font-black transition-all duration-300 cursor-pointer ${
+                                <Link 
+                                  to={`/contact?subject=Event Registration&message=${encodeURIComponent(`Hi, I would like to inquire about exhibiting at the IHECF event in ${event.country} (${event.city}). Please share details regarding booth space and packages.`)}`}
+                                  className={`py-2 px-4 rounded-xl text-xs font-black transition-all duration-300 text-center flex items-center justify-center ${
                                     isTBA 
-                                    ? 'border border-primary text-primary hover:bg-primary hover:text-white shadow-sm' 
-                                    : 'bg-secondary text-white hover:bg-secondary-light shadow-md shadow-secondary/15 hover:scale-[1.02]'
+                                    ? 'border border-primary text-primary hover:bg-primary hover:text-white hover:text-white shadow-sm' 
+                                    : 'bg-secondary text-white hover:bg-secondary-light hover:text-white shadow-md shadow-secondary/15 hover:scale-[1.02]'
                                   }`}
                                 >
                                   {isTBA ? 'Request Alert' : 'Book Booth'}
-                                </button>
+                                </Link>
                               </div>
                             </td>
                           </motion.tr>
@@ -598,16 +561,16 @@ const EventCalendar = () => {
                               Explore <ChevronRight size={14} />
                             </Link>
                             
-                            <button 
-                              onClick={() => setSelectedEventForInquiry(event)}
-                              className={`flex-[1.5] py-2.5 px-3 text-xs rounded-xl font-black text-center transition-all cursor-pointer ${
+                            <Link 
+                              to={`/contact?subject=Event Registration&message=${encodeURIComponent(`Hi, I would like to inquire about exhibiting at the IHECF event in ${event.country} (${event.city}). Please share details regarding booth space and packages.`)}`}
+                              className={`flex-[1.5] py-2.5 px-3 text-xs rounded-xl font-black text-center transition-all flex items-center justify-center ${
                                 isTBA 
                                 ? 'bg-primary text-white hover:bg-primary-light shadow-md shadow-primary/10' 
-                                : 'bg-secondary text-white hover:bg-secondary-light shadow-md shadow-secondary/15'
+                                : 'bg-secondary text-white hover:bg-secondary-light hover:text-white shadow-md shadow-secondary/15'
                               }`}
                             >
                               {isTBA ? 'Request Alert' : 'Book Booth'}
-                            </button>
+                            </Link>
                           </div>
                         </motion.div>
                       );
@@ -663,164 +626,7 @@ const EventCalendar = () => {
         </div>
       </section>
 
-      {/* Institutional Booking Inquiry Modal */}
-      <AnimatePresence>
-        {selectedEventForInquiry && (
-          <div className="fixed inset-0 z-[100] flex items-center justify-center p-0 md:p-6 overflow-y-auto">
-            {/* Modal Backdrop */}
-            <motion.div 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setSelectedEventForInquiry(null)}
-              className="fixed inset-0 bg-primary/90 backdrop-blur-md" 
-            />
-            
-            {/* Modal Card */}
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.95, y: 15 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 15 }}
-              className="bg-white w-full h-full md:h-auto md:max-w-xl md:rounded-[2.5rem] overflow-hidden relative shadow-2xl flex flex-col z-10 my-auto"
-            >
-              {/* Close Button */}
-              <button 
-                onClick={() => setSelectedEventForInquiry(null)}
-                className="absolute top-6 right-6 w-10 h-10 bg-slate-100 hover:bg-slate-200 text-gray-500 hover:text-primary rounded-full flex items-center justify-center transition-all shadow-sm z-20 cursor-pointer"
-              >
-                <X size={18} />
-              </button>
 
-              <div className="p-8 sm:p-10 flex-grow overflow-y-auto max-h-[100vh] md:max-h-[85vh]">
-                {showSuccessInquiry ? (
-                  <motion.div 
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    className="py-12 flex flex-col items-center justify-center text-center space-y-5"
-                  >
-                    <div className="w-20 h-20 bg-emerald-50 text-emerald-500 rounded-full flex items-center justify-center shadow-inner">
-                      <CheckCircle size={40} />
-                    </div>
-                    <h3 className="text-2xl font-black tracking-tight text-primary">Inquiry Submitted!</h3>
-                    <p className="text-gray-500 text-sm leading-relaxed max-w-sm">
-                      Thank you for your interest. An exhibition coordinator will review your request for the <strong>{selectedEventForInquiry.country}</strong> event and contact you within 24 business hours.
-                    </p>
-                    <button 
-                      onClick={() => setSelectedEventForInquiry(null)}
-                      className="px-6 py-2.5 bg-primary hover:bg-primary-light text-white text-xs font-bold rounded-xl"
-                    >
-                      Dismiss
-                    </button>
-                  </motion.div>
-                ) : (
-                  <>
-                    {/* Header */}
-                    <div className="mb-6 space-y-2">
-                      <span className="inline-flex items-center gap-1.5 py-1 px-3 bg-secondary/15 text-secondary rounded-lg text-[10px] font-black uppercase tracking-wider">
-                        Institutional Booking
-                      </span>
-                      <h3 className="text-2xl font-black tracking-tight text-primary">
-                        Exhibitor Inquiry
-                      </h3>
-                      <div className="flex items-center gap-3 bg-slate-50 border border-slate-200/50 p-3.5 rounded-2xl text-xs font-bold text-gray-700">
-                        <img 
-                          src={selectedEventForInquiry.flag} 
-                          alt={`${selectedEventForInquiry.country} flag`} 
-                          className="w-7 h-5 rounded object-cover shadow-sm shrink-0 border border-slate-200"
-                        />
-                        <div>
-                          <div>{selectedEventForInquiry.country} ({selectedEventForInquiry.city})</div>
-                          <div className="text-[10px] text-gray-450 font-semibold mt-0.5">
-                            {selectedEventForInquiry.date === 'TBA' ? 'Dates: TBA' : `Schedule: ${selectedEventForInquiry.date}`} | Est. Cost: {selectedEventForInquiry.cost}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Inquiry Form */}
-                    <form onSubmit={handleInquirySubmit} className="space-y-4">
-                      <div className="space-y-1">
-                        <label className="text-[9px] font-black uppercase tracking-widest text-gray-400 ml-1">University / Institution Name</label>
-                        <input 
-                          required 
-                          name="institution" 
-                          type="text" 
-                          className="w-full bg-slate-50 border-none rounded-xl p-3.5 focus:ring-2 focus:ring-secondary/50 text-sm font-semibold" 
-                          placeholder="e.g. Amity University" 
-                        />
-                      </div>
-                      
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div className="space-y-1">
-                          <label className="text-[9px] font-black uppercase tracking-widest text-gray-400 ml-1">Contact Name</label>
-                          <input 
-                            required 
-                            name="name" 
-                            type="text" 
-                            className="w-full bg-slate-50 border-none rounded-xl p-3.5 focus:ring-2 focus:ring-secondary/50 text-sm font-semibold" 
-                            placeholder="Full Name" 
-                          />
-                        </div>
-                        <div className="space-y-1">
-                          <label className="text-[9px] font-black uppercase tracking-widest text-gray-400 ml-1">Phone Number</label>
-                          <input 
-                            required 
-                            name="phone" 
-                            type="tel" 
-                            className="w-full bg-slate-50 border-none rounded-xl p-3.5 focus:ring-2 focus:ring-secondary/50 text-sm font-semibold" 
-                            placeholder="+91 99999 99999" 
-                          />
-                        </div>
-                      </div>
-
-                      <div className="space-y-1">
-                        <label className="text-[9px] font-black uppercase tracking-widest text-gray-400 ml-1">Work Email Address</label>
-                        <input 
-                          required 
-                          name="email" 
-                          type="email" 
-                          className="w-full bg-slate-50 border-none rounded-xl p-3.5 focus:ring-2 focus:ring-secondary/50 text-sm font-semibold" 
-                          placeholder="admissions@institution.edu" 
-                        />
-                      </div>
-
-                      <div className="space-y-1">
-                        <label className="text-[9px] font-black uppercase tracking-widest text-gray-400 ml-1">Preferred Booth Space</label>
-                        <select 
-                          name="booth_preference" 
-                          className="w-full bg-slate-50 border-none rounded-xl p-3.5 focus:ring-2 focus:ring-secondary/50 text-sm font-semibold text-gray-700"
-                        >
-                          <option value="standard">Standard Booth (Single)</option>
-                          <option value="double">Double Booth Space</option>
-                          <option value="premium">Premium Pavilion Space</option>
-                          <option value="undecided">Undecided / Request Details</option>
-                        </select>
-                      </div>
-
-                      <div className="space-y-1">
-                        <label className="text-[9px] font-black uppercase tracking-widest text-gray-400 ml-1">Special Requirements / Comments</label>
-                        <textarea 
-                          name="comments" 
-                          rows="3" 
-                          className="w-full bg-slate-50 border-none rounded-xl p-3.5 focus:ring-2 focus:ring-secondary/50 text-sm font-semibold text-gray-750" 
-                          placeholder="Specify regional target, multi-region package interest, etc."
-                        />
-                      </div>
-
-                      <button 
-                        disabled={isSubmittingInquiry}
-                        className="btn-secondary w-full py-4 text-sm mt-3 font-black uppercase tracking-wider shadow-lg shadow-secondary/10 disabled:opacity-50"
-                      >
-                        {isSubmittingInquiry ? 'Submitting Request...' : 'Send Inquiry Request'}
-                      </button>
-                    </form>
-                  </>
-                )}
-              </div>
-            </motion.div>
-          </div>
-        )}
-      </AnimatePresence>
     </div>
   );
 };
