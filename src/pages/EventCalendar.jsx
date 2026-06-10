@@ -172,7 +172,7 @@ const EventCalendar = () => {
   return (
     <div className="min-h-screen bg-slate-50/50">
       <SEO 
-        title="Annual Event Calendar 2026-27 | IHECF Recruitment Fairs" 
+        title="Upcoming Events 2026-27 | IHECF Recruitment Fairs" 
         description="View the comprehensive annual event schedule of Indian Higher Education & Career Fairs (IHECF) in the Middle East, Africa, and Asia. Plan your recruitment tours."
         keywords="IHECF Event Calendar, Education Fair Schedule 2026, Indian Universities Recruitment GCC Africa, Edunial Group Fairs"
       />
@@ -198,7 +198,7 @@ const EventCalendar = () => {
               </span>
               <h1 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight leading-tight">
                 Edunial Group <br />
-                <span className="text-secondary italic">Annual Event Calendar</span>
+                <span className="text-secondary italic">Upcoming Events</span>
               </h1>
               <p className="text-gray-400 text-sm sm:text-base md:text-lg max-w-xl font-medium leading-relaxed">
                 Connect directly with international student hubs. Plan your university recruitment tours across the Middle East, Africa, Central Asia, and SAARC.

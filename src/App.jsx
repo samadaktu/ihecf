@@ -4,6 +4,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
+import ForInstitutions from './pages/ForInstitutions';
 import Events from './pages/Events';
 import Contact from './pages/Contact';
 import Gallery from './pages/Gallery';
@@ -39,10 +40,11 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
+            <Route path="/for-institutions" element={<ForInstitutions />} />
             <Route path="/service/counselling" element={<Counselling />} />
             <Route path="/service/:slug" element={<ServiceDetail />} />
             <Route path="/events" element={<Events />} />
-            <Route path="/calendar" element={<EventCalendar />} />
+            <Route path="/upcoming-events" element={<EventCalendar />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/country/senegal" element={<SenegalEvent />} />

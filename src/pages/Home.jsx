@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Globe, Users, GraduationCap, Calendar, ChevronRight, CheckCircle, ArrowRight, Play, ExternalLink, ShieldCheck, Sparkles } from 'lucide-react';
+import { Globe, Users, GraduationCap, Calendar, ChevronRight, CheckCircle, ArrowRight, Play, ShieldCheck, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { services, countries } from '../utils/data';
 import SEO from '../components/SEO';
@@ -29,27 +29,27 @@ const Home = () => {
   ];
 
   const countryDirectory = [
-    { name: "Bangladesh", flag: "https://flagcdn.com/w40/bd.png", path: "/country/bangladesh" },
-    { name: "Cambodia", flag: "https://flagcdn.com/w40/kh.png", path: "/country/cambodia" },
-    { name: "Ethiopia", flag: "https://flagcdn.com/w40/et.png", path: "/country/ethiopia" },
-    { name: "Gambia", flag: "https://flagcdn.com/w40/gm.png", path: "/country/gambia" },
-    { name: "Kazakhstan", flag: "https://flagcdn.com/w40/kz.png", path: "/country/kazakhstan" },
-    { name: "Kenya", flag: "https://flagcdn.com/w40/ke.png", path: "/country/kenya" },
-    { name: "Kuwait", flag: "https://flagcdn.com/w40/kw.png", path: "/country/kuwait" },
-    { name: "Mauritius", flag: "https://flagcdn.com/w40/mu.png", path: "/country/mauritius" },
-    { name: "Namibia", flag: "https://flagcdn.com/w40/na.png", path: "/country/namibia" },
-    { name: "Nepal", flag: "https://flagcdn.com/w40/np.png", path: "/country/nepal" },
-    { name: "Oman", flag: "https://flagcdn.com/w40/om.png", path: "/country/oman" },
     { name: "Qatar", flag: "https://flagcdn.com/w40/qa.png", path: "/country/qatar" },
+    { name: "Kuwait", flag: "https://flagcdn.com/w40/kw.png", path: "/country/kuwait" },
     { name: "Saudi Arabia", flag: "https://flagcdn.com/w40/sa.png", path: "/country/ksa" },
+    { name: "Gambia", flag: "https://flagcdn.com/w40/gm.png", path: "/country/gambia" },
     { name: "Senegal", flag: "https://flagcdn.com/w40/sn.png", path: "/country/senegal" },
-    { name: "Sri Lanka", flag: "https://flagcdn.com/w40/lk.png", path: "/country/sri-lanka" },
-    { name: "Tanzania", flag: "https://flagcdn.com/w40/tz.png", path: "/country/tanzania" },
-    { name: "Thailand", flag: "https://flagcdn.com/w40/th.png", path: "/country/thailand" },
+    { name: "Ethiopia", flag: "https://flagcdn.com/w40/et.png", path: "/country/ethiopia" },
+    { name: "Kenya", flag: "https://flagcdn.com/w40/ke.png", path: "/country/kenya" },
     { name: "Uganda", flag: "https://flagcdn.com/w40/ug.png", path: "/country/uganda" },
-    { name: "Uzbekistan", flag: "https://flagcdn.com/w40/uz.png", path: "/country/uzbekistan" },
+    { name: "Tanzania", flag: "https://flagcdn.com/w40/tz.png", path: "/country/tanzania" },
     { name: "Zambia", flag: "https://flagcdn.com/w40/zm.png", path: "/country/zambia" },
-    { name: "Zimbabwe", flag: "https://flagcdn.com/w40/zw.png", path: "/country/zimbabwe" }
+    { name: "Zimbabwe", flag: "https://flagcdn.com/w40/zw.png", path: "/country/zimbabwe" },
+    { name: "Namibia", flag: "https://flagcdn.com/w40/na.png", path: "/country/namibia" },
+    { name: "Mauritius", flag: "https://flagcdn.com/w40/mu.png", path: "/country/mauritius" },
+    { name: "Fiji", flag: "https://flagcdn.com/w40/fj.png", path: "/country/fiji" },
+    { name: "Cambodia", flag: "https://flagcdn.com/w40/kh.png", path: "/country/cambodia" },
+    { name: "Thailand", flag: "https://flagcdn.com/w40/th.png", path: "/country/thailand" },
+    { name: "Uzbekistan", flag: "https://flagcdn.com/w40/uz.png", path: "/country/uzbekistan" },
+    { name: "Kazakhstan", flag: "https://flagcdn.com/w40/kz.png", path: "/country/kazakhstan" },
+    { name: "Nepal", flag: "https://flagcdn.com/w40/np.png", path: "/country/nepal" },
+    { name: "Bangladesh", flag: "https://flagcdn.com/w40/bd.png", path: "/country/bangladesh" },
+    { name: "Sri Lanka", flag: "https://flagcdn.com/w40/lk.png", path: "/country/sri-lanka" }
   ];
 
   const containerVariants = {
@@ -117,26 +117,17 @@ const Home = () => {
 
             <motion.p
               variants={itemVariants}
-              className="text-base md:text-2xl text-gray-300 mb-8 md:mb-12 leading-relaxed max-w-3xl"
+              className="text-base md:text-2xl text-gray-300 mb-4 md:mb-6 leading-relaxed max-w-3xl"
             >
               Navigate the rapidly growing international student market with confidence. The IHECF by Edunial Groups is your proven strategic platform to recruit high-quality students from Africa, Middle East, Southeast Asia, CIS Countries, and SAARC nations.
             </motion.p>
 
-            <motion.div variants={itemVariants} className="flex flex-col sm:flex-row justify-center gap-4 md:gap-6 w-full sm:w-auto">
-              <Link to="/events" className="group btn-secondary px-8 md:px-10 py-4 md:py-5 text-base md:text-lg shadow-xl w-full sm:w-auto justify-center">
-                Register for Next Fair <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
-              </Link>
-              <Link to="/contact" className="bg-white/5 hover:bg-white/10 text-white border border-white/20 px-8 md:px-10 py-4 md:py-5 rounded-full font-bold transition-all backdrop-blur-md flex items-center justify-center gap-2 w-full sm:w-auto text-base">
-                Partner With Us <ExternalLink size={18} />
-              </Link>
-            </motion.div>
-
             {/* Countries Directory Bar */}
             <motion.div 
               variants={itemVariants} 
-              className="mt-12 md:mt-16 w-full max-w-5xl"
+              className="mt-4 md:mt-6 w-full max-w-5xl"
             >
-              <div className="flex items-center justify-center gap-2 mb-4">
+              <div className="flex items-center justify-center gap-2 mb-3">
                 <span className="h-px w-8 bg-secondary/35"></span>
                 <span className="text-[10px] md:text-xs text-gray-400 font-black uppercase tracking-widest">
                   Featured Recruitment Destinations
@@ -144,19 +135,19 @@ const Home = () => {
                 <span className="h-px w-8 bg-secondary/35"></span>
               </div>
               
-              <div className="flex flex-nowrap md:flex-wrap justify-start md:justify-center gap-3 overflow-x-auto md:overflow-x-visible no-scrollbar py-3.5 px-4 rounded-3xl bg-white/5 border border-white/5 backdrop-blur-md">
+              <div className="flex flex-wrap justify-center gap-1.5 md:gap-3.5 py-2.5 px-3 md:py-4 md:px-5 rounded-2xl md:rounded-3xl bg-white/5 border border-white/5 backdrop-blur-md">
                 {countryDirectory.map((c) => (
                   <Link
                     key={c.name}
                     to={c.path}
-                    className="inline-flex items-center gap-2.5 px-4 py-2 bg-white/10 hover:bg-white text-white hover:text-primary rounded-xl border border-white/10 hover:border-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-secondary/5 shrink-0 md:shrink"
+                    className="inline-flex items-center gap-1.5 md:gap-3 px-2.5 py-1.5 md:px-5 md:py-2.5 bg-white/10 hover:bg-white text-white hover:text-primary rounded-lg md:rounded-xl border border-white/10 hover:border-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-secondary/5 shrink-0"
                   >
                     <img 
                       src={c.flag} 
                       alt={`${c.name} flag`} 
-                      className="w-6 h-4 rounded-sm object-cover border border-white/15 shadow-sm shrink-0" 
+                      className="w-5 h-3 md:w-8 md:h-[22px] rounded-sm object-cover border border-white/15 shadow-sm shrink-0" 
                     />
-                    <span className="text-xs font-bold tracking-tight whitespace-nowrap">{c.name}</span>
+                    <span className="text-[10px] md:text-sm font-bold tracking-tight whitespace-nowrap">{c.name}</span>
                   </Link>
                 ))}
               </div>
@@ -389,7 +380,7 @@ const Home = () => {
                   <div className="p-8 md:p-10 flex-grow">
                     <h3 className="text-2xl md:text-3xl text-white font-bold mb-3 md:mb-4">{region.name}</h3>
                     <p className="text-gray-400 text-sm md:text-lg leading-relaxed mb-6 md:mb-8">{region.desc}</p>
-                    <Link to={`/calendar?region=${encodeURIComponent(region.queryRegion)}`} className="w-full py-3 md:py-4 border border-white/20 rounded-xl md:rounded-2xl text-white font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2 group-hover:bg-white group-hover:text-primary transition-all">
+                    <Link to={`/upcoming-events?region=${encodeURIComponent(region.queryRegion)}`} className="w-full py-3 md:py-4 border border-white/20 rounded-xl md:rounded-2xl text-white font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2 group-hover:bg-white group-hover:text-primary transition-all">
                       Explore <ChevronRight size={18} />
                     </Link>
                   </div>
@@ -417,7 +408,7 @@ const Home = () => {
                   <div className="p-8 md:p-10 flex-grow">
                     <h3 className="text-2xl md:text-3xl text-white font-bold mb-3 md:mb-4">{region.name}</h3>
                     <p className="text-gray-400 text-sm md:text-lg leading-relaxed mb-6 md:mb-8">{region.desc}</p>
-                    <Link to={`/calendar?region=${encodeURIComponent(region.queryRegion)}`} className="w-full py-3 md:py-4 border border-white/20 rounded-xl md:rounded-2xl text-white font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2 group-hover:bg-white group-hover:text-primary transition-all">
+                    <Link to={`/upcoming-events?region=${encodeURIComponent(region.queryRegion)}`} className="w-full py-3 md:py-4 border border-white/20 rounded-xl md:rounded-2xl text-white font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2 group-hover:bg-white group-hover:text-primary transition-all">
                       Explore <ChevronRight size={18} />
                     </Link>
                   </div>
@@ -436,8 +427,8 @@ const Home = () => {
               <h2 className="text-4xl md:text-7xl font-black tracking-tighter text-primary mb-3 md:mb-4 leading-none">The <span className="text-secondary italic underline decoration-4 underline-offset-8">Schedule</span></h2>
               <p className="text-gray-500 text-base md:text-xl">Secure your spot in our upcoming tours.</p>
             </div>
-            <Link to="/calendar" className="btn-primary inline-flex items-center gap-3 w-full sm:w-auto justify-center py-4">
-              View Calendar <Calendar size={20} />
+            <Link to="/upcoming-events" className="btn-primary inline-flex items-center gap-3 w-full sm:w-auto justify-center py-4">
+              Upcoming Events <Calendar size={20} />
             </Link>
           </div>
 
