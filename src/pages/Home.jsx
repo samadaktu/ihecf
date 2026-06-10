@@ -24,7 +24,7 @@ const Home = () => {
     { country: 'KSA', date: 'Sept 15-20, 2026', title: 'Riyadh Education Expo', image: '/ksa_education_event.png', type: 'Premium Expo' },
     { country: 'Qatar', date: 'Sept 24, 2026', title: 'IHECF Qatar 2026', image: '/qatar_education_fair.png', type: 'Education Fair' },
     { country: 'Kuwait', date: 'Sept 27-30, 2026', title: 'IHECF Kuwait 2026', image: '/kuwait_education_fair.png', type: 'Education Fair' },
-    { country: 'Oman', date: 'Oct 02-05, 2026', title: 'Muscat Career Fair', image: '/student_interaction_fair.png', type: 'Career Fair' },
+    { country: 'Oman', date: 'Oct 02-05, 2026', title: 'Muscat Career Fair', image: '/oman_landmark.png', type: 'Career Fair' },
     { country: 'Vietnam', date: 'Nov 10-14, 2026', title: 'Hanoi University Meet', image: '/vietnam_education_event.png', type: 'Institutional Meet' },
   ];
 

@@ -5,7 +5,7 @@ import { countries, services } from '../utils/data';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const universityCountries = [
-  "KSA", "Kenya", "Uganda", "Tanzania", "Zanzibar", "Zambia", "Gambia", "Senegal", "Kuwait", "Qatar"
+  "KSA", "Kenya", "Uganda", "Tanzania", "Zanzibar", "Zambia", "Gambia", "Senegal", "Kuwait", "Qatar", "Oman", "Mauritius", "Zimbabwe", "Namibia"
 ];
 
 const studentCountries = [

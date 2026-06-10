@@ -10,7 +10,8 @@ import {
   Building2, 
   Target, 
   ShieldCheck,
-  ChevronRight
+  ChevronRight,
+  Megaphone
 } from 'lucide-react';
 import SEO from '../components/SEO';
 
@@ -338,30 +339,303 @@ const ForInstitutions = () => {
         </div>
       </section>
 
-      {/* Call to Action Footer */}
-      <section className="bg-primary text-white py-16 md:py-24 px-6 border-t border-white/10 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-secondary/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="max-w-4xl mx-auto text-center relative z-10 space-y-6">
-          <span className="inline-block py-1 px-4 bg-secondary/20 rounded-full text-xs font-black uppercase tracking-widest text-secondary border border-secondary/20">
-            Participation Inquiries
-          </span>
-          <h2 className="text-3xl md:text-5xl font-black tracking-tight leading-tight">
-            Reserve Your Institution's Booth Space
-          </h2>
-          <p className="text-gray-400 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
-            Ready to scale your global enrollments? Secure your spot in our upcoming fairs across GCC, Africa, Southeast Asia, CIS, and SAARC.
-          </p>
-          <div className="pt-4 flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Link 
-              to="/contact" 
-              className="btn-secondary px-8 py-4 text-base font-bold flex items-center gap-2 shadow-xl hover:shadow-2xl hover:scale-105 transition-all w-full sm:w-auto justify-center"
-            >
-              Inquire / Register Now
-              <ArrowRight size={18} />
-            </Link>
+      {/* How Edunial Group Promotes IHECF Section */}
+      <section className="py-20 md:py-28 bg-gray-50 border-y border-gray-100">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <span className="inline-flex items-center gap-2 py-1.5 px-4 bg-secondary/15 border border-secondary/20 rounded-full text-xs font-black uppercase tracking-widest text-secondary mb-4">
+              <Megaphone size={14} /> Ecosystem Marketing
+            </span>
+            <h2 className="text-3xl md:text-6xl font-black tracking-tighter text-primary mb-6 leading-tight">
+              How Edunial Group Promotes IHECF <br />
+              <span className="text-secondary italic">for Maximum Footfall & ROI</span>
+            </h2>
+            <p className="text-gray-500 text-base md:text-lg leading-relaxed">
+              At Edunial Group, we don’t just organize Indian Higher Education & Career Fairs (IHECF) — we build high-conversion recruitment ecosystems that bring together serious students, supportive parents, trusted schools, and ambitious Indian universities across Middle East, Africa, Southeast Asia, Central Asia, and SAARC.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+            {/* Card 1: Hyper-Local, Multi-Channel Promotion */}
+            <div className="bg-white rounded-[2rem] p-8 md:p-10 border border-gray-150/70 shadow-sm hover:shadow-xl transition-all duration-300 group">
+              <div className="w-14 h-14 bg-secondary/10 text-secondary rounded-2xl flex items-center justify-center mb-6 group-hover:bg-secondary group-hover:text-white transition-all duration-300">
+                <Globe size={24} />
+              </div>
+              <h3 className="text-2xl font-bold text-primary mb-4">1. Hyper-Local, Multi-Channel Promotion</h3>
+              <p className="text-gray-500 text-sm leading-relaxed mb-6">
+                We use a blended, hyper-local approach to reach students and parents where they are:
+              </p>
+              <div className="space-y-4">
+                <div className="bg-gray-50 p-4 rounded-xl border border-gray-100">
+                  <h4 className="font-bold text-primary text-sm mb-1">School & College Partnerships</h4>
+                  <p className="text-gray-500 text-xs leading-relaxed">
+                    Work directly with top Indian and international schools and counselling centres to pre-register Grade XII/undergraduate students and conduct career workshops.
+                  </p>
+                </div>
+                <div className="bg-gray-50 p-4 rounded-xl border border-gray-100">
+                  <h4 className="font-bold text-primary text-sm mb-1">Community & Diaspora Networks</h4>
+                  <p className="text-gray-500 text-xs leading-relaxed">
+                    Activate regional Indian community associations, student groups, and parent networks through WhatsApp groups and localized forums.
+                  </p>
+                </div>
+                <div className="bg-gray-50 p-4 rounded-xl border border-gray-100">
+                  <h4 className="font-bold text-primary text-sm mb-1">Local Language & Cultural Tailoring</h4>
+                  <p className="text-gray-500 text-xs leading-relaxed">
+                    Adapt campaign creatives to local languages (Arabic, French, English, Hindi, Urdu) and prioritize regional courses (engineering, medicine, nursing, etc.).
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 2: Digital Marketing That Drives Intent */}
+            <div className="bg-white rounded-[2rem] p-8 md:p-10 border border-gray-150/70 shadow-sm hover:shadow-xl transition-all duration-300 group">
+              <div className="w-14 h-14 bg-secondary/10 text-secondary rounded-2xl flex items-center justify-center mb-6 group-hover:bg-secondary group-hover:text-white transition-all duration-300">
+                <Sparkles size={24} />
+              </div>
+              <h3 className="text-2xl font-bold text-primary mb-4">2. Digital Marketing Built for Intent</h3>
+              <p className="text-gray-500 text-sm leading-relaxed mb-6">
+                Our digital promotion focuses on active conversion, driving high-intent registrants:
+              </p>
+              <div className="space-y-4">
+                <div className="bg-gray-50 p-4 rounded-xl border border-gray-100">
+                  <h4 className="font-bold text-primary text-sm mb-1">Targeted Social Media Campaigns</h4>
+                  <p className="text-gray-500 text-xs leading-relaxed">
+                    Geo-targeted Facebook, Instagram, TikTok, and LinkedIn ads pointing to specific city-level student clusters with real student/alumni reels.
+                  </p>
+                </div>
+                <div className="bg-gray-50 p-4 rounded-xl border border-gray-100">
+                  <h4 className="font-bold text-primary text-sm mb-1">Search & Performance Marketing</h4>
+                  <p className="text-gray-500 text-xs leading-relaxed">
+                    SEO-optimized target pages and Google Ads targeting queries like "study in India", "scholarships for international students", "MBBS/B.Tech in India".
+                  </p>
+                </div>
+                <div className="bg-gray-50 p-4 rounded-xl border border-gray-100">
+                  <h4 className="font-bold text-primary text-sm mb-1">Email & SMS Automation</h4>
+                  <p className="text-gray-500 text-xs leading-relaxed">
+                    Personalized follow-ups based on course interest, pre-event reminders, and post-event automated nudges to build continuity.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 3: On-Ground Activation */}
+            <div className="bg-white rounded-[2rem] p-8 md:p-10 border border-gray-150/70 shadow-sm hover:shadow-xl transition-all duration-300 group">
+              <div className="w-14 h-14 bg-secondary/10 text-secondary rounded-2xl flex items-center justify-center mb-6 group-hover:bg-secondary group-hover:text-white transition-all duration-300">
+                <Building2 size={24} />
+              </div>
+              <h3 className="text-2xl font-bold text-primary mb-4">3. On-Ground Activation & Trust</h3>
+              <p className="text-gray-500 text-sm leading-relaxed mb-6">
+                We build local urgency and credibility months before the fair doors open:
+              </p>
+              <div className="space-y-4">
+                <div className="bg-gray-50 p-4 rounded-xl border border-gray-100">
+                  <h4 className="font-bold text-primary text-sm mb-1">School Visits & Counselor Briefings</h4>
+                  <p className="text-gray-500 text-xs leading-relaxed">
+                    Our team meets with high school counselors to share partner university profiles and motivate students to attend the fair alongside their parents.
+                  </p>
+                </div>
+                <div className="bg-gray-50 p-4 rounded-xl border border-gray-100">
+                  <h4 className="font-bold text-primary text-sm mb-1">Career Workshops & Seminars</h4>
+                  <p className="text-gray-500 text-xs leading-relaxed">
+                    Hosting informative regional seminars on topic-specific areas: fees, ROI, safety, admissions, and student life in India.
+                  </p>
+                </div>
+                <div className="bg-gray-50 p-4 rounded-xl border border-gray-100">
+                  <h4 className="font-bold text-primary text-sm mb-1">Local Media & PR Campaigns</h4>
+                  <p className="text-gray-500 text-xs leading-relaxed">
+                    Press releases in national newspapers, online portals, and TV/radio spots featuring interviews with Edunial leaders and past success metrics.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 4: Data-Driven, ROI-Oriented Design */}
+            <div className="bg-white rounded-[2rem] p-8 md:p-10 border border-gray-150/70 shadow-sm hover:shadow-xl transition-all duration-300 group">
+              <div className="w-14 h-14 bg-secondary/10 text-secondary rounded-2xl flex items-center justify-center mb-6 group-hover:bg-secondary group-hover:text-white transition-all duration-300">
+                <Target size={24} />
+              </div>
+              <h3 className="text-2xl font-bold text-primary mb-4">4. Data-Driven, ROI-Oriented Design</h3>
+              <p className="text-gray-500 text-sm leading-relaxed mb-6">
+                Every IHECF event is optimized for measurable conversion rates for partnering institutions:
+              </p>
+              <div className="space-y-4">
+                <div className="bg-gray-50 p-4 rounded-xl border border-gray-100">
+                  <h4 className="font-bold text-primary text-sm mb-1">Pre-Qualified, Consent-Based Leads</h4>
+                  <p className="text-gray-500 text-xs leading-relaxed">
+                    Get full structured lists (Name, Contact, course preference, budget, scholarship requirements) with explicit consent for admissions follow-up.
+                  </p>
+                </div>
+                <div className="bg-gray-50 p-4 rounded-xl border border-gray-100">
+                  <h4 className="font-bold text-primary text-sm mb-1">Smart Booth & Presentation Design</h4>
+                  <p className="text-gray-500 text-xs leading-relaxed">
+                    Enjoy branded, spacious counseling booths, dedicated presentation slots, and interactive Q&A spaces to build family trust.
+                  </p>
+                </div>
+                <div className="bg-gray-555 p-4 rounded-xl border border-gray-100">
+                  <h4 className="font-bold text-primary text-sm mb-1">Post-Fair Support & Follow-Up</h4>
+                  <p className="text-gray-500 text-xs leading-relaxed">
+                    Receive lead reports within 7 days, exclusive IHECF scholarship track listings, and post-event follow-up virtual webinars.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
+
+      {/* Success Stories Section */}
+      <section className="py-20 md:py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <span className="inline-flex items-center gap-2 py-1.5 px-4 bg-secondary/15 border border-secondary/20 rounded-full text-xs font-black uppercase tracking-widest text-secondary mb-4">
+              <ShieldCheck size={14} /> Proven Results
+            </span>
+            <h2 className="text-3xl md:text-6xl font-black tracking-tighter text-primary mb-4 leading-tight">
+              Where IHECF Has Delivered <span className="text-secondary">Real Results</span>
+            </h2>
+            <p className="text-gray-500 text-base md:text-lg">
+              Across multiple global regions, our educational exhibitions have consistently produced high-footfall and high-conversion outcomes.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {/* Middle East */}
+            <div className="bg-gray-50 rounded-3xl p-8 border border-gray-100 flex flex-col justify-between hover:shadow-lg transition-all">
+              <div>
+                <span className="text-xs font-black text-secondary tracking-widest uppercase mb-2 block">Region Highlight</span>
+                <h3 className="text-2xl font-bold text-primary mb-4">Middle East</h3>
+                <p className="text-gray-500 text-xs leading-relaxed mb-6 uppercase tracking-wider font-bold">
+                  Qatar, Kuwait, Saudi Arabia, UAE
+                </p>
+                <ul className="space-y-4 text-sm text-gray-650 font-medium">
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle size={16} className="text-secondary shrink-0 mt-0.5" />
+                    <span><strong>IHECF Qatar & Kuwait School Tours</strong>: Targeted 1,000–1,500 Grade XII students per country across 8 schools, delivering hundreds of qualified leads.</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle size={16} className="text-secondary shrink-0 mt-0.5" />
+                    <span><strong>IHECF Saudi Arabia (Riyadh, Dammam, Al-Jubail, Jeddah)</strong>: Multi-city fair with thousands of attendees, reporting high conversions for STEM, Healthcare, BBA, and nursing.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Africa */}
+            <div className="bg-gray-50 rounded-3xl p-8 border border-gray-100 flex flex-col justify-between hover:shadow-lg transition-all">
+              <div>
+                <span className="text-xs font-black text-secondary tracking-widest uppercase mb-2 block">Region Highlight</span>
+                <h3 className="text-2xl font-bold text-primary mb-4">Africa</h3>
+                <p className="text-gray-500 text-xs leading-relaxed mb-6 uppercase tracking-wider font-bold">
+                  Gambia, Senegal, Nigeria, Tanzania, Kenya
+                </p>
+                <ul className="space-y-4 text-sm text-gray-650 font-medium">
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle size={16} className="text-secondary shrink-0 mt-0.5" />
+                    <span><strong>West & East Africa Fairs</strong>: Strong turnout of students seeking affordable, English-medium programs with scholarships.</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle size={16} className="text-secondary shrink-0 mt-0.5" />
+                    <span><strong>Institutional Network</strong>: Allowed partnering universities to establish long-term agent relationships and bilateral MoUs.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Southeast Asia & SAARC */}
+            <div className="bg-gray-50 rounded-3xl p-8 border border-gray-100 flex flex-col justify-between hover:shadow-lg transition-all">
+              <div>
+                <span className="text-xs font-black text-secondary tracking-widest uppercase mb-2 block">Region Highlight</span>
+                <h3 className="text-2xl font-bold text-primary mb-4">Southeast Asia & SAARC</h3>
+                <p className="text-gray-500 text-xs leading-relaxed mb-6 uppercase tracking-wider font-bold">
+                  Bangladesh, Nepal, Sri Lanka, Myanmar, Malaysia
+                </p>
+                <ul className="space-y-4 text-sm text-gray-650 font-medium">
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle size={16} className="text-secondary shrink-0 mt-0.5" />
+                    <span><strong>Cross-Border Engagement</strong>: Intense response from students seeking cost-effective, globally recognized Indian degrees.</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle size={16} className="text-secondary shrink-0 mt-0.5" />
+                    <span><strong>STEM & Pharmacy Focus</strong>: Built sustainable enrollment pipelines for engineering, nursing, and business management.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Central Asia */}
+            <div className="bg-gray-50 rounded-3xl p-8 border border-gray-100 flex flex-col justify-between hover:shadow-lg transition-all">
+              <div>
+                <span className="text-xs font-black text-secondary tracking-widest uppercase mb-2 block">Region Highlight</span>
+                <h3 className="text-2xl font-bold text-primary mb-4">Central Asia</h3>
+                <p className="text-gray-500 text-xs leading-relaxed mb-6 uppercase tracking-wider font-bold">
+                  Kazakhstan, Uzbekistan, and beyond
+                </p>
+                <ul className="space-y-4 text-sm text-gray-650 font-medium">
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle size={16} className="text-secondary shrink-0 mt-0.5" />
+                    <span><strong>Emerging Market Outreach</strong>: Strong focus on students looking for affordable engineering, IT, and medical degrees in India.</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle size={16} className="text-secondary shrink-0 mt-0.5" />
+                    <span><strong>First-Mover conversions</strong>: Establishing early pipelines and building brand presence in these highly receptive markets.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Success Metrics Summary Cards */}
+            <div className="lg:col-span-2 bg-primary text-white rounded-3xl p-8 flex flex-col justify-between shadow-xl relative overflow-hidden">
+              <div className="absolute right-0 top-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+              <div>
+                <h3 className="text-2xl font-black mb-3">Overall Performance Yield</h3>
+                <p className="text-gray-300 text-sm leading-relaxed mb-6">
+                  Across all global networks, Edunial Group's IHECF series is designed to satisfy the core needs of student recruitment:
+                </p>
+                <div className="grid grid-cols-3 gap-4 border-t border-white/10 pt-6">
+                  <div>
+                    <div className="text-3xl font-black text-secondary">High</div>
+                    <div className="text-[10px] uppercase tracking-widest text-gray-400 font-bold mt-1">Footfall Density</div>
+                  </div>
+                  <div>
+                    <div className="text-3xl font-black text-secondary">Quality</div>
+                    <div className="text-[10px] uppercase tracking-widest text-gray-400 font-bold mt-1">Pre-Qualified Leads</div>
+                  </div>
+                  <div>
+                    <div className="text-3xl font-black text-secondary">98%</div>
+                    <div className="text-[10px] uppercase tracking-widest text-gray-400 font-bold mt-1">Measurable ROI</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Build Admission Pipeline CTA Section */}
+      <section className="py-12 md:py-20 px-6 max-w-7xl mx-auto">
+        <div className="bg-gradient-to-r from-primary to-primary/90 rounded-[2.5rem] md:rounded-[3.5rem] p-8 md:p-16 text-white relative overflow-hidden shadow-2xl">
+          <div className="absolute inset-0 z-0 bg-white/5 opacity-5" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '24px 24px' }}></div>
+          <div className="relative z-10 max-w-4xl">
+            <span className="inline-flex items-center gap-2 py-1 px-3 bg-secondary/20 text-secondary border border-secondary/30 rounded-full text-xs font-black uppercase tracking-widest mb-6">
+              Admission Pipeline Accelerator
+            </span>
+            <h2 className="text-3xl md:text-5xl font-black tracking-tight mb-6">
+              Build Your Global Admission Pipeline with IHECF
+            </h2>
+            <p className="text-gray-300 text-base md:text-lg mb-8 leading-relaxed max-w-3xl">
+              If your university is ready to access high-intent students across Middle East, Africa, Southeast Asia, Central Asia, and SAARC, generate qualified, conversion-ready leads, and build long-term international partnerships with schools, agents, and students — then IHECF by Edunial Group is your strategic gateway to global growth.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link to="/contact" className="btn-secondary px-8 py-4 text-base font-bold shadow-xl text-center">
+                Partner With Us Today
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
     </div>
   );
 };

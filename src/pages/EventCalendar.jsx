@@ -47,7 +47,8 @@ const EventCalendar = () => {
       events: [
         { sno: 1, country: "Qatar", flag: "https://flagcdn.com/w40/qa.png", slug: "qatar", city: "Doha", date: "21/22/23/24 Sept.", venue: "MES Indian School, Doha", cost: "₹ 4,00,000", remark: "" },
         { sno: 2, country: "Kuwait", flag: "https://flagcdn.com/w40/kw.png", slug: "kuwait", city: "Kuwait City", date: "27/28/29/30 Sept.", venue: "United Indian School / Birla School", cost: "₹ 4,00,000", remark: "" },
-        { sno: 3, country: "Saudi Arabia", flag: "https://flagcdn.com/w40/sa.png", slug: "ksa", city: "Riyadh / Dammam / Jubail / Jeddah", date: "25/27/28/29 Oct.", venue: "IIS Riyadh, Dammam, Jubail, Jeddah", cost: "₹ 10,65,000", remark: "" }
+        { sno: 3, country: "Saudi Arabia", flag: "https://flagcdn.com/w40/sa.png", slug: "ksa", city: "Riyadh / Dammam / Jubail / Jeddah", date: "25/27/28/29 Oct.", venue: "IIS Riyadh, Dammam, Jubail, Jeddah", cost: "₹ 10,65,000", remark: "" },
+        { sno: 4, country: "Oman", flag: "https://flagcdn.com/w40/om.png", slug: "oman", city: "Muscat", date: "TBA", venue: "TBA", cost: "TBA", remark: "" }
       ]
     },
     {
@@ -60,7 +61,7 @@ const EventCalendar = () => {
         { sno: 5, country: "Uganda", flag: "https://flagcdn.com/w40/ug.png", slug: "uganda", city: "Kampala", date: "TBA", venue: "TBA", cost: "TBA", remark: "" },
         { sno: 6, country: "Tanzania", flag: "https://flagcdn.com/w40/tz.png", slug: "tanzania", city: "Zanzibar / Dar es Salaam", date: "TBA", venue: "TBA", cost: "TBA", remark: "" },
         { sno: 7, country: "Zambia", flag: "https://flagcdn.com/w40/zm.png", slug: "zambia", city: "Lusaka", date: "TBA", venue: "TBA", cost: "TBA", remark: "" },
-        { sno: 8, country: "Zimbabwe", flag: "https://flagcdn.com/w40/zw.png", slug: "zimbabwe", city: "Harare", date: "TBA", venue: "TBA", cost: "TBA", remark: "" },
+        { sno: 8, country: "Zimbabwe", flag: "https://flagcdn.com/w40/zw.png", slug: "zimbabwe", city: "Harare", date: "18/19 Feb.", venue: "Rainbow Hotel, Harare", cost: "TBA", remark: "" },
         { sno: 9, country: "Namibia", flag: "https://flagcdn.com/w40/na.png", slug: "namibia", city: "Windhoek", date: "TBA", venue: "TBA", cost: "TBA", remark: "" },
         { sno: 10, country: "Mauritius", flag: "https://flagcdn.com/w40/mu.png", slug: "mauritius", city: "Port Louis", date: "TBA", venue: "TBA", cost: "TBA", remark: "" },
         { sno: 11, country: "Fiji", flag: "https://flagcdn.com/w40/fj.png", slug: "fiji", city: "Suva", date: "TBA", venue: "TBA", cost: "TBA", remark: "" }
@@ -594,39 +595,6 @@ const EventCalendar = () => {
           )}
         </div>
       </section>
-
-      {/* Quick Inquiries Call-To-Action (Bottom Banner) */}
-      <section className="bg-primary text-white py-16 md:py-24 px-6 border-t border-white/10 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-secondary/10 rounded-full blur-3xl" />
-        <div className="max-w-4xl mx-auto text-center relative z-10 space-y-6">
-          <span className="inline-block py-1 px-4 bg-secondary/20 rounded-full text-xs font-black uppercase tracking-widest text-secondary border border-secondary/20">
-            Participation Inquiries
-          </span>
-          <h2 className="text-3xl md:text-5xl font-black tracking-tight leading-tight">
-            Reserve Your Institution's Presence
-          </h2>
-          <p className="text-gray-400 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
-            Interested in exhibiting at our education fairs across the Middle East, Africa, South East Asia, Central Asia, or SAARC? Secure early slots to select premium booth spaces and maximize conversions.
-          </p>
-          <div className="pt-4 flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Link 
-              to="/contact" 
-              className="btn-secondary px-8 py-4 text-base font-bold flex items-center gap-2 shadow-xl hover:shadow-2xl hover:scale-105 transition-all"
-            >
-              Inquire / Register Now
-              <ArrowRight size={18} />
-            </Link>
-            <a 
-              href="mailto:info@ihecf.info" 
-              className="text-gray-300 hover:text-white font-bold text-sm underline flex items-center gap-2 transition-colors"
-            >
-              <Mail size={16} className="text-secondary" /> Email us at info@ihecf.info
-            </a>
-          </div>
-        </div>
-      </section>
-
-
     </div>
   );
 };

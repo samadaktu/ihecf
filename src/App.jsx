@@ -22,6 +22,10 @@ import KuwaitEvent from './pages/KuwaitEvent';
 import QatarEvent from './pages/QatarEvent';
 import KSAEvent from './pages/KSAEvent';
 import UgandaEvent from './pages/UgandaEvent';
+import OmanEvent from './pages/OmanEvent';
+import MauritiusEvent from './pages/MauritiusEvent';
+import ZimbabweEvent from './pages/ZimbabweEvent';
+import NamibiaEvent from './pages/NamibiaEvent';
 import QatarStudent from './pages/QatarStudent';
 import KSAStudent from './pages/KSAStudent';
 import StudentCountryDetail from './pages/StudentCountryDetail';
@@ -57,6 +61,10 @@ function App() {
             <Route path="/country/qatar" element={<QatarEvent />} />
             <Route path="/country/ksa" element={<KSAEvent />} />
             <Route path="/country/uganda" element={<UgandaEvent />} />
+            <Route path="/country/oman" element={<OmanEvent />} />
+            <Route path="/country/mauritius" element={<MauritiusEvent />} />
+            <Route path="/country/zimbabwe" element={<ZimbabweEvent />} />
+            <Route path="/country/namibia" element={<NamibiaEvent />} />
             <Route path="/student/qatar" element={<QatarStudent />} />
             <Route path="/student/ksa" element={<KSAStudent />} />
             <Route path="/student/:slug" element={<StudentCountryDetail />} />
