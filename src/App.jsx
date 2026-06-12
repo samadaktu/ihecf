@@ -16,6 +16,8 @@ import SenegalEvent from './pages/SenegalEvent';
 import GambiaEvent from './pages/GambiaEvent';
 import ZambiaEvent from './pages/ZambiaEvent';
 import TanzaniaEvent from './pages/TanzaniaEvent';
+import UzbekistanEvent from './pages/UzbekistanEvent';
+import KazakhstanEvent from './pages/KazakhstanEvent';
 import ZanzibarEvent from './pages/ZanzibarEvent';
 import KenyaEvent from './pages/KenyaEvent';
 import KuwaitEvent from './pages/KuwaitEvent';
@@ -55,6 +57,8 @@ function App() {
             <Route path="/country/gambia" element={<GambiaEvent />} />
             <Route path="/country/zambia" element={<ZambiaEvent />} />
             <Route path="/country/tanzania" element={<TanzaniaEvent />} />
+            <Route path="/country/kazakhstan" element={<KazakhstanEvent />} />
+            <Route path="/country/uzbekistan" element={<UzbekistanEvent />} />
             <Route path="/country/zanzibar" element={<ZanzibarEvent />} />
             <Route path="/country/kenya" element={<KenyaEvent />} />
             <Route path="/country/kuwait" element={<KuwaitEvent />} />
