@@ -5,11 +5,11 @@ import { countries, services } from '../utils/data';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const universityCountries = [
-  "KSA", "Kenya", "Uganda", "Tanzania", "Zanzibar", "Zambia", "Gambia", "Senegal", "Kuwait", "Qatar", "Oman", "Mauritius", "Zimbabwe", "Namibia", "Kazakhstan", "Uzbekistan"
+  "KSA", "Kenya", "Uganda", "Tanzania", "Zanzibar", "Zambia", "Gambia", "Senegal", "Kuwait", "Qatar", "Oman", "Mauritius", "Zimbabwe", "Namibia", "Kazakhstan", "Uzbekistan", "Cambodia", "Nepal", "Fiji", "Ethiopia", "Bangladesh", "Sri Lanka", "Thailand"
 ];
 
 const studentCountries = [
-  "Qatar", "KSA"
+  "Qatar", "KSA", "Uzbekistan", "Sri Lanka", "Kazakhstan", "Bangladesh", "Kuwait", "Kenya", "Ethiopia", "Tanzania", "Uganda", "Zambia", "Mauritius", "Gambia"
 ];
 
 
@@ -42,7 +42,7 @@ const Navbar = () => {
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
     { name: 'For Institutions', path: '/for-institutions' },
-    { name: 'Countries', path: '#', mega: 'countries' },
+    { name: 'For Students', path: '/for-students' },
     { name: 'Upcoming Events', path: '/upcoming-events' },
     { name: 'Gallery', path: '/gallery' },
     { name: 'Contact', path: '/contact' },

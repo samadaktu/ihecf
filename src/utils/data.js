@@ -1,5 +1,5 @@
 export const countries = [
-  "KSA", "Oman", "Ethiopia", "Kenya", "Uganda", "Tanzania", "Zambia", "Zimbabwe", "Mauritius", "Cambodia", "Togo", "Ghana", "Rwanda", "Botswana", "Namibia", "Kuwait", "Ivory Coast", "Thailand", "Laos", "Vietnam", "Sharjah", "Al Ain", "Senegal", "Gambia", "Zanzibar", "Qatar", "Kazakhstan", "Uzbekistan"
+  "KSA", "Oman", "Ethiopia", "Kenya", "Uganda", "Tanzania", "Zambia", "Zimbabwe", "Mauritius", "Cambodia", "Togo", "Ghana", "Rwanda", "Botswana", "Namibia", "Kuwait", "Ivory Coast", "Thailand", "Laos", "Vietnam", "Sharjah", "Al Ain", "Senegal", "Gambia", "Zanzibar", "Qatar", "Kazakhstan", "Uzbekistan", "Nepal", "Fiji", "Bangladesh", "Sri Lanka"
 ];
 
 export const services = [
