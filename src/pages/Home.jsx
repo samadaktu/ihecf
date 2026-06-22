@@ -7,8 +7,8 @@ import PartnerCarousel from '../components/PartnerCarousel';
 
 const Home = () => {
   const stats = [
-    { label: 'Qualified Students', value: '30k+', icon: <Users /> },
-    { label: 'Exhibiting Schools', value: '200+', icon: <GraduationCap /> },
+    { label: 'Qualified Students', value: '1.5L+', icon: <Users /> },
+    { label: 'Exhibiting Schools', value: '500+', icon: <GraduationCap /> },
     { label: 'Global Markets', value: '20+', icon: <Globe /> },
     { label: 'Success Rate', value: '98%', icon: <ShieldCheck /> },
   ];
