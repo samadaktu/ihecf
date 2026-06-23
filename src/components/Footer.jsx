@@ -1,6 +1,29 @@
 import { Link } from 'react-router-dom';
-import { countries } from '../utils/data';
 import { Mail, Phone, MapPin } from 'lucide-react';
+
+const heroCountries = [
+  "Bangladesh",
+  "Cambodia",
+  "Ethiopia",
+  "Fiji",
+  "Gambia",
+  "Kazakhstan",
+  "Kenya",
+  "KSA",
+  "Kuwait",
+  "Mauritius",
+  "Namibia",
+  "Nepal",
+  "Qatar",
+  "Senegal",
+  "Sri Lanka",
+  "Tanzania",
+  "Thailand",
+  "Uganda",
+  "Uzbekistan",
+  "Zambia",
+  "Zimbabwe"
+];
 
 const Footer = () => {
   return (
@@ -53,7 +76,7 @@ const Footer = () => {
         <div>
           <h3 className="text-lg font-bold mb-6 border-b border-white/10 pb-2">Countries</h3>
           <div className="grid grid-cols-2 gap-y-4">
-            {countries.slice(0, 10).map((country) => (
+            {heroCountries.map((country) => (
               <Link key={country} to={`/country/${country.toLowerCase().replace(/ /g, '-')}`} className="text-gray-400 hover:text-secondary transition-colors text-sm">
                 {country}
               </Link>
