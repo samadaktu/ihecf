@@ -10,10 +10,10 @@ const About = () => {
   ];
 
   const timeline = [
-    { year: "2012", title: "Inception", desc: "Started as a small consultancy focused on Indian student mobility." },
+    { year: "2014", title: "Inception", desc: "Started as a small consultancy focused on Indian student mobility." },
     { year: "2015", title: "Middle East Expansion", desc: "Launched our first major fairs across key Middle Eastern hubs." },
     { year: "2018", title: "African Footprint", desc: "Established strong ties with schools across the African continent." },
-    { year: "2023", title: "Global Network", desc: "Connecting 30,000+ students across 20+ countries annually." }
+    { year: "2026", title: "Global Network", desc: "Connecting 1,00,000+ students across 20+ countries annually." }
   ];
 
   const globalPresence = [

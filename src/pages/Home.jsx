@@ -362,9 +362,9 @@ const Home = () => {
             {/* First row: 3 columns */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               {[
-                { name: 'Middle East', queryRegion: 'Middle East', desc: 'The hub of premium student mobility including KSA, Oman, and UAE.', img: '/ksa_education_event.png', count: '8 Countries' },
-                { name: 'Africa', queryRegion: 'Africa', desc: 'The fastest growing youth population across Kenya, Ethiopia, and Tanzania.', img: '/kenya_education_event.png', count: '10 Countries' },
-                { name: 'Southeast Asia', queryRegion: 'South East Asia', desc: 'Emerging academic powerhouses including Vietnam and Thailand.', img: '/vietnam_education_event.png', count: '5 Countries' }
+                { name: 'Middle East', queryRegion: 'Middle East', desc: 'The hub of premium student mobility including KSA, Oman, and UAE.', img: 'https://edunialgroup.com/wp-content/uploads/2026/06/middle-east-scaled.webp', count: '8 Countries' },
+                { name: 'Africa', queryRegion: 'Africa', desc: 'The fastest growing youth population across Kenya, Ethiopia, and Tanzania.', img: 'https://edunialgroup.com/wp-content/uploads/2026/06/africa.webp', count: '10 Countries' },
+                { name: 'Southeast Asia', queryRegion: 'South East Asia', desc: 'Emerging academic powerhouses including Vietnam and Thailand.', img: 'https://edunialgroup.com/wp-content/uploads/2026/06/south-asia.webp', count: '5 Countries' }
               ].map((region, i) => (
                 <motion.div
                   key={i}
@@ -391,8 +391,8 @@ const Home = () => {
             {/* Second row: 2 columns, centered on desktop */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
               {[
-                { name: 'SAARC', queryRegion: 'SAARC', desc: 'Key recruitment hubs in South Asia including Nepal, Bangladesh, and Sri Lanka.', img: '/saarc_education_event.png', count: '3 Countries' },
-                { name: 'Central Asia', queryRegion: 'Central Asia', desc: 'Rapidly emerging markets in Central Asia, featuring Uzbekistan and Kazakhstan.', img: '/central_asia_education_event.png', count: '2 Countries' }
+                { name: 'SAARC', queryRegion: 'SAARC', desc: 'Key recruitment hubs in South Asia including Nepal, Bangladesh, and Sri Lanka.', img: 'https://edunialgroup.com/wp-content/uploads/2026/06/saarc.webp', count: '3 Countries' },
+                { name: 'Central Asia', queryRegion: 'Central Asia', desc: 'Rapidly emerging markets in Central Asia, featuring Uzbekistan and Kazakhstan.', img: 'https://edunialgroup.com/wp-content/uploads/2026/06/central-asia-scaled.webp', count: '2 Countries' }
               ].map((region, i) => (
                 <motion.div
                   key={i}

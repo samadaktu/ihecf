@@ -27,7 +27,7 @@ const ForInstitutions = () => {
   };
 
   const stats = [
-    { label: 'Exhibiting Schools', value: '200+', icon: <GraduationCap size={20} /> },
+    { label: 'Exhibiting Schools', value: '500+', icon: <GraduationCap size={20} /> },
     { label: 'Global Markets', value: '20+', icon: <Globe size={20} /> },
     { label: 'Recruitment Success', value: '98%', icon: <ShieldCheck size={20} /> },
   ];
