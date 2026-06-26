@@ -157,7 +157,7 @@ const Navbar = () => {
               </AnimatePresence>
             </div>
           ))}
-          <Link to="/events" className="btn-secondary py-2 text-sm">
+          <Link to="/university-registration" className="btn-secondary py-2 text-sm">
             Register for Fair
           </Link>
         </div>
@@ -293,7 +293,7 @@ const Navbar = () => {
               ))}
               <div className="pt-6">
                 <Link 
-                  to="/events" 
+                  to="/university-registration" 
                   className="btn-secondary w-full py-4 text-lg justify-center shadow-xl"
                   onClick={() => setIsOpen(false)}
                 >

@@ -128,7 +128,7 @@ const KSAEvent = () => {
               </p>
               
               <div className="flex flex-wrap gap-4">
-                <Link to="/contact" className="btn-secondary px-8 py-4 text-sm md:text-base flex items-center gap-2">
+                <Link to="/university-registration" className="btn-secondary px-8 py-4 text-sm md:text-base flex items-center gap-2">
                   Register as Exhibitor Now <ArrowRight size={18} />
                 </Link>
               </div>
@@ -369,7 +369,7 @@ const KSAEvent = () => {
                     <p className="text-xs text-gray-600"><strong className="text-primary">Phone / WhatsApp:</strong> +91-9654448283 / 9319473355</p>
                   </div>
 
-                  <Link to="/contact" className="btn-secondary w-full py-4 text-base flex justify-center items-center gap-2 font-bold">
+                  <Link to="/university-registration" className="btn-secondary w-full py-4 text-base flex justify-center items-center gap-2 font-bold">
                     Register Your Institution <ArrowRight size={18} />
                   </Link>
                   <p className="text-[10px] text-gray-400 font-bold uppercase tracking-widest mt-4">Connect. Recruit. Expand.</p>

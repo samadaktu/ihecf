@@ -107,9 +107,9 @@ const KuwaitStudent = () => {
               </p>
               
               <div className="flex flex-wrap gap-4">
-                <a href="#rsvp-form" className="btn-secondary px-8 py-4 text-sm md:text-base flex items-center gap-2">
-                  Pre-Register / RSVP for Free <ArrowRight size={18} />
-                </a>
+                <Link to={`/student-registration?subject=${encodeURIComponent("IHECF Kuwait Student Pre-Registration")}`} className="btn-secondary px-8 py-4 text-sm md:text-base flex items-center gap-2">
+                  Pre-Register / RSVP for Free
+                </Link>
               </div>
             </div>
             
@@ -287,15 +287,14 @@ const KuwaitStudent = () => {
               <div className="relative z-10" id="rsvp-form">
                 <span className="inline-block py-1 px-3 bg-secondary/10 text-secondary rounded-full text-[10px] font-black uppercase tracking-widest mb-6">Entry is Free & Fast</span>
                 <h3 className="text-2xl md:text-3xl font-black text-primary mb-4 leading-tight">Pre-Register / RSVP Now</h3>
-                <p className="text-gray-500 mb-8 text-sm">Secure your entry pass to Kuwait's most anticipated higher education fair and explore pathways in India, Dubai, and Malaysia.</p>
-
-                <button 
-                  onClick={(e) => { e.preventDefault(); }}
-                  className="btn-secondary w-full py-4 text-base flex justify-center items-center gap-2 font-bold shadow-lg shadow-secondary/10 rounded-xl"
+                <p className="text-gray-550 mb-8 text-sm leading-relaxed">Secure your priority entry pass, explore scholarship pathways, and book your 1:1 university counseling slots at the fair.</p>
+                <Link 
+                  to={`/student-registration?subject=${encodeURIComponent("IHECF Kuwait Student Pre-Registration")}`}
+                  className="btn-secondary w-full py-4 text-xs flex justify-center items-center gap-2 font-bold shadow-lg shadow-secondary/10 rounded-xl hover:scale-[1.02] transition-transform"
                 >
-                  Click Here to Register <ArrowRight size={18} />
-                </button>
-                <p className="text-[10px] text-gray-400 font-bold uppercase tracking-widest mt-4">Edunial Group — Connecting Aspiring Minds</p>
+                  Start Registration Form <ArrowRight size={14} />
+                </Link>
+                <p className="text-[10px] text-gray-400 font-bold uppercase tracking-widest mt-6">Edunial Group — Connecting Aspiring Minds</p>
               </div>
             </div>
           </div>

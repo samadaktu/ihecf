@@ -105,7 +105,7 @@ const ThailandEvent = () => {
               </p>
               
               <div className="flex flex-wrap gap-4">
-                <Link to="/contact" className="btn-secondary px-8 py-4 text-sm md:text-base flex items-center gap-2">
+                <Link to="/university-registration" className="btn-secondary px-8 py-4 text-sm md:text-base flex items-center gap-2">
                   Register as Exhibitor Now <ArrowRight size={18} />
                 </Link>
               </div>
@@ -295,7 +295,7 @@ const ThailandEvent = () => {
                   <p className="text-xs text-gray-600"><strong className="text-primary">Web:</strong> www.ihecf.info | www.edunialgroup.com</p>
                 </div>
 
-                <Link to="/contact?subject=IHECF Thailand University Registration" className="btn-secondary w-full py-4 text-base flex justify-center items-center gap-2 font-bold shadow-lg shadow-secondary/10">
+                <Link to="/university-registration?subject=IHECF Thailand University Registration" className="btn-secondary w-full py-4 text-base flex justify-center items-center gap-2 font-bold shadow-lg shadow-secondary/10">
                   Register Your Institution <ArrowRight size={18} />
                 </Link>
                 <p className="text-[10px] text-gray-400 font-bold uppercase tracking-widest mt-4">Connect. Recruit. Expand.</p>

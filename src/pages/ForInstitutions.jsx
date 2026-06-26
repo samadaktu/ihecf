@@ -97,10 +97,10 @@ const ForInstitutions = () => {
                 className="pt-4 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center"
               >
                 <Link 
-                  to="/contact" 
+                  to="/university-registration" 
                   className="btn-secondary px-8 py-4 text-base font-bold shadow-xl hover:shadow-2xl hover:scale-105 transition-all w-full sm:w-auto text-center"
                 >
-                  Become a Partner
+                  Register Your Institution
                 </Link>
                 <a 
                   href="#services-grid" 
@@ -626,8 +626,8 @@ const ForInstitutions = () => {
               If your university is ready to access high-intent students across Middle East, Africa, Southeast Asia, Central Asia, and SAARC, generate qualified, conversion-ready leads, and build long-term international partnerships with schools, agents, and students — then IHECF by Edunial Group is your strategic gateway to global growth.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="/contact" className="btn-secondary px-8 py-4 text-base font-bold shadow-xl text-center">
-                Partner With Us Today
+              <Link to="/university-registration" className="btn-secondary px-8 py-4 text-base font-bold shadow-xl text-center">
+                Register Your Institution Now
               </Link>
             </div>
           </div>

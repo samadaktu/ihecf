@@ -118,7 +118,7 @@ const OmanEvent = () => {
               </p>
               
               <div className="flex flex-wrap gap-4">
-                <Link to="/contact" className="btn-secondary px-8 py-4 text-sm md:text-base flex items-center gap-2">
+                <Link to="/university-registration" className="btn-secondary px-8 py-4 text-sm md:text-base flex items-center gap-2">
                   Register as Exhibitor Now <ArrowRight size={18} />
                 </Link>
               </div>
@@ -278,7 +278,7 @@ const OmanEvent = () => {
                 Strengthen India-Oman educational ties while achieving outstanding returns on your internationalization efforts. Edunial Group ensures robust pre-event outreach, school counselor connect programs, and localized digital campaigns for maximum on-the-spot recruitment success.
              </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="/contact" className="btn-primary px-8 py-4 text-base text-center">
+              <Link to="/university-registration" className="btn-primary px-8 py-4 text-base text-center">
                 Book a Stall Now
               </Link>
               <a href="mailto:info@ihecf.info" className="flex items-center justify-center px-8 py-4 border-2 border-gray-200 text-primary font-bold text-sm uppercase tracking-widest rounded-full hover:border-secondary transition-all">
@@ -302,7 +302,7 @@ const OmanEvent = () => {
                   <p className="text-xs text-gray-200"><strong className="text-white">Phone / WhatsApp:</strong> +91-96544 48283</p>
                 </div>
 
-                <Link to="/contact" className="btn-secondary w-full py-4 text-base flex justify-center items-center gap-2 font-bold">
+                <Link to="/university-registration" className="btn-secondary w-full py-4 text-base flex justify-center items-center gap-2 font-bold">
                   Register Your Institution <ArrowRight size={18} />
                 </Link>
               </div>

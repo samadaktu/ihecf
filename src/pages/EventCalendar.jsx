@@ -450,11 +450,11 @@ const EventCalendar = () => {
                                   <ChevronRight size={18} />
                                 </Link>
                                 <Link 
-                                  to={`/contact?subject=Event Registration&message=${encodeURIComponent(`Hi, I would like to inquire about exhibiting at the IHECF event in ${event.country} (${event.city}). Please share details regarding booth space and packages.`)}`}
+                                  to={`/university-registration?subject=${encodeURIComponent(`IHECF ${event.country} University Registration`)}`}
                                   className={`py-2 px-4 rounded-xl text-xs font-black transition-all duration-300 text-center flex items-center justify-center ${
                                     isTBA 
-                                    ? 'border border-primary text-primary hover:bg-primary hover:text-white hover:text-white shadow-sm' 
-                                    : 'bg-secondary text-white hover:bg-secondary-light hover:text-white shadow-md shadow-secondary/15 hover:scale-[1.02]'
+                                    ? 'border border-primary text-primary hover:bg-primary hover:text-white shadow-sm' 
+                                    : 'bg-secondary text-white hover:bg-secondary-light shadow-md shadow-secondary/15 hover:scale-[1.02]'
                                   }`}
                                 >
                                   {isTBA ? 'Request Alert' : 'Book Booth'}
@@ -563,11 +563,11 @@ const EventCalendar = () => {
                             </Link>
                             
                             <Link 
-                              to={`/contact?subject=Event Registration&message=${encodeURIComponent(`Hi, I would like to inquire about exhibiting at the IHECF event in ${event.country} (${event.city}). Please share details regarding booth space and packages.`)}`}
+                              to={`/university-registration?subject=${encodeURIComponent(`IHECF ${event.country} University Registration`)}`}
                               className={`flex-[1.5] py-2.5 px-3 text-xs rounded-xl font-black text-center transition-all flex items-center justify-center ${
                                 isTBA 
                                 ? 'bg-primary text-white hover:bg-primary-light shadow-md shadow-primary/10' 
-                                : 'bg-secondary text-white hover:bg-secondary-light hover:text-white shadow-md shadow-secondary/15'
+                                : 'bg-secondary text-white hover:bg-secondary-light shadow-md shadow-secondary/15'
                               }`}
                             >
                               {isTBA ? 'Request Alert' : 'Book Booth'}

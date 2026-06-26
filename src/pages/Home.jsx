@@ -490,7 +490,7 @@ const Home = () => {
               <h2 className="text-3xl md:text-6xl text-white font-black tracking-tighter mb-6 md:mb-8 leading-[1.1]">Ready to <span className="text-secondary">Lead in</span> Global Student Recruitment?</h2>
               <p className="text-gray-400 text-base md:text-xl mb-8 md:mb-12 leading-relaxed">Become part of India’s most influential platform for higher education internationalization. Partner with Edunial Groups IHECF to expand your reach, attract high-caliber international students, and build sustainable world-class enrollment pipelines.</p>
               <div className="flex flex-col sm:flex-row gap-4 md:gap-6">
-                <Link to="/contact" className="btn-secondary px-10 py-4 text-base md:text-lg justify-center">Start Today</Link>
+                <Link to="/university-registration" className="btn-secondary px-10 py-4 text-base md:text-lg justify-center">Start Today</Link>
                 <div className="flex items-center justify-center gap-4 text-white group cursor-pointer">
                   <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-secondary transition-all">
                     <Play size={20} fill="currentColor" />

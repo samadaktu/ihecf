@@ -120,9 +120,9 @@ const StudentCountryDetail = () => {
               </p>
               
               <div className="flex flex-wrap gap-4">
-                <a href="#rsvp-form" className="btn-secondary px-8 py-4 text-sm md:text-base flex items-center gap-2">
-                  Pre-Register / RSVP for Free <ArrowRight size={18} />
-                </a>
+                <Link to={`/student-registration?subject=${encodeURIComponent(`IHECF ${countryName} Student Pre-Registration`)}`} className="btn-secondary px-8 py-4 text-sm md:text-base flex items-center gap-2">
+                  Pre-Register / RSVP for Free
+                </Link>
               </div>
             </div>
             
@@ -220,117 +220,19 @@ const StudentCountryDetail = () => {
       {/* RSVP Form Section */}
       <section id="rsvp-form" className="py-16 md:py-24 bg-gray-50 px-6 border-t border-gray-100">
         <div className="max-w-4xl mx-auto">
-          <div className="bg-white rounded-[3rem] p-8 md:p-12 shadow-2xl border border-gray-100 relative overflow-hidden">
+          <div className="bg-white rounded-[3rem] p-8 md:p-12 shadow-2xl border border-gray-100 text-center max-w-2xl mx-auto relative overflow-hidden">
             <div className="absolute -top-10 -right-10 w-32 h-32 bg-accent-light rounded-full z-0"></div>
-            
-            <div className="relative z-10 max-w-2xl mx-auto text-center mb-8">
-              <span className="inline-block py-1 px-3 bg-secondary/10 text-secondary rounded-full text-[10px] font-black uppercase tracking-widest mb-4">Free Admission Counseling</span>
+            <div className="relative z-10 space-y-6">
+              <span className="inline-block py-1 px-3 bg-secondary/10 text-secondary rounded-full text-[10px] font-black uppercase tracking-widest">Free Admission Counseling</span>
               <h2 className="text-3xl md:text-4xl font-black text-primary mb-3">Pre-Register / RSVP Online</h2>
-              <p className="text-gray-500 text-sm">Register below to receive your student entry pass, exclusive course guides, and scholarship eligibility details for the {countryName} fair.</p>
+              <p className="text-gray-550 text-sm leading-relaxed max-w-md mx-auto">Secure your priority entry pass, explore scholarship pathways, and book your 1:1 university counseling slots at the fair.</p>
+              <Link 
+                to={`/student-registration?subject=${encodeURIComponent(`IHECF ${countryName} Student Pre-Registration`)}`}
+                className="btn-secondary w-full max-w-md py-4 text-xs font-black inline-flex justify-center items-center gap-2.5 shadow-lg shadow-secondary/10 rounded-xl hover:scale-[1.02] transition-transform mx-auto"
+              >
+                Start Student Pre-Registration <ArrowRight size={16} />
+              </Link>
             </div>
-
-            {showSuccess ? (
-              <div className="bg-green-50 border border-green-200 rounded-2xl p-8 text-center relative z-10 max-w-xl mx-auto">
-                <CheckCircle className="text-green-500 mx-auto mb-4" size={48} />
-                <h3 className="text-green-800 font-bold text-xl mb-2">Registration Successful!</h3>
-                <p className="text-green-700 text-sm mb-4">Your RSVP pass for IHECF {countryName} has been confirmed. We have sent a confirmation email to you.</p>
-                <div className="text-left text-xs bg-white p-4 rounded-lg border border-green-100 text-gray-600">
-                  <strong>Location:</strong> {countryName} Edition<br/>
-                  <strong>Organizer:</strong> Edunial Groups<br/>
-                  <strong>Access:</strong> Free entry pass for students and parents
-                </div>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-6 relative z-10 max-w-xl mx-auto">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-xs font-black uppercase tracking-wider text-gray-500 mb-2">Full Name</label>
-                    <input 
-                      type="text" 
-                      name="name" 
-                      required 
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      placeholder="Enter student / parent name" 
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-secondary focus:border-secondary text-sm"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-xs font-black uppercase tracking-wider text-gray-500 mb-2">Email Address</label>
-                    <input 
-                      type="email" 
-                      name="email" 
-                      required 
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      placeholder="e.g. name@example.com" 
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-secondary focus:border-secondary text-sm"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-xs font-black uppercase tracking-wider text-gray-500 mb-2">Phone / WhatsApp Number</label>
-                    <input 
-                      type="tel" 
-                      name="phone" 
-                      required 
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      placeholder="Include country code" 
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-secondary focus:border-secondary text-sm"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-xs font-black uppercase tracking-wider text-gray-500 mb-2">Current Class / Education</label>
-                    <select 
-                      name="grade" 
-                      required
-                      value={formData.grade}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-secondary focus:border-secondary text-sm bg-white"
-                    >
-                      <option value="">Select current status</option>
-                      <option value="High School">High School Student</option>
-                      <option value="Undergraduate">Undergraduate Student</option>
-                      <option value="Parent">Parent of Student</option>
-                      <option value="Counselor">Education Counselor</option>
-                      <option value="Other">Other Expatriate / Professional</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-xs font-black uppercase tracking-wider text-gray-500 mb-2">Preferred Field of Study</label>
-                  <select 
-                    name="course" 
-                    required
-                    value={formData.course}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-secondary focus:border-secondary text-sm bg-white"
-                  >
-                    <option value="">Select course of interest</option>
-                    <option value="Medicine / MBBS">Medicine / MBBS / Allied Health</option>
-                    <option value="Engineering / BTech">Engineering / Technology</option>
-                    <option value="Business / MBA / BBA">Business Administration / Commerce</option>
-                    <option value="Computer Science / IT">Computer Science / IT / AI</option>
-                    <option value="Pharmacy / Science">Pharmacy / Applied Sciences</option>
-                    <option value="Arts / Design / Hospitality">Arts, Design & Hospitality</option>
-                    <option value="Other / Undecided">Other / Undecided</option>
-                  </select>
-                </div>
-
-                <button 
-                  type="submit" 
-                  disabled={isSubmitting}
-                  className="btn-secondary w-full py-4 text-base flex justify-center items-center gap-2.5 shadow-xl hover:shadow-2xl transition-all"
-                >
-                  {isSubmitting ? 'Registering...' : 'Submit RSVP Pre-Registration'} 
-                  <Send size={18} />
-                </button>
-              </form>
-            )}
           </div>
         </div>
       </section>

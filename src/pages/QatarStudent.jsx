@@ -97,9 +97,9 @@ const QatarStudent = () => {
               </p>
               
               <div className="flex flex-wrap gap-4">
-                <a href="#rsvp-form" className="btn-secondary px-8 py-4 text-sm md:text-base flex items-center gap-2">
-                  Pre-Register / RSVP for Free <ArrowRight size={18} />
-                </a>
+                <Link to={`/student-registration?subject=${encodeURIComponent("IHECF Qatar Student Pre-Registration")}`} className="btn-secondary px-8 py-4 text-sm md:text-base flex items-center gap-2">
+                  Pre-Register / RSVP for Free
+                </Link>
               </div>
             </div>
             
@@ -225,10 +225,18 @@ const QatarStudent = () => {
             <h2 className="text-3xl md:text-4xl font-black tracking-tighter mb-8 relative z-10">Who Should <span className="text-secondary">Attend?</span></h2>
             <div className="space-y-4 relative z-10">
               {whoShouldAttend.map((participant, index) => (
-                <div key={index} className="flex items-center gap-4 bg-white/5 p-4 rounded-2xl border border-white/10 backdrop-blur-sm">
-                  <Users size={20} className="text-secondary flex-shrink-0" />
-                  <p className="font-bold text-sm">{participant}</p>
-                </div>
+                <div className="relative z-10" id="rsvp-form">
+                <span className="inline-block py-1 px-3 bg-secondary/10 text-secondary rounded-full text-[10px] font-black uppercase tracking-widest mb-6">Entry is Free & Fast</span>
+                <h3 className="text-2xl md:text-3xl font-black text-primary mb-4 leading-tight">Pre-Register / RSVP Now</h3>
+                <p className="text-gray-550 mb-8 text-sm leading-relaxed">Secure your priority entry pass, explore scholarship pathways, and book your 1:1 university counseling slots at the fair.</p>
+                <Link 
+                  to={`/student-registration?subject=${encodeURIComponent("IHECF Qatar Student Pre-Registration")}`}
+                  className="btn-secondary w-full py-4 text-xs flex justify-center items-center gap-2 font-bold shadow-lg shadow-secondary/10 rounded-xl hover:scale-[1.02] transition-transform"
+                >
+                  Start Registration Form <ArrowRight size={14} />
+                </Link>
+                <p className="text-[10px] text-gray-400 font-bold uppercase tracking-widest mt-6">Edunial Group — Connecting Aspiring Minds</p>
+              </div>
               ))}
             </div>
           </div>

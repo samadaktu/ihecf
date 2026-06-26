@@ -54,6 +54,8 @@ import EthiopiaEvent from './pages/EthiopiaEvent';
 import BangladeshEvent from './pages/BangladeshEvent';
 import SriLankaEvent from './pages/SriLankaEvent';
 import ThailandEvent from './pages/ThailandEvent';
+import UniversityRegistration from './pages/UniversityRegistration';
+import StudentRegistration from './pages/StudentRegistration';
 
 function App() {
   return (
@@ -64,6 +66,8 @@ function App() {
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/university-registration" element={<UniversityRegistration />} />
+            <Route path="/student-registration" element={<StudentRegistration />} />
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
             <Route path="/for-institutions" element={<ForInstitutions />} />

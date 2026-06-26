@@ -166,9 +166,9 @@ const UgandaStudent = () => {
               </p>
               
               <div className="flex flex-wrap gap-4">
-                <a href="#rsvp-form" className="btn-secondary px-8 py-4 text-sm md:text-base flex items-center gap-2">
-                  Pre-Register / RSVP for Free <ArrowRight size={18} />
-                </a>
+                <Link to={`/student-registration?subject=${encodeURIComponent("IHECF Uganda Student Pre-Registration")}`} className="btn-secondary px-8 py-4 text-sm md:text-base flex items-center gap-2">
+                  Pre-Register / RSVP for Free
+                </Link>
               </div>
             </div>
             
@@ -365,93 +365,14 @@ const UgandaStudent = () => {
               <div className="relative z-10" id="rsvp-form">
                 <span className="inline-block py-1 px-3 bg-secondary/10 text-secondary rounded-full text-[10px] font-black uppercase tracking-widest mb-6">Entry is Free & Fast</span>
                 <h3 className="text-2xl md:text-3xl font-black text-primary mb-4 leading-tight">Pre-Register / RSVP Now</h3>
-                <p className="text-gray-500 mb-8 text-sm">Secure your entry pass to Uganda's most anticipated higher education event and explore pathways in India, Dubai, and Malaysia.</p>
-
-                {showSuccess ? (
-                  <div className="bg-green-50 border border-green-200 rounded-xl p-6 text-center">
-                    <CheckCircle className="text-green-500 mx-auto mb-3" size={32} />
-                    <h4 className="text-green-800 font-bold text-sm mb-1">Registration Successful!</h4>
-                    <p className="text-green-700 text-xs">We have reserved your entry pass. A confirmation email has been sent.</p>
-                  </div>
-                ) : (
-                  <form onSubmit={handleSubmit} className="space-y-4 text-left">
-                    <div>
-                      <input 
-                        type="text" 
-                        name="name" 
-                        required 
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        placeholder="Full Name" 
-                        className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:ring-secondary focus:border-secondary text-xs"
-                      />
-                    </div>
-                    <div>
-                      <input 
-                        type="email" 
-                        name="email" 
-                        required 
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        placeholder="Email Address" 
-                        className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:ring-secondary focus:border-secondary text-xs"
-                      />
-                    </div>
-                    <div>
-                      <input 
-                        type="tel" 
-                        name="phone" 
-                        required 
-                        value={formData.phone}
-                        onChange={handleInputChange}
-                        placeholder="Phone (WhatsApp)" 
-                        className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:ring-secondary focus:border-secondary text-xs"
-                      />
-                    </div>
-                    <div>
-                      <select 
-                        name="grade" 
-                        required
-                        value={formData.grade}
-                        onChange={handleInputChange}
-                        className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:ring-secondary focus:border-secondary text-xs bg-white"
-                      >
-                        <option value="">Current Status</option>
-                        <option value="High School">High School Student</option>
-                        <option value="Undergraduate">Undergraduate Student</option>
-                        <option value="Parent">Parent of Student</option>
-                        <option value="Counselor">Education Counselor</option>
-                        <option value="Other">Other</option>
-                      </select>
-                    </div>
-                    <div>
-                      <select 
-                        name="course" 
-                        required
-                        value={formData.course}
-                        onChange={handleInputChange}
-                        className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:ring-secondary focus:border-secondary text-xs bg-white"
-                      >
-                        <option value="">Preferred Field of Study</option>
-                        <option value="Medicine / MBBS">Medicine / MBBS / Health</option>
-                        <option value="Engineering / BTech">Engineering & Tech</option>
-                        <option value="Business / MBA / BBA">Business & Commerce</option>
-                        <option value="Computer Science / IT">Computer Science & IT</option>
-                        <option value="Pharmacy / Science">Pharmacy & Applied Sciences</option>
-                        <option value="Arts / Design">Arts & Design</option>
-                        <option value="Other">Other / Undecided</option>
-                      </select>
-                    </div>
-                    <button 
-                      type="submit" 
-                      disabled={isSubmitting}
-                      className="btn-secondary w-full py-3 text-xs flex justify-center items-center gap-2 font-bold shadow-lg shadow-secondary/10 rounded-xl"
-                    >
-                      {isSubmitting ? 'Registering...' : 'Click here to Register'} <ArrowRight size={14} />
-                    </button>
-                  </form>
-                )}
-                <p className="text-[10px] text-gray-400 font-bold uppercase tracking-widest mt-4">Edunial Group — Connecting Aspiring Minds</p>
+                <p className="text-gray-550 mb-8 text-sm leading-relaxed">Secure your priority entry pass, explore scholarship pathways, and book your 1:1 university counseling slots at the fair.</p>
+                <Link 
+                  to={`/student-registration?subject=${encodeURIComponent("IHECF Uganda Student Pre-Registration")}`}
+                  className="btn-secondary w-full py-4 text-xs flex justify-center items-center gap-2 font-bold shadow-lg shadow-secondary/10 rounded-xl hover:scale-[1.02] transition-transform"
+                >
+                  Start Registration Form <ArrowRight size={14} />
+                </Link>
+                <p className="text-[10px] text-gray-400 font-bold uppercase tracking-widest mt-6">Edunial Group — Connecting Aspiring Minds</p>
               </div>
             </div>
           </div>

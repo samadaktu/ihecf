@@ -374,7 +374,7 @@ const ForStudents = () => {
               Pre-registration is completely free and ensures you get slot priority for 1:1 university counselling, scholarship assessments, and entry passes.
             </p>
             <div className="pt-4">
-              <Link to="/events" className="btn-secondary px-10 py-4 text-base font-bold shadow-xl hover:shadow-2xl hover:scale-105 transition-all inline-flex items-center gap-2">
+              <Link to="/student-registration" className="btn-secondary px-10 py-4 text-base font-bold shadow-xl hover:shadow-2xl hover:scale-105 transition-all inline-flex items-center gap-2">
                 Pre-Register Now <ArrowRight size={18} />
               </Link>
             </div>
